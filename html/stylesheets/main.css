@@ -2740,7 +2740,7 @@ body {
   height: 100%;
   font-family: "latoregular", Arial, sans-serif;
   font-size: 1.6rem;
-  color: #000000;
+  color: #000;
   background-color: #F1F1F1;
   /* CLASSES DE BASE */ }
   body [id="wrapper"] {
@@ -2798,7 +2798,7 @@ body {
         body [id="wrapper"] [id="menu-button"] {
           display: none; } }
       body [id="wrapper"] [id="menu-button"] > span {
-        background-color: #000000;
+        background-color: #000;
         height: 0.2em;
         position: relative;
         width: 1.5em;
@@ -2809,7 +2809,7 @@ body {
         *display: inline;
         margin-left: 0.5em; }
         body [id="wrapper"] [id="menu-button"] > span::before, body [id="wrapper"] [id="menu-button"] > span::after {
-          background-color: #000000;
+          background-color: #000;
           content: "";
           height: 0.2em;
           left: 0;
@@ -2879,19 +2879,19 @@ body {
             border: none;
             padding: inherit; } }
       body [id="wrapper"] .main-logo a {
-        color: #000000;
+        color: #000;
         text-decoration: none;
         display: block;
         padding-left: 1.5em;
         padding-right: 1.5em; }
         body [id="wrapper"] .main-logo a:visited {
-          color: #000000; }
+          color: #000; }
         body [id="wrapper"] .main-logo a:focus {
-          color: #000000; }
+          color: #000; }
         body [id="wrapper"] .main-logo a:hover {
-          color: #000000; }
+          color: #000; }
         body [id="wrapper"] .main-logo a:active {
-          color: #000000; }
+          color: #000; }
         @media (min-width: 1001px) {
           body [id="wrapper"] .main-logo a {
             display: inline-block;
@@ -2920,16 +2920,16 @@ body {
         display: block;
         text-decoration: none;
         padding: 0.5em 1em;
-        color: #000000; }
+        color: #000; }
         body [id="wrapper"] ul[role="menubar"] a span {
           transition-duration: 400ms; }
       body [id="wrapper"] ul[role="menubar"] > li {
         position: relative; }
         body [id="wrapper"] ul[role="menubar"] > li > a {
           font-size: 1.2em;
-          color: #000000; }
+          color: #000; }
           body [id="wrapper"] ul[role="menubar"] > li > a:visited {
-            color: #000000; }
+            color: #000; }
           body [id="wrapper"] ul[role="menubar"] > li > a:focus {
             color: #ebbe00; }
           body [id="wrapper"] ul[role="menubar"] > li > a:hover {
@@ -2976,9 +2976,9 @@ body {
           margin: 0; }
           body [id="wrapper"] ul[role="menubar"] > li > ul > li > a {
             font-size: 1.1em;
-            color: #000000; }
+            color: #000; }
             body [id="wrapper"] ul[role="menubar"] > li > ul > li > a:visited {
-              color: #000000; }
+              color: #000; }
             body [id="wrapper"] ul[role="menubar"] > li > ul > li > a:focus {
               color: #ebbe00; }
             body [id="wrapper"] ul[role="menubar"] > li > ul > li > a:hover {
@@ -3023,16 +3023,16 @@ body {
         @media (min-width: 1001px) {
           body [id="wrapper"] main [id="content"] a:not([role="button"])[href^="tel:"] {
             text-decoration: none;
-            color: #000000;
+            color: #000;
             cursor: default; }
             body [id="wrapper"] main [id="content"] a:not([role="button"])[href^="tel:"]:visited {
-              color: #000000; }
+              color: #000; }
             body [id="wrapper"] main [id="content"] a:not([role="button"])[href^="tel:"]:focus {
-              color: #000000; }
+              color: #000; }
             body [id="wrapper"] main [id="content"] a:not([role="button"])[href^="tel:"]:hover {
-              color: #000000; }
+              color: #000; }
             body [id="wrapper"] main [id="content"] a:not([role="button"])[href^="tel:"]:active {
-              color: #000000; } }
+              color: #000; } }
       body [id="wrapper"] main [id="content"] h1 {
         padding-bottom: 0.3em;
         border-bottom: solid 3px #ccc;
@@ -3044,7 +3044,7 @@ body {
         font-size: 1.4em; }
       body [id="wrapper"] main [id="content"] h4 {
         font-size: 1.2em;
-        color: #000000; }
+        color: #000; }
       body [id="wrapper"] main [id="content"] blockquote {
         padding: 1em;
         background-color: #ffffff;
@@ -3218,9 +3218,9 @@ body {
           opacity: .5; }
       body [id="wrapper"] main [id="content"] > section.archive article h2 a, body [id="wrapper"] main [id="content"] > section.archive .article h2 a {
         text-decoration: none;
-        color: #000000; }
+        color: #000; }
         body [id="wrapper"] main [id="content"] > section.archive article h2 a:visited, body [id="wrapper"] main [id="content"] > section.archive .article h2 a:visited {
-          color: #000000; }
+          color: #000; }
         body [id="wrapper"] main [id="content"] > section.archive article h2 a:focus, body [id="wrapper"] main [id="content"] > section.archive .article h2 a:focus {
           color: #ebbe00; }
         body [id="wrapper"] main [id="content"] > section.archive article h2 a:hover, body [id="wrapper"] main [id="content"] > section.archive .article h2 a:hover {
@@ -3255,7 +3255,6 @@ body {
           body [id="wrapper"] main [id="breadcrumbs"] ol li a {
             display: inline-block; }
           body [id="wrapper"] main [id="breadcrumbs"] ol li span {
-            display: inline-block;
             padding: 0.2em 0.5em; }
             @media (min-width: 1001px) {
               body [id="wrapper"] main [id="breadcrumbs"] ol li span {
@@ -3371,9 +3370,9 @@ body {
         body.landing #wrapper main > div a[role="button"] {
           margin: 1em 0; }
   body a, body li, body i, body input, body textarea, body button {
-    transition-duration: 400ms; }
+    transition-duration: 0.4s; }
   body a:active, body li:active, body i:active, body input:active, body button:active {
-    transition-duration: 0ms; }
+    transition-duration: 0s; }
   body .float-left, body .alignleft {
     float: left; }
   body .float-right, body .alignright {
@@ -3401,10 +3400,7 @@ body {
     visibility: hidden;
     height: 0;
     width: 0;
-    clear: both;
-    *height: auto;
-    *width: auto;
-    *overflow: visible; }
+    clear: both; }
   body .visuallyhidden {
     font: 0/0 serif;
     text-shadow: none;

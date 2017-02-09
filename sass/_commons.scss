@@ -1,10 +1,10 @@
 /* CLASSES DE BASE */
 a, li, i, input, textarea, button {
-    @include transition-duration(400ms);
+    @include transition-duration(0.4s);
 }
 
 a:active, li:active, i:active, input:active, button:active {
-    @include transition-duration(0ms);
+    @include transition-duration(0s);
 }
 
 .float-left, .alignleft {
@@ -57,10 +57,6 @@ a:active, li:active, i:active, input:active, button:active {
     height: 0;
     width:0;
     clear: both;
-
-    *height:auto;
-    *width:auto;
-    *overflow: visible;
 }
 
 .visuallyhidden {

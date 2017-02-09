@@ -310,7 +310,7 @@ main {
                 }
 
                 span {
-                    display: inline-block;
+                    //                    display: inline-block;
                     padding: 0.2em 0.5em;
 
                     @include from('desktop') {
