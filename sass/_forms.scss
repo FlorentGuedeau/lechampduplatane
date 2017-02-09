@@ -1,0 +1,99 @@
+> div {
+    margin: 1em 0;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5em;
+}
+
+.required {
+    font-size: 0.8em;
+    vertical-align: super;
+    font-style: italic;
+    color: #777777;
+}
+
+[type="text"], [type="email"], [type="password"], [type="tel"], [type="number"], [type="search"], [type="url"], [type="date"], textarea, select {
+    display: block;
+    background-color: #ffffff;
+    width: 100%;
+    padding: .5em;
+    border: solid 4px #666666;
+    font: {
+        family: $family-lato;
+        size: 1em;
+    }
+
+    @include from('desktop') {
+        min-width: 25em;
+    }
+
+    @include input-placeholder {
+        font-size: 0px;
+
+        @include from('desktop') {
+            font: {
+                size: .8em;
+                style: italic;
+            }
+        }
+    }
+
+    &:hover {
+        border-color: $color-green;
+    }
+
+    &:focus {
+        border-color: $color-orange;
+    }
+
+    &[disabled="disabled"] {
+        background: {
+            color: #ececec;
+        }
+
+        &:hover {
+            border: {
+                color: #d7d7d7;
+            }
+        }
+    }
+}
+
+[type="submit"] {
+    border:none;
+    display: block;
+    text-decoration: none;
+    color: #ffffff;
+    background-color: $color-green;
+    border-radius: .2em;
+    text-align: center;
+    padding: 1em;
+    font: {
+        family: $family-lato;
+        size: 1.1em;
+    }
+    position: relative;
+    cursor: pointer;
+
+    &::after {
+        @include content('\f054');
+        font: {
+            family: 'FontAwesome';
+            size: 1em;
+        }
+        @include inline-block;
+        margin: {
+            left: 1em;
+        }
+    }
+
+    &:hover, &:focus {
+        background-color: darken($color-green, 20%);
+    }
+
+    &:active {
+        background-color: darken($color-green, 30%);
+    }   
+}

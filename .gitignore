@@ -1,3 +1,10 @@
+.tmp
+.sass-cache
+node_modules
+bower_components
+!node_modules/connect-include/lib/connect-include.js
+documents
+
 # Windows image file caches
 Thumbs.db
 ehthumbs.db

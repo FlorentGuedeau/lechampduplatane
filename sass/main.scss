@@ -1,0 +1,96 @@
+@charset "UTF-8";
+
+$browser-minimum-versions: ("ie": "10");
+
+@import "compass";
+
+@import 'normalize';
+$_normalize-exclude: ('table');
+@include normalize();
+
+@import "compass/layout";
+@import "compass/css3/user-interface";
+@import "compass/css3/selection";
+
+@import 'breakpoint';
+@import 'breakpoint-slicer';
+
+@import "fonts";
+@import "font-awesome/font-awesome";
+//@import "mixins";
+
+//@import "toolkit";
+//@import "toolkit/kickstart";
+
+$sidebar-width: 265px;
+$footer-height : 250px;
+
+/* Couleurs du projet */
+$color-text: #000000;
+$color-grey: #333b3b;
+$color-green: #9bc407;
+$color-orange: #ebbe00;
+$color-blue: #00a8ec;
+
+$golden-ratio: 1.62;
+$font-global: 16;
+
+$slicer-breakpoints: 0 1000px;
+$slicer-breakpoint-names: 'mobile' 'desktop';
+
+// @include to : jusqu'a
+// @include from : à partir de ___ et au dela
+// @include at : a
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+    font-size: calc(1em * .625);
+}
+
+body {
+    height: 100%;
+    font: {
+        family: $family-lato;
+        size: 1.6rem;
+    }
+    color: $color-text;
+    background-color: #F1F1F1;
+
+    [id="wrapper"] {
+        position: relative;
+        height: auto;
+        min-height: 100%;
+        padding-top: 1px; // hack des marges
+        margin-bottom: $footer-height * -1;
+
+        > noscript {
+            > div {
+                margin: {
+                    left: 1em;
+                    right: 1em;
+                }
+
+                @include from('desktop') {
+                    margin-left: calc(260px + 5px + 1em); // $sidebar-width, calc ne prend pas en compte les variables ?
+                }
+            }
+        }
+
+        @import "sidebar";
+        @import "content";
+
+        @import "footer";
+    }
+
+    &.landing {
+        background-color: #ffffff;
+
+        @import "landing";
+    }
+
+    @import "commons";
+}

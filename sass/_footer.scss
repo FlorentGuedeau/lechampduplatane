@@ -1,0 +1,96 @@
+[id="footer"] {
+    @include from('desktop') {
+        margin: {
+            left: $sidebar-width;
+        }
+    }
+
+    border-top: solid 5px $color-blue;
+    background-color: $color-grey;
+    color: #ffffff;
+    background-color: lighten($color-grey, 5%);
+    //background-color: $color-grey;
+
+    a {
+        @include link-colors(#ffffff, $color-blue, $color-orange, #ffffff, $color-blue);
+
+        display: inline-block;
+        margin: 0.2em 0;
+        padding: 0.2em 0.5em;
+
+        @include from('desktop') {
+            margin: auto;
+            padding: inherit;
+
+            &[href^="tel:"] {
+                text-decoration: none;
+                @include link-colors(#ffffff, #ffffff, #ffffff, #ffffff, #ffffff);
+                cursor: default;
+            }
+        }
+    }
+
+    p, li {
+        line-height: #{$golden-ratio}em;
+    }
+
+    i {
+        margin: {
+            right: 0.2em;
+        }
+    }
+
+    .cols {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        @include from('desktop') {
+            justify-content: space-around;
+        }
+
+        > div {
+            padding: {
+                left: 1em;
+                right: 1em;
+                bottom: 1em;
+            }
+
+            @include from('desktop') {
+                max-width: 33%;
+            }
+        }
+
+        nav {
+            a {
+                display: block;
+                line-height: #{$golden-ratio}em;
+            }
+        }
+
+        ul {
+            list-style: none;
+            //margin: 0;
+            padding: 0;
+        }
+
+        .title {
+            font: {
+                weight: bold;
+            }
+            padding-bottom: 0.2em;
+            border-bottom: solid 2px lighten($color-grey, 30%);
+        }                
+    }
+
+    .sub-footer {
+        background-color: $color-grey;
+        //background-color: darken($color-grey, 5%);
+        padding: 1px 1em;
+        font-size: 0.8em;
+
+        p {
+            text-align: center;
+        }
+    }
+}

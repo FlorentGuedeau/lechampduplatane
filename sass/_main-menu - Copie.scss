@@ -1,0 +1,131 @@
+aside {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    bottom: 0;
+    background-color: #ffffff;
+    border-right: solid 5px $color-orange;
+    width: $sidebar-width;
+
+    @include to('mobile') {
+        display: none;
+    }
+}
+
+#sticky-sidebar {
+    float: left;
+    width: $sidebar-width;
+    background-color: #ffffff;
+    position: relative;
+    border-right: solid 5px $color-orange;
+}
+
+.main-logo {
+    text-align: center;
+
+    a, img {
+        display: inline-block;
+    }
+
+    img {
+        line-height: calc(193px / 2); // hauteur du logo
+        text-transform: uppercase;
+        font-size: 15px; // unité en pixel car la largeur de l'image est figée. L'utilisation de em fera bouger la mise en page
+        text-align: center;
+    }
+
+    a {
+        @include link-colors($color-text, $color-text, $color-text, $color-text, $color-text);
+    }
+}
+
+a[role="button"] {
+    font-size: 1em;
+    margin: 1em;
+}
+
+ul[role="menubar"] {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    margin: {
+        top: 2em;
+        bottom: 5em;
+    }
+
+    a {
+        display: block;
+        text-decoration: none;
+        padding: 0.5em 1em;
+        color: $color-text;
+
+        span {
+            @include transition-duration(400ms);
+        }
+    }
+
+    > li {
+        position: relative;
+
+        > a {
+            font-size: 1.2em;
+            @include link-colors($color-text, $color-orange, $color-green, $color-text, $color-text);
+        }
+
+        &.active {
+            > a {            
+                @include link-colors(darken($color-orange, 10%), $color-orange, $color-green, darken($color-orange, 10%), darken($color-orange, 10%));
+            }
+        }
+
+        span[role="button"] {
+            position: absolute;
+            top: 1px;
+            right: 0;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            padding: 0.8em 1em;
+            background-color: #F1F1F1;
+            z-index: 10;
+            @include transition-duration(400ms);
+
+            &:hover {
+                background-color: $color-orange;
+            }
+
+            &:active {
+                background-color: $color-green;
+            }
+
+            &.active {
+                background-color: $color-orange;
+
+                &:active {
+                    background-color: $color-green;
+                }
+
+                i {
+                    @include rotate(90deg);
+                }
+            }
+        }
+
+        i {
+            font-size: 1.1em;
+        }
+
+        > ul {
+            list-style: none;
+            margin: 0;
+
+            > li {
+                > a {
+                    font-size: 1.1em;
+                    @include link-colors($color-text, $color-orange, $color-green, $color-text, $color-text);
+                }
+            }
+        }
+    }
+}

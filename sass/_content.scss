@@ -1,0 +1,323 @@
+main {
+    @include from('desktop') {
+        margin: {
+            left: $sidebar-width;
+        }
+        min-height: 100vh;
+        margin-bottom: $footer-height * -1;  // sticky footer
+        padding-bottom: 1px; // hack pour le footer, pour éviter la superposition
+    }
+
+    [id="content"] {
+        @include from('desktop') {
+            margin-bottom: $footer-height;  // sticky footer
+        }
+
+        padding: 1px 1em;
+
+        > section {
+            margin: {
+                bottom: 5em;
+            }
+        }
+
+        p, li, blockquote {
+            line-height: $golden-ratio;
+        }
+
+        img {
+            &.float-right, &.alignright {
+                margin: {
+                    left: 1em;
+                    bottom: 1em;
+                }
+            }
+
+            &.float-left, &.alignleft {
+                margin: {
+                    right: 1em;
+                    bottom: 1em;
+                }
+            }
+
+            &.aligncenter {
+                display: block;
+            }
+        }
+
+        strong {
+            color: $color-green;
+        }
+
+        a:not([role="button"]) {
+            @include link-colors($color-blue, $color-orange, $color-green, $color-blue, $color-orange);
+
+            @include from('desktop') {
+                &[href^="tel:"] {
+                    text-decoration: none;
+                    @include link-colors($color-text, $color-text, $color-text, $color-text, $color-text);
+                    cursor: default;
+                }
+            }
+        }
+
+        h1 {
+            padding-bottom: 0.3em;
+            border-bottom: solid 3px #ccc;
+            margin: {
+                top: 1em;
+                bottom: 1.5em;
+            }
+        }
+
+        h2 {
+            font: {
+                size: 1.6em;
+            }
+        }
+
+        h3 {
+            font: {
+                size: 1.4em;
+            }
+        }
+
+        h4 {
+            font: {
+                size: 1.2em;
+            }
+            color: $color-text;
+        }
+
+        blockquote {
+            padding: 1em;
+            background-color: #ffffff;
+            font-style: italic;
+            position: relative;
+            padding-left: 6em;
+            //min-height: 60px;
+
+            &::before {
+                display: block;
+                @include content("\201C");
+                font-size: 8em;
+                font-family: Georgia, Times, "Times New Roman", serif;
+                position: absolute;
+                top: -0.5rem;
+                left: 1rem;
+                line-height: normal;
+            }
+        }
+
+        form {
+            @import 'forms';
+        }
+
+        > section {
+            &[id="contact"] {
+                .cols {
+                    display: flex;
+                    flex-wrap: wrap;
+
+                    > div {
+                        flex-grow: 1;
+
+                        @include from('desktop') {
+                            margin:  {
+                                left: 1em;
+                                right: 1em;
+                                top: -1em;
+                            }
+                        }
+
+                        > h2 {
+                            margin-top: 1rem;
+                        }
+                    }
+
+                    i {
+                        margin: {
+                            right: 0.2em;
+                        }
+                    }
+                }
+            }
+
+            &[id="realisations"] {
+                .cols {
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: center;
+
+                    @include from('desktop') {
+                        display: block;
+                    }
+
+                    > article {
+                        margin: .5em;
+
+                        @include from('desktop') {
+                            margin: 0;
+                            margin-bottom: 1.5em;
+
+                            &:last-child {
+                                margin-bottom: 0;
+                            }
+                        }
+
+                        .illustration {
+                            @include from('desktop') {
+                                flex-shrink: 0;
+                            }
+                        }
+                    }
+                }
+
+                article {
+                    max-width: 280px; // valeur fixe car les images font 300px de large
+                    box-shadow: 0 0px 3px rgba(0, 0, 0, 0.2);
+                    background-color: #ffffff;
+
+                    @include from('desktop') {
+                        max-width: none;
+                        display: flex;
+                    }
+
+                    a[role="button"] {
+                        @include from('desktop') {
+                            display: inline-block;
+                        }
+                    }
+                }
+            }
+
+            &[id="services"] {
+                .cols {
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    align-items: flex-start;
+
+                    .article {
+                        margin: .5em;
+                    }
+                }
+
+                .article {
+                    max-width: 280px; // valeur fixe car les images font 300px de large
+                    box-shadow: 0 0px 3px rgba(0, 0, 0, 0.2);
+                    background-color: #ffffff;
+                }
+            }
+
+            &.archive { // toute les pages listant des elements
+                article, .article {
+                    .content-article {
+                        padding: {
+                            left: 1em;
+                            right: 1em;
+                        }
+                    }
+
+                    .illustration {
+                        a {
+                            display: inline-block;
+
+                            img {
+                                @include transition-duration(400ms);
+                                display: block;
+                            }
+
+                            &:not(.reverside) {
+                                &:hover, &:focus {
+                                    img {
+                                        //box-shadow: 0 0 0 5px $color-green inset;
+                                        opacity: .5;
+                                    }
+                                }   
+                            }
+                        }
+                    }
+
+                    h2 {
+                        a {
+                            text-decoration: none;
+                            @include link-colors($color-text, $color-orange, $color-green, $color-text, $color-orange);
+                        }
+                    }
+
+                    a[role="button"] {
+                        margin: {
+                            left: 0;
+                            right: 0;
+                        }
+
+                        //                        @include from('desktop') {
+                        //                            display: inline-block;
+                        //                        }
+                    }
+                }
+            }
+
+            &[id="page"], &[id="post"], &[id="none"] {
+
+            }
+
+            &[id="archive"], &[id="search"] {
+
+            }
+        }
+    }
+
+    [id="breadcrumbs"] {
+        font: {
+            size: .8em;
+        }
+        margin: {
+            bottom: -1em;
+            top: 1em;
+        }
+
+        ol {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+
+            li {
+                position: relative;
+
+                @include from('desktop') {
+                    margin-right: 0.5em;
+                }
+
+                &::after {
+                    @include content('\203A');
+
+                    @include from('desktop') {
+                        margin-left: 0.5em;
+                    }
+                }
+
+                &:last-child {
+                    &::after {
+                        display: none;
+                    }
+                }
+
+                a {
+                    display: inline-block;
+                }
+
+                span {
+                    display: inline-block;
+                    padding: 0.2em 0.5em;
+
+                    @include from('desktop') {
+                        padding: inherit;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,102 @@
+@charset "UTF-8";
+
+$browser-minimum-versions: ("ie": "9");
+
+@import "compass";
+
+//@import 'normalize/import-now';
+@import 'normalize';
+$_normalize-exclude: ('table');
+@include normalize();
+
+@import "compass/layout";
+@import "compass/css3/user-interface";
+@import "compass/css3/selection";
+
+@import 'breakpoint';
+@import 'breakpoint-slicer';
+
+@import "fonts";
+//@import "mixins";
+
+//@import "toolkit";
+//@import "toolkit/kickstart";
+
+$wrapper-width: 800px;
+
+/* Couleurs du projet */
+$color-text: #000000;
+
+$golden-ratio: 1.62;
+$font-global: 16;
+
+$slicer-breakpoints: 0 $wrapper-width;
+$slicer-breakpoint-names: 'tablet' 'desktop';
+
+/*
+@include to : jusqu'a
+@include from : à partir de ___ et au dela
+@include at : a
+*/
+
+/*@include from(desktop) {
+@include sticky-footer($footer-height, "#wrapper", "#wrapper-footer", "body > footer");
+}*/
+
+html {
+    font: {
+        size: 100%; // eviter de forcer la taille de police pour les navigateurs
+    }
+}
+
+body {
+    font: {
+        family: $family-lato;
+        size: 1em;
+    }
+    color: $color-text;
+
+    #wrapper {
+        position: relative;
+
+        > noscript {
+
+        }
+
+        main {
+            text-align: center;
+            margin: {
+                left: 1em;
+                right: 1em;
+            }
+            
+            p {
+                line-height: 1.62em;
+            }
+            
+            a {
+                @include link-colors(#000000, #000000, #000000, #000000, #000000)
+            }
+        }
+
+        //@import "header";
+        //@import "content";
+    }
+
+    /*@import "footer";
+
+    &.home {
+    @import "home";
+}
+
+    &.admin-bar {
+    #wrapper {
+    > header {
+    top: 32px;
+}
+}
+}*/
+}
+
+@import "commons";
+@import "font-awesome/font-awesome";

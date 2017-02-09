@@ -1,0 +1,297 @@
+[id="aside"] {
+    background-color: #ffffff;
+    //padding: 1px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0%;
+    z-index: 10;
+    overflow-x: hidden; // permet d'avoir le scrollbar quand la hauteur n'est pas assez grande
+    @include transition-duration(400ms);
+
+    &.active {
+        height: 100%;
+    }
+
+    @include from('desktop') {
+        @include transition-duration(0ms);
+        position: absolute;
+        height: 100%;
+        bottom: 0;
+        overflow-x: hidden;
+        background-color: #ffffff;
+        border-right: solid 5px $color-orange;
+        width: $sidebar-width;
+    }
+}
+
+[id="menu-button"] {
+    position: fixed;
+    z-index: 15;
+    bottom: 1em;
+    left: 50%;
+    @include translateX(-50%);
+    font: {
+        family: $family-lato;
+        size: 1.2em;
+    }
+    display: block;
+    text-decoration: none;
+    background-color: #ffffff;
+    border-radius: .2em;
+    text-align: center;
+    padding: .5em 1em;
+    border: none;
+    box-shadow: 0px 0px 5px rgba(#000000, 0.2);
+    cursor: pointer;
+
+    @include from('desktop') {
+        display: none;
+    }
+
+    > span {
+        background-color: $color-text;
+        height: 0.2em;
+        position: relative;
+        width: 1.5em;
+        @include inline-block;
+        margin-left: 0.5em;
+
+        &::before, &::after {
+            background-color: $color-text;
+            @include content('');
+            height: 0.2em;
+            left: 0;
+            position: absolute;
+            width: 1.5em;
+            transition-duration: 300ms;
+            transition-property: all;
+            transition-timing-function: ease;
+        }
+
+        &::before {
+            top: -0.4em;
+        }
+
+        &::after {
+            top: 0.4em;
+        }
+    }
+
+    &:hover, &:focus {
+        > span {
+            &::before {
+                top: -0.6em;
+            }
+
+            &::after {
+                top: 0.6em;
+            }
+        }
+    }
+
+    &:active, &:focus {
+        background-color: $color-green;
+        color: #ffffff;
+
+        > span {
+            background-color: #ffffff;
+
+            &::before, &::after {
+                @include transition-duration(0ms);
+                background-color: #ffffff;
+            }
+        }
+    }
+
+    &.active {
+        > span {
+            background-color: transparent;
+
+            &::before {
+                top: 0;
+                transform: rotate(-45deg);
+            }
+
+            &::after {
+                top: 0;
+                transform: rotate(45deg);
+            }
+        }
+    }
+}
+
+
+[id="sticky-sidebar"] {
+    padding: {
+        top: 1px;
+        bottom: 5em; // mettre ici la hauteur approximative du bouton menu
+    }
+
+    @include from('desktop') {
+        padding: inherit;
+        float: left;
+        width: $sidebar-width;
+        background-color: #ffffff;
+        position: relative;
+        border-right: solid 5px $color-orange;
+    }
+}
+
+.main-logo {
+    text-align: center;
+
+    img {
+        display: inline-block;
+        line-height: calc(193px / 2); // hauteur du logo
+        text-transform: uppercase;
+        font-size: 15px; // unité en pixel car la largeur de l'image est figée. L'utilisation de em ferai bouger la mise en page
+        text-align: center;
+
+        @include to('mobile') {
+            display: none;
+        }
+    }
+
+    span {
+        display: block;
+        font: {
+            size: 1.5em;
+            weight: bold;
+        }
+        padding: {
+            bottom: 0.3em;
+        }
+        border-bottom: solid 3px #ccc;
+        line-height: normal;
+
+        @include from('desktop') {
+            @include squish-text;
+            border: none;
+            padding: inherit;
+        }
+    }
+
+    a {
+        @include link-colors($color-text, $color-text, $color-text, $color-text, $color-text);
+        text-decoration: none;
+        display: block;
+        padding: {
+            left: 1.5em;
+            right: 1.5em;
+        }
+
+        @include from('desktop') {
+            display: inline-block;
+            padding: {
+                left: inherit;
+                right: inherit;
+            }
+        }
+    }
+}
+
+a[role="button"] {
+    font-size: 1em;
+    margin: 0 2em 1em 2em;
+
+    @include from('desktop') {
+        margin: {
+            right: 1em;
+            left: 1em;
+        }
+    }
+}
+
+ul[role="menubar"] {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    background-color: #ffffff;
+    padding: 1em 2em 2em 2em;
+
+    @include from('desktop') {
+        padding: inherit;
+        margin: {
+            top: 2em;
+            bottom: 5em;
+        }
+    }
+
+    a {
+        display: block;
+        text-decoration: none;
+        padding: 0.5em 1em;
+        color: $color-text;
+
+        span {
+            @include transition-duration(400ms);
+        }
+    }
+
+    > li {
+        position: relative;
+
+        > a {
+            font-size: 1.2em;
+            @include link-colors($color-text, $color-orange, $color-green, $color-text, $color-orange); // $normal, $hover, $active, $visited, $focus
+        }
+
+        &.active {
+            > a {
+                @include link-colors(darken($color-orange, 10%), $color-orange, $color-green, darken($color-orange, 10%), darken($color-orange, 10%));
+            }
+        }
+
+        span[role="button"] {
+            position: absolute;
+            top: 1px;
+            right: 0;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            padding: 0.8em 1em;
+            background-color: #F1F1F1;
+            z-index: 10;
+            @include transition-duration(400ms);
+
+            &:hover, &:focus {
+                background-color: $color-orange;
+            }
+
+            &:active {
+                background-color: $color-green;
+            }
+
+            &.active {
+                background-color: $color-orange;
+
+                &:active {
+                    background-color: $color-green;
+                }
+
+                i {
+                    @include rotate(90deg);
+                }
+            }
+        }
+
+        i {
+            font-size: 1.1em;
+        }
+
+        > ul {
+            list-style: none;
+            margin: 0;
+
+            > li {
+                > a {
+                    font-size: 1.1em;
+                    @include link-colors($color-text, $color-orange, $color-green, $color-text, $color-orange);
+                }
+            }
+        }
+    }
+}
