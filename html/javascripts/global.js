@@ -50,7 +50,7 @@ jQuery(document).ready(function(){
         $(this).attr("aria-pressed", pressed ? "false" : "true");
 
         $(this).toggleClass('active');
-        $('aside').toggleClass('active');
+        $('#sidebar').toggleClass('active');
 
         e.preventDefault();
     });

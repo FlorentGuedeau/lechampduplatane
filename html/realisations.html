@@ -8,50 +8,52 @@
         <meta name="author" content="Florent Guédeau">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
 
-        <link rel="stylesheet" type="text/css" href="stylesheets/main.css">
-        <script type="text/javascript" src="javascripts/modules/modernizr.js"></script>
+        <link rel="stylesheet" href="stylesheets/main.css">
+        <script src="javascripts/modules/modernizr.js"></script>
     </head>
     <body itemscope itemtype="http://schema.org/WebPage">
         <div id="wrapper">
             <noscript><div class="states warning">Pour une meilleure utilisation de ce site, veuillez activer JavaScript dans votre navigateur.</div></noscript>
 
-            <button aria-pressed="false" type="button" id="menu-button" tabindex="1">Menu <span></span></button>
-
-            <aside id="aside">
+            <div id="sidebar" aria-label="Menu latéral">
                 <div id="sticky-sidebar">
-                    <p class="main-logo">
+                    <header role="banner" class="main-logo">
                         <a href="index.html" title="Retour à l'accueil">
                             <span role="heading">Le Champ du Platane, Paysagiste concepteur</span>
-                            <img src="images/compressed/logo-le-champ-du-platane-paysagiste-concepteur-sidebar.png" width="200" height="193" alt="Le Champ du Platane, Paysagiste concepteur">
+                            <img src="images/compressed/logo-le-champ-du-platane-paysagiste-concepteur-2.png" width="200" height="193" alt="Le Champ du Platane, Paysagiste concepteur">
                         </a>
-                    </p>
+                    </header>
 
-                    <ul role="menubar" itemscope itemtype="http://schema.org/SiteNavigationElement">
-                        <li role="menuitem"><a href="index.html" tabindex="1" aria-current="page" itemprop="url" title="Le Champ du Platane, Paysagiste concepteur"><span itemprop="name">Accueil</span></a></li>
-                        <li role="menuitem" aria-haspopup="true">
-                            <a href="landing-page.html" tabindex="2" itemprop="url" title="Nos services"><span itemprop="name">Nos services</span></a>
-                            <span tabindex="3" role="button" aria-controls="smenu1" aria-pressed="false" title="Cliquez ici pour ouvrir ou fermer le sous-menu de Nos services"><i class="fa fa-chevron-right" aria-hidden="true"></i></span>
-                            <ul id="smenu1" role="menu" aria-hidden="true">
-                                <li role="menuitem"><a href="#" tabindex="4" itemprop="url" title="L'étude et la conception"><span itemprop="name">Etude et conception</span></a></li>
-                                <li role="menuitem"><a href="#" tabindex="5" itemprop="url" title="L'exécution"><span itemprop="name">Exécution</span></a></li>
-                                <li role="menuitem"><a href="#" tabindex="6" itemprop="url" title="La gestion"><span itemprop="name">Gestion</span></a></li>
-                            </ul>
-                        </li>
-                        <li class="active" role="menuitem"><a href="#" tabindex="7" itemprop="url" title="Nos références"><span itemprop="name">Réalisations</span></a></li>
-                        <li role="menuitem"><a href="#" tabindex="8" itemprop="url" title="Nous découvrir"><span itemprop="name">Qui sommes-nous ?</span></a></li>
-                        <li role="menuitem"><a href="#" tabindex="9" itemprop="url" title="Nous contacter"><span itemprop="name">Contact</span></a></li>
-                    </ul>
+                    <nav role="navigation" aria-label="Menu principal">
+                        <ul role="menubar" itemscope itemtype="http://schema.org/SiteNavigationElement">
+                            <li role="menuitem"><a href="index.html" tabindex="1" itemprop="url" title="Le Champ du Platane, Paysagiste concepteur"><span itemprop="name">Accueil</span></a></li>
+                            <li role="menuitem" aria-haspopup="true">
+                                <a href="nos-services.html" tabindex="2" itemprop="url" title="Nos services"><span itemprop="name">Nos services</span></a>
+                                <span tabindex="3" role="button" aria-controls="smenu1" aria-pressed="false" title="Cliquez ici pour ouvrir ou fermer le sous-menu de Nos services"><i class="fa fa-chevron-right" aria-hidden="true"></i></span>
+                                <ul id="smenu1" role="menu" aria-hidden="true">
+                                    <li role="menuitem"><a href="landing-page.html" tabindex="4" itemprop="url" title="L'étude et la conception"><span itemprop="name">Étude et conception</span></a></li>
+                                    <li role="menuitem"><a href="landing-page.html" tabindex="5" itemprop="url" title="L'exécution"><span itemprop="name">Exécution</span></a></li>
+                                    <li role="menuitem"><a href="landing-page.html" tabindex="6" itemprop="url" title="La gestion"><span itemprop="name">Gestion</span></a></li>
+                                </ul>
+                            </li>
+                            <li class="active" role="menuitem"><a aria-current="page" href="realisations.html" tabindex="7" itemprop="url" title="Nos réalisations"><span itemprop="name">Réalisations</span></a></li>
+                            <li role="menuitem"><a href="qui-sommes-nous.html" tabindex="8" itemprop="url" title="Nous découvrir"><span itemprop="name">Qui sommes-nous ?</span></a></li>
+                            <li role="menuitem"><a href="contact.html" tabindex="9" itemprop="url" title="Nous contacter"><span itemprop="name">Contact</span></a></li>
+                        </ul>
+                    </nav>
 
                     <a role="button" href="landing-page.html" title="Cliquez-ici si vous êtes un professionnel">Je suis un professionnel</a>
                 </div>
-            </aside>
+            </div>
 
-            <main>
+            <button aria-pressed="false" type="button" id="menu-button" tabindex="1">Menu <span></span></button>
+
+            <main role="main">
                 <div id="content">
                     <div id="breadcrumbs">
                         <ol itemscope itemtype="http://schema.org/BreadcrumbList">
                             <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-                                <a itemprop="item" href="index.html" title="">
+                                <a itemprop="item" href="index.html" title="Retour à l'accueil">
                                     <span itemprop="name">Accueil</span>
                                 </a>
                                 <meta itemprop="position" content="1" />
@@ -71,7 +73,7 @@
                         <div class="cols">
                             <article itemscope itemtype="http://schema.org/Article">
                                 <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject" class="illustration">
-                                    <a href="#" title="Cliquez pour en savoir plus">
+                                    <a href="real.html" title="Cliquez pour en savoir plus">
                                         <img src="images/intragram.jpg" width="280" height="280" alt="">
                                     </a>
                                     <meta itemprop="url" content="http://www.example.com/">
@@ -82,7 +84,7 @@
                                 <div class="content-article">
                                     <header>
                                         <h2 itemprop="headline">
-                                            <a href="#" title="Cliquez pour en savoir plus" itemprop="mainEntityOfPage">Aménagement d’un jardin particulier</a>
+                                            <a href="real.html" title="Cliquez pour en savoir plus" itemprop="mainEntityOfPage">Aménagement d’un jardin particulier</a>
                                         </h2>
                                         <small class="domhidden">
                                             Publié le <time itemprop="datePublished" datetime="2016-10-27">27 octobre 2016</time>
@@ -99,14 +101,14 @@
                                     </div>
 
                                     <footer>
-                                        <a itemprop="url" role="button" href="#" title="Cliquez pour en savoir plus">En savoir plus</a>
+                                        <a itemprop="url" role="button" href="real.html" title="Cliquez pour en savoir plus">En savoir plus</a>
                                     </footer>
                                 </div>
                             </article>
 
                             <article itemscope itemtype="http://schema.org/Article">
                                 <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject" class="illustration">
-                                    <a href="#" title="Cliquez pour en savoir plus">
+                                    <a href="real.html" title="Cliquez pour en savoir plus">
                                         <img src="images/intragram2.jpg" width="280" height="280" alt="">
                                     </a>
                                     <meta itemprop="url" content="http://www.example.com/">
@@ -117,7 +119,7 @@
                                 <div class="content-article">
                                     <header>
                                         <h2 itemprop="headline">
-                                            <a href="#" title="Cliquez pour en savoir plus" itemprop="mainEntityOfPage">Conception d'une main courante</a>
+                                            <a href="real.html" title="Cliquez pour en savoir plus" itemprop="mainEntityOfPage">Conception d'une main courante</a>
                                         </h2>
                                         <small class="domhidden">
                                             Publié le <time itemprop="datePublished" datetime="2016-10-27">27 octobre 2016</time>
@@ -134,13 +136,13 @@
                                     </div>
 
                                     <footer>
-                                        <a itemprop="url" role="button" href="#" title="Cliquez pour en savoir plus">En savoir plus</a>
+                                        <a itemprop="url" role="button" href="real.html" title="Cliquez pour en savoir plus">En savoir plus</a>
                                     </footer>
                                 </div>
                             </article>                           
                             <article itemscope itemtype="http://schema.org/Article">
                                 <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject" class="illustration">
-                                    <a href="#" title="Cliquez pour en savoir plus">
+                                    <a href="real.html" title="Cliquez pour en savoir plus">
                                         <img src="images/intragram3.jpg" width="280" height="280" alt="">
                                     </a>
                                     <meta itemprop="url" content="http://www.example.com/">
@@ -151,7 +153,7 @@
                                 <div class="content-article">
                                     <header>
                                         <h2 itemprop="headline">
-                                            <a href="#" title="Cliquez pour en savoir plus" itemprop="mainEntityOfPage">Aménagement d'entrée</a>
+                                            <a href="real.html" title="Cliquez pour en savoir plus" itemprop="mainEntityOfPage">Aménagement d'entrée</a>
                                         </h2>
                                         <small class="domhidden">
                                             Publié le <time itemprop="datePublished" datetime="2016-10-27">27 octobre 2016</time>
@@ -168,13 +170,13 @@
                                     </div>
 
                                     <footer>
-                                        <a itemprop="url" role="button" href="#" title="Cliquez pour en savoir plus">En savoir plus</a>
+                                        <a itemprop="url" role="button" href="real.html" title="Cliquez pour en savoir plus">En savoir plus</a>
                                     </footer>
                                 </div>
                             </article>                 
                             <article itemscope itemtype="http://schema.org/Article">
                                 <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject" class="illustration">
-                                    <a class="reverside" href="#" title="Cliquez pour en savoir plus">
+                                    <a class="reverside" href="real.html" title="Cliquez pour en savoir plus">
                                         <img src="images/img-transparent.png" width="280" height="280" alt="">
                                         <img src="images/img-color.jpg" width="280" height="280" alt="">
                                     </a>
@@ -186,7 +188,7 @@
                                 <div class="content-article">
                                     <header>
                                         <h2 itemprop="headline">
-                                            <a href="#" title="Cliquez pour en savoir plus" itemprop="mainEntityOfPage">Aménagement d’un jardin particulier</a>
+                                            <a href="real.html" title="Cliquez pour en savoir plus" itemprop="mainEntityOfPage">Aménagement d’un jardin particulier</a>
                                         </h2>
                                         <small class="domhidden">
                                             Publié le <time itemprop="datePublished" datetime="2016-10-27">27 octobre 2016</time>
@@ -203,13 +205,13 @@
                                     </div>
 
                                     <footer>
-                                        <a itemprop="url" role="button" href="#" title="Cliquez pour en savoir plus">En savoir plus</a>
+                                        <a itemprop="url" role="button" href="real.html" title="Cliquez pour en savoir plus">En savoir plus</a>
                                     </footer>
                                 </div>
                             </article>              
                             <article itemscope itemtype="http://schema.org/Article">
                                 <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject" class="illustration">
-                                    <a href="#" title="Cliquez pour en savoir plus">
+                                    <a href="real.html" title="Cliquez pour en savoir plus">
                                         <img src="images/intragram.jpg" width="280" height="280" alt="">
                                     </a>
                                     <meta itemprop="url" content="http://www.example.com/">
@@ -220,7 +222,7 @@
                                 <div class="content-article">
                                     <header>
                                         <h2 itemprop="headline">
-                                            <a href="#" title="Cliquez pour en savoir plus" itemprop="mainEntityOfPage">Aménagement d’un jardin particulier</a>
+                                            <a href="real.html" title="Cliquez pour en savoir plus" itemprop="mainEntityOfPage">Aménagement d’un jardin particulier</a>
                                         </h2>
                                         <small class="domhidden">
                                             Publié le <time itemprop="datePublished" datetime="2016-10-27">27 octobre 2016</time>
@@ -237,7 +239,7 @@
                                     </div>
 
                                     <footer>
-                                        <a itemprop="url" role="button" href="#" title="Cliquez pour en savoir plus">En savoir plus</a>
+                                        <a itemprop="url" role="button" href="real.html" title="Cliquez pour en savoir plus">En savoir plus</a>
                                     </footer>
                                 </div>
                             </article>
@@ -246,13 +248,13 @@
                 </div>
             </main>
 
-            <footer id="footer">
+            <footer role="contentinfo" id="footer">
                 <div class="cols">
                     <div>
                         <p class="title" role="heading">Accès rapide</p>
-                        <ul role="menu">
+                        <ul role="menu" aria-label="Menu raccourci dans le pied de page">
                             <li role="menuitem"><a href="index.html" title="">Accueil</a></li>
-                            <li role="menuitem"><a href="#" title="">Contact</a></li>
+                            <li role="menuitem"><a href="contact.html" title="">Contact</a></li>
                             <li role="menuitem"><a href="#" title="">Mentions légales</a></li>
                             <li role="menuitem"><a href="#" title="">Plan du site</a></li>
                         </ul>
@@ -275,21 +277,21 @@
                     <div>
                         <p class="title" role="heading">Retrouvez-nous sur les réseaux sociaux</p>
                         <ul>
-                            <li><i class="fa fa-facebook" aria-hidden="true"></i> <a itemprop="sameAs" href="https://www.facebook.com/lechampduplatane/" target="_blank" rel="noopener noreferrer" title="Retrouvez-nous sur Facebook (nouvelle fenêtre)"><span class="visuallyhidden">Retrouvez-nous sur Facebook</span> /lechampduplatane</a></li>
-                            <li><i class="fa fa-instagram" aria-hidden="true"></i><span class="visuallyhidden">Retrouvez-nous sur Instagram</span> <a itemprop="sameAs" href="#" target="_blank" rel="noopener noreferrer" title="Retrouvez-nous sur Instagram (nouvelle fenêtre)">/lechampduplatane</a></li>
+                            <li><i class="fa fa-facebook" aria-hidden="true"></i> <a itemprop="sameAs" href="//www.facebook.com/lechampduplatane/" target="_blank" rel="noopener noreferrer" title="Retrouvez-nous sur Facebook (nouvelle fenêtre)"><span class="visuallyhidden">Retrouvez-nous sur Facebook</span> /lechampduplatane</a></li>
+                            <li><i class="fa fa-instagram" aria-hidden="true"></i><span class="visuallyhidden">Retrouvez-nous sur Instagram</span> <a itemprop="sameAs" href="//www.pictaram.com/user/lechampduplatane/4116275699" target="_blank" rel="noopener noreferrer" title="Retrouvez-nous sur Instagram (nouvelle fenêtre)">/lechampduplatane</a></li>
                             <li><i class="fa fa-pinterest-p" aria-hidden="true"></i><span class="visuallyhidden">Retrouvez-nous sur Pinterest</span> <a itemprop="sameAs" href="#" target="_blank" rel="noopener noreferrer" title="Retrouvez-nous sur Pinterest (nouvelle fenêtre)">/lechampduplatane</a></li>
                         </ul>
                     </div>
                 </div>
 
                 <div class="sub-footer">
-                    <p>Le <strong>Champ du Platane</strong> est soutenu par la pépiniere d'entreprise de La Rochelle - <a href="#">www.kvjnedjnvjndv.fr</a> - SIRET : 0 0998 U78 998 97 /// Développé avec &#10084; par <a href="#" target="_blank" rel="noopener noreferrer" title="(nouvelle fenêtre)">Flo</a> &copy; 2017</p>
+                    <p>Le <strong>Champ du Platane</strong> est soutenu par la pépiniere d'entreprise de La Rochelle - <a href="#">www.kvjnedjnvjndv.fr</a> - SIRET : 0 0998 U78 998 97 /// Développé avec &#10084; par <a href="//www.florentguedeau.fr/" target="_blank" rel="noopener noreferrer" title="Site internet du développeur et du meilleur ami ! (nouvelle fenêtre)">Flo</a> &copy; 2017</p>
                 </div>
             </footer>
         </div>
 
-        <script type="text/javascript" src="javascripts/modules/jquery.min.js"></script>
-        <script type="text/javascript" src="javascripts/modules/jquery.sticky-kit.js"></script>
-        <script type="text/javascript" src="javascripts/global.js"></script>
+        <script src="javascripts/modules/jquery.min.js"></script>
+        <script src="javascripts/modules/jquery.sticky-kit.js"></script>
+        <script src="javascripts/global.js"></script>
     </body>
 </html>

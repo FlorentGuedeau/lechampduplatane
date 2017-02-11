@@ -186,6 +186,7 @@ main {
                     a[role="button"] {
                         @include from('desktop') {
                             display: inline-block;
+                            margin-bottom: 1em;
                         }
                     }
                 }
@@ -196,10 +197,9 @@ main {
                     display: flex;
                     flex-wrap: wrap;
                     justify-content: center;
-                    align-items: flex-start;
 
                     .article {
-                        margin: .5em;
+                        margin: 1em;
                     }
                 }
 
@@ -207,6 +207,14 @@ main {
                     max-width: 280px; // valeur fixe car les images font 300px de large
                     box-shadow: 0 0px 3px rgba(0, 0, 0, 0.2);
                     background-color: #ffffff;
+                    
+                    footer {
+                        @include from('desktop') {
+                            a {
+                                margin-bottom: 1em;
+                            }
+                        }
+                    }
                 }
             }
 

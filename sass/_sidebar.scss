@@ -1,4 +1,4 @@
-[id="aside"] {
+[id="sidebar"] {
     background-color: #ffffff;
     //padding: 1px 0;
     position: fixed;
@@ -141,6 +141,7 @@
 
 .main-logo {
     text-align: center;
+    margin-top: 1em;
 
     img {
         display: inline-block;
@@ -148,6 +149,7 @@
         text-transform: uppercase;
         font-size: 15px; // unité en pixel car la largeur de l'image est figée. L'utilisation de em ferai bouger la mise en page
         text-align: center;
+        max-width: 200px;
 
         @include to('mobile') {
             display: none;
@@ -200,6 +202,7 @@ a[role="button"] {
         margin: {
             right: 1em;
             left: 1em;
+            bottom: 0;
         }
     }
 }
@@ -216,7 +219,7 @@ ul[role="menubar"] {
         padding: inherit;
         margin: {
             top: 2em;
-            bottom: 5em;
+            bottom: 4em;
         }
     }
 

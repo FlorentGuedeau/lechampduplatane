@@ -4348,7 +4348,7 @@ body [id='wrapper'] > noscript > div
         margin-left: calc(260px + 5px + 1em);
     }
 }
-body [id='wrapper'] [id='aside']
+body [id='wrapper'] [id='sidebar']
 {
     position: fixed;
     z-index: 10;
@@ -4364,13 +4364,13 @@ body [id='wrapper'] [id='aside']
 
     background-color: #fff;
 }
-body [id='wrapper'] [id='aside'].active
+body [id='wrapper'] [id='sidebar'].active
 {
     height: 100%;
 }
 @media (min-width: 1001px)
 {
-    body [id='wrapper'] [id='aside']
+    body [id='wrapper'] [id='sidebar']
     {
         position: absolute;
         bottom: 0;
@@ -4527,6 +4527,8 @@ body [id='wrapper'] [id='sticky-sidebar']
 }
 body [id='wrapper'] .main-logo
 {
+    margin-top: 1em; 
+
     text-align: center;
 }
 body [id='wrapper'] .main-logo img
@@ -4536,7 +4538,9 @@ body [id='wrapper'] .main-logo img
 
     display: inline-block;
 
-    text-align: center; 
+    max-width: 200px; 
+
+    text-align: center;
     text-transform: uppercase;
 }
 @media (max-width: 1000px)
@@ -4619,6 +4623,7 @@ body [id='wrapper'] a[role='button']
     body [id='wrapper'] a[role='button']
     {
         margin-right: 1em;
+        margin-bottom: 0; 
         margin-left: 1em;
     }
 }
@@ -4639,7 +4644,7 @@ body [id='wrapper'] ul[role='menubar']
     body [id='wrapper'] ul[role='menubar']
     {
         margin-top: 2em;
-        margin-bottom: 5em; 
+        margin-bottom: 4em; 
         padding: inherit;
     }
 }
@@ -5419,8 +5424,6 @@ body [id='wrapper'] main [id='breadcrumbs'] ol li a
 }
 body [id='wrapper'] main [id='breadcrumbs'] ol li span
 {
-    display: inline-block;
-
     padding: .2em .5em;
 }
 @media (min-width: 1001px)
@@ -5636,7 +5639,7 @@ body input,
 body textarea,
 body button
 {
-    transition-duration: 400ms;
+    transition-duration: .4s;
 }
 body a:active,
 body li:active,
@@ -5644,7 +5647,7 @@ body i:active,
 body input:active,
 body button:active
 {
-    transition-duration: 0ms;
+    transition-duration: 0s;
 }
 body .float-left,
 body .alignleft
@@ -5692,16 +5695,13 @@ body .reset-float
 body .clear
 {
     visibility: hidden;
-    clear: both;
+    clear: both; 
     overflow: hidden;
 
     width: 0;
     height: 0;
 
     *zoom: 1;
-    *height: auto;
-    *width: auto;
-    *overflow: visible;
 }
 body .visuallyhidden
 {
