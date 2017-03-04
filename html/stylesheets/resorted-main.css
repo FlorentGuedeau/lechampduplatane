@@ -5292,6 +5292,8 @@ body [id='wrapper'] main [id='content'] > section[id='realisations'] article
     body [id='wrapper'] main [id='content'] > section[id='realisations'] article a[role='button']
     {
         display: inline-block;
+
+        margin-bottom: 1em;
     }
 }
 body [id='wrapper'] main [id='content'] > section[id='services'] .cols
@@ -5303,12 +5305,10 @@ body [id='wrapper'] main [id='content'] > section[id='services'] .cols
         flex-wrap: wrap;
     -ms-flex-pack: center;
     justify-content: center;
-    -ms-flex-align: start;
-    align-items: flex-start;
 }
 body [id='wrapper'] main [id='content'] > section[id='services'] .cols .article
 {
-    margin: .5em;
+    margin: 1em;
 }
 body [id='wrapper'] main [id='content'] > section[id='services'] .article
 {
@@ -5316,6 +5316,13 @@ body [id='wrapper'] main [id='content'] > section[id='services'] .article
 
     background-color: #fff; 
     box-shadow: 0 0 3px rgba(0, 0, 0, .2);
+}
+@media (min-width: 1001px)
+{
+    body [id='wrapper'] main [id='content'] > section[id='services'] .article footer a
+    {
+        margin-bottom: 1em;
+    }
 }
 body [id='wrapper'] main [id='content'] > section.archive article .content-article,
 body [id='wrapper'] main [id='content'] > section.archive .article .content-article

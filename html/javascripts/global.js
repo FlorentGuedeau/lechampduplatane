@@ -17,15 +17,38 @@ jQuery(document).ready(function(){
 
     // Bouton ">" du menu
     $('ul[role="menubar"] > li > ul').each(function() {
-        $(this).hide()
+        var btn = $(this).parent('li').find('span[role="button"]');
+        var item = $(this).parent('li').find('> a').text();
+
+        if( btn.hasClass('active') ) {
+            btn.attr("aria-pressed", "true");
+            btn.attr("title", "Cliquez ici pour fermer le sous-menu de " + item + "");
+        } else {
+            $(this).hide();
+            btn.attr("title", "Cliquez ici pour ouvrir le sous-menu de " + item + "");
+        }
     });
+
+    if( $('ul[role="menubar"]').find('span[role="button"]').hasClass('active') ) {
+        $(this).parent().find('ul').show();
+    }
+
     $('ul[role="menubar"]').find('span[role="button"]').on('click', function(e){
         var pressed = $(this).attr("aria-pressed") == "true";
         //change la valeur de aria-pressed quand le bouton est basculé :
         $(this).attr("aria-pressed", pressed ? "false" : "true");
 
         $(this).toggleClass('active');
+        $(this).blur();
         $(this).parent().find('ul').slideToggle();
+
+        var item = $(this).parent('li').find('> a').text();
+
+        if( $(this).hasClass('active') ) {
+            $(this).attr("title", "Cliquez ici pour fermer le sous-menu de " + item + "");
+        } else {
+            $(this).attr("title", "Cliquez ici pour ouvrir le sous-menu de " + item + "");
+        }
 
         e.preventDefault();
     });
@@ -37,6 +60,14 @@ jQuery(document).ready(function(){
 
             $(this).toggleClass('active');
             $(this).parent().find('ul').slideToggle();
+
+            var item = $(this).parent('li').find('> a').text();
+
+            if( $(this).hasClass('active') ) {
+                $(this).attr("title", "Cliquez ici pour fermer le sous-menu de " + item + "");
+            } else {
+                $(this).attr("title", "Cliquez ici pour ouvrir le sous-menu de " + item + "");
+            }
         }
 
         e.preventDefault();

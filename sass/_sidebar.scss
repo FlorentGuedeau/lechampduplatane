@@ -231,6 +231,10 @@ ul[role="menubar"] {
 
         span {
             @include transition-duration(400ms);
+
+            &:active {
+                transition-duration: 0s;
+            }
         }
     }
 
@@ -260,11 +264,12 @@ ul[role="menubar"] {
             z-index: 10;
             @include transition-duration(400ms);
 
-            &:hover, &:focus {
+            &:hover, &:focus { // le :focus reste lorsqu'on clic sur le btn
                 background-color: $color-orange;
             }
 
             &:active {
+                transition-duration: 0s;
                 background-color: $color-green;
             }
 
@@ -293,6 +298,12 @@ ul[role="menubar"] {
                 > a {
                     font-size: 1.1em;
                     @include link-colors($color-text, $color-orange, $color-green, $color-text, $color-orange);
+                }
+
+                &.active {
+                    > a {
+                        @include link-colors(darken($color-orange, 10%), $color-orange, $color-green, darken($color-orange, 10%), darken($color-orange, 10%));
+                    }
                 }
             }
         }

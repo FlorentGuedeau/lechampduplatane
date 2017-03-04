@@ -2926,6 +2926,8 @@ body {
         color: #000; }
         body [id="wrapper"] ul[role="menubar"] a span {
           transition-duration: 400ms; }
+          body [id="wrapper"] ul[role="menubar"] a span:active {
+            transition-duration: 0s; }
       body [id="wrapper"] ul[role="menubar"] > li {
         position: relative; }
         body [id="wrapper"] ul[role="menubar"] > li > a {
@@ -2965,6 +2967,7 @@ body {
           body [id="wrapper"] ul[role="menubar"] > li span[role="button"]:hover, body [id="wrapper"] ul[role="menubar"] > li span[role="button"]:focus {
             background-color: #ebbe00; }
           body [id="wrapper"] ul[role="menubar"] > li span[role="button"]:active {
+            transition-duration: 0s;
             background-color: #9bc407; }
           body [id="wrapper"] ul[role="menubar"] > li span[role="button"].active {
             background-color: #ebbe00; }
@@ -2987,6 +2990,16 @@ body {
             body [id="wrapper"] ul[role="menubar"] > li > ul > li > a:hover {
               color: #ebbe00; }
             body [id="wrapper"] ul[role="menubar"] > li > ul > li > a:active {
+              color: #9bc407; }
+          body [id="wrapper"] ul[role="menubar"] > li > ul > li.active > a {
+            color: #b89500; }
+            body [id="wrapper"] ul[role="menubar"] > li > ul > li.active > a:visited {
+              color: #b89500; }
+            body [id="wrapper"] ul[role="menubar"] > li > ul > li.active > a:focus {
+              color: #b89500; }
+            body [id="wrapper"] ul[role="menubar"] > li > ul > li.active > a:hover {
+              color: #ebbe00; }
+            body [id="wrapper"] ul[role="menubar"] > li > ul > li.active > a:active {
               color: #9bc407; }
     @media (min-width: 1001px) {
       body [id="wrapper"] main {
@@ -3060,7 +3073,7 @@ body {
           font-size: 8em;
           font-family: Georgia, Times, "Times New Roman", serif;
           position: absolute;
-          top: -0.5rem;
+          top: -1rem;
           left: 1rem;
           line-height: normal; }
       body [id="wrapper"] main [id="content"] form > div {
@@ -3143,6 +3156,43 @@ body {
           background-color: #4d6203; }
         body [id="wrapper"] main [id="content"] form [type="submit"]:active {
           background-color: #263002; }
+      body [id="wrapper"] main [id="content"] [id="tarif"] {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+        -ms-flex-align: center;
+            align-items: center;
+        background-color: #9bc407;
+        color: #fff;
+        padding: 2rem;
+        -ms-flex-pack: center;
+            justify-content: center;
+        margin-bottom: 2em;
+        margin-top: -1em;
+        text-align: center; }
+        @media (min-width: 1001px) {
+          body [id="wrapper"] main [id="content"] [id="tarif"] {
+            text-align: inherit; } }
+        body [id="wrapper"] main [id="content"] [id="tarif"] > div {
+          font-size: 1.2em; }
+        body [id="wrapper"] main [id="content"] [id="tarif"] .title {
+          display: block;
+          font-size: 2em;
+          margin-right: 8rem;
+          margin-bottom: 2rem; }
+        body [id="wrapper"] main [id="content"] [id="tarif"] a {
+          color: #fff; }
+          body [id="wrapper"] main [id="content"] [id="tarif"] a:visited {
+            color: #fff; }
+          body [id="wrapper"] main [id="content"] [id="tarif"] a:focus {
+            color: #333b3b; }
+          body [id="wrapper"] main [id="content"] [id="tarif"] a:hover {
+            color: #333b3b; }
+          body [id="wrapper"] main [id="content"] [id="tarif"] a:active {
+            color: #00a8ec; }
+        body [id="wrapper"] main [id="content"] [id="tarif"] p {
+          margin: 0; }
       body [id="wrapper"] main [id="content"] > section[id="contact"] .cols {
         display: -ms-flexbox;
         display: flex;

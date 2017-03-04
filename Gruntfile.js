@@ -68,6 +68,16 @@ module.exports = function(grunt) {
                 }
             }
         },
+        rem_to_px: {
+            options: {
+                baseFontSize: 10, // 1rem = 10px
+                removeFontFace: true,
+            },
+            dist: {
+                src: ['html/stylesheets/main.css', 'html/stylesheets/compressed-main.css'],
+                dest: 'html/stylesheets/norem/'
+            }
+        },
     });
 
     grunt.loadNpmTasks('grunt-contrib-cssmin'); // https://github.com/gruntjs/grunt-contrib-cssmin
@@ -76,5 +86,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-postcss'); // https://github.com/postcss/autoprefixer
     grunt.loadNpmTasks('grunt-contrib-imagemin'); // https://github.com/gruntjs/grunt-contrib-imagemin
     grunt.loadNpmTasks('grunt-contrib-watch'); // https://github.com/gruntjs/grunt-contrib-watch /// http://blog.grayghostvisuals.com/grunt/image-optimization/
-    grunt.registerTask('default', ['sass:dist', 'postcss:dist', 'csscomb:dist', 'cssmin', 'imagemin', 'watch']);
+    grunt.loadNpmTasks('grunt-rem-to-pixels'); // https://github.com/lohmander/grunt-rem-to-px
+    grunt.registerTask('default', ['sass:dist', 'postcss:dist', 'csscomb:dist', 'cssmin', 'rem_to_px', 'imagemin', 'watch']);
 };

@@ -103,7 +103,7 @@ main {
                 font-size: 8em;
                 font-family: Georgia, Times, "Times New Roman", serif;
                 position: absolute;
-                top: -0.5rem;
+                top: -1rem;
                 left: 1rem;
                 line-height: normal;
             }
@@ -111,6 +111,42 @@ main {
 
         form {
             @import 'forms';
+        }
+
+        [id="tarif"] {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            background-color: $color-green;
+            color: #fff;
+            padding: 2rem;
+            justify-content: center;
+            margin-bottom: 2em;
+            margin-top: -1em;
+            text-align: center;
+
+            @include from('desktop') {
+                text-align: inherit;
+            }
+
+            > div {
+                font-size: 1.2em;
+            }
+
+            .title {
+                display: block;
+                font-size: 2em;
+                margin-right: 8rem;
+                margin-bottom: 2rem;
+            }
+
+            a {
+                @include link-colors(#fff, $color-grey, $color-blue, #fff, $color-grey); // $normal, $hover, $active, $visited, $focus
+            }
+
+            p {
+                margin: 0;
+            }
         }
 
         > section {
@@ -207,7 +243,7 @@ main {
                     max-width: 280px; // valeur fixe car les images font 300px de large
                     box-shadow: 0 0px 3px rgba(0, 0, 0, 0.2);
                     background-color: #ffffff;
-                    
+
                     footer {
                         @include from('desktop') {
                             a {
