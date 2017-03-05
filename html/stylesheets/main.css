@@ -3001,6 +3001,8 @@ body {
               color: #ebbe00; }
             body [id="wrapper"] ul[role="menubar"] > li > ul > li.active > a:active {
               color: #9bc407; }
+          body [id="wrapper"] ul[role="menubar"] > li > ul > li > ul {
+            display: none; }
     @media (min-width: 1001px) {
       body [id="wrapper"] main {
         margin-left: 265px;

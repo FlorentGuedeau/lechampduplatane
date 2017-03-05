@@ -4662,6 +4662,10 @@ body [id='wrapper'] ul[role='menubar'] a span
 {
     transition-duration: 400ms;
 }
+body [id='wrapper'] ul[role='menubar'] a span:active
+{
+    transition-duration: 0s;
+}
 body [id='wrapper'] ul[role='menubar'] > li
 {
     position: relative;
@@ -4735,6 +4739,8 @@ body [id='wrapper'] ul[role='menubar'] > li span[role='button']:focus
 }
 body [id='wrapper'] ul[role='menubar'] > li span[role='button']:active
 {
+    transition-duration: 0s;
+
     background-color: #9bc407;
 }
 body [id='wrapper'] ul[role='menubar'] > li span[role='button'].active
@@ -4780,6 +4786,30 @@ body [id='wrapper'] ul[role='menubar'] > li > ul > li > a:hover
 body [id='wrapper'] ul[role='menubar'] > li > ul > li > a:active
 {
     color: #9bc407;
+}
+body [id='wrapper'] ul[role='menubar'] > li > ul > li.active > a
+{
+    color: #b89500;
+}
+body [id='wrapper'] ul[role='menubar'] > li > ul > li.active > a:visited
+{
+    color: #b89500;
+}
+body [id='wrapper'] ul[role='menubar'] > li > ul > li.active > a:focus
+{
+    color: #b89500;
+}
+body [id='wrapper'] ul[role='menubar'] > li > ul > li.active > a:hover
+{
+    color: #ebbe00;
+}
+body [id='wrapper'] ul[role='menubar'] > li > ul > li.active > a:active
+{
+    color: #9bc407;
+}
+body [id='wrapper'] ul[role='menubar'] > li > ul > li > ul
+{
+    display: none;
 }
 @media (min-width: 1001px)
 {
@@ -4918,7 +4948,7 @@ body [id='wrapper'] main [id='content'] blockquote::before
     line-height: normal; 
 
     position: absolute;
-    top: -.5rem;
+    top: -1rem;
     left: 1rem;
 
     display: block;
@@ -5198,6 +5228,71 @@ body [id='wrapper'] main [id='content'] form [type='submit']:focus
 body [id='wrapper'] main [id='content'] form [type='submit']:active
 {
     background-color: #263002;
+}
+body [id='wrapper'] main [id='content'] [id='tarif']
+{
+    display: -ms-flexbox;
+    display: flex;
+
+    margin-top: -1em;
+    margin-bottom: 2em;
+    padding: 2rem;
+
+    text-align: center; 
+
+    color: #fff;
+    background-color: #9bc407;
+
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+@media (min-width: 1001px)
+{
+    body [id='wrapper'] main [id='content'] [id='tarif']
+    {
+        text-align: inherit;
+    }
+}
+body [id='wrapper'] main [id='content'] [id='tarif'] > div
+{
+    font-size: 1.2em;
+}
+body [id='wrapper'] main [id='content'] [id='tarif'] .title
+{
+    font-size: 2em;
+
+    display: block;
+
+    margin-right: 8rem;
+    margin-bottom: 2rem;
+}
+body [id='wrapper'] main [id='content'] [id='tarif'] a
+{
+    color: #fff;
+}
+body [id='wrapper'] main [id='content'] [id='tarif'] a:visited
+{
+    color: #fff;
+}
+body [id='wrapper'] main [id='content'] [id='tarif'] a:focus
+{
+    color: #333b3b;
+}
+body [id='wrapper'] main [id='content'] [id='tarif'] a:hover
+{
+    color: #333b3b;
+}
+body [id='wrapper'] main [id='content'] [id='tarif'] a:active
+{
+    color: #00a8ec;
+}
+body [id='wrapper'] main [id='content'] [id='tarif'] p
+{
+    margin: 0;
 }
 body [id='wrapper'] main [id='content'] > section[id='contact'] .cols
 {

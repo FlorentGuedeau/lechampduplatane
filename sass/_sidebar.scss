@@ -305,6 +305,10 @@ ul[role="menubar"] {
                         @include link-colors(darken($color-orange, 10%), $color-orange, $color-green, darken($color-orange, 10%), darken($color-orange, 10%));
                     }
                 }
+
+                > ul {
+                    display: none;
+                }
             }
         }
     }
