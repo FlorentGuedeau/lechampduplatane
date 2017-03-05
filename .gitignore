@@ -4,6 +4,7 @@ node_modules
 bower_components
 !node_modules/connect-include/lib/connect-include.js
 documents
+wp_sources
 
 # Windows image file caches
 Thumbs.db
