@@ -1,34 +1,35 @@
-<?php
-/**
- * The template for displaying the footer
- *
- * Contains the closing of the "site-content" div and all content after.
- *
- * @package WordPress
- * @subpackage Twenty_Fifteen
- * @since Twenty Fifteen 1.0
- */
-?>
+</div>
+</main>
 
-	</div><!-- .site-content -->
+<footer role="contentinfo" id="footer">
+    <div class="cols">
+        <?php
+        if ( is_active_sidebar( 'widget-footer-1' ) ) {
+            dynamic_sidebar( 'widget-footer-1' );
+        }
+        ?>
 
-	<footer id="colophon" class="site-footer" role="contentinfo">
-		<div class="site-info">
-			<?php
-				/**
-				 * Fires before the Twenty Fifteen footer text for footer customization.
-				 *
-				 * @since Twenty Fifteen 1.0
-				 */
-				do_action( 'twentyfifteen_credits' );
-			?>
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'twentyfifteen' ) ); ?>"><?php printf( __( 'Proudly powered by %s', 'twentyfifteen' ), 'WordPress' ); ?></a>
-		</div><!-- .site-info -->
-	</footer><!-- .site-footer -->
+        <?php
+        if ( is_active_sidebar( 'widget-footer-2' ) ) {
+            dynamic_sidebar( 'widget-footer-2' );
+        }
+        ?>
 
-</div><!-- .site -->
+        <?php
+        if ( is_active_sidebar( 'widget-footer-3' ) ) {
+            dynamic_sidebar( 'widget-footer-3' );
+        }
+        ?>
+    </div>
+
+    <?php
+    if ( is_active_sidebar( 'widget-footer-4' ) ) {
+        dynamic_sidebar( 'widget-footer-4' );
+    }
+    ?>
+</footer>
+</div>
 
 <?php wp_footer(); ?>
-
 </body>
 </html>

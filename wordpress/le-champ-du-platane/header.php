@@ -1,66 +1,51 @@
 <!DOCTYPE html>
-<html <?php language_attributes(); ?> class="no-js">
+<html <?php language_attributes(); ?> class="no-js no-svg">
     <head>
         <meta charset="<?php bloginfo( 'charset' ); ?>">
         <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
         <meta name="author" content="Florent Guédeau">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
         <link rel="profile" href="http://gmpg.org/xfn/11">
-        <?php if ( is_singular() && pings_open( get_queried_object() ) ) : ?>
-        <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-        <?php endif; ?>
+
         <?php wp_head(); ?>
     </head>
 
     <body itemscope itemtype="http://schema.org/WebPage" <?php body_class(); ?>>
-        <div id="page" class="site">
-            <div class="site-inner">
-                <header id="masthead" class="site-header" role="banner">
-                    <div class="site-header-main">
-                        <div class="site-branding">
-                            <?php if ( is_front_page() && is_home() ) : ?>
-                            <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-                            <?php else : ?>
-                            <p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-                            <?php endif;
+        <div id="wrapper">
+            <noscript><div class="states warning">Pour une meilleure utilisation de ce site, veuillez activer JavaScript dans votre navigateur.</div></noscript>
 
-                            $description = get_bloginfo( 'description', 'display' );
-                            if ( $description || is_customize_preview() ) : ?>
-                            <p class="site-description"><?php echo $description; ?></p>
-                            <?php endif; ?>
-                        </div><!-- .site-branding -->
+            <aside id="sidebar" aria-label="Menu latéral">
+                <div id="sticky-sidebar">
 
-                        <?php if ( has_nav_menu( 'primary' ) || has_nav_menu( 'social' ) ) : ?>
-                        <button id="menu-toggle" class="menu-toggle"><?php _e( 'Menu', 'twentysixteen' ); ?></button>
+                    <header role="banner" class="main-logo">
+                        <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" title="Retour à l'accueil">
+                            <span role="heading"><?php bloginfo( 'name' ); ?><?php echo ', '; ?><?php bloginfo( 'description' ); ?></span>
+                            <img src="<?php echo get_template_directory_uri(); ?>/images/logo-le-champ-du-platane-paysagiste-concepteur.png" width="200" height="193" alt="<?php bloginfo( 'name' ); ?><?php echo ', '; ?><?php bloginfo( 'description' ); ?>">
+                        </a>
+                    </header>
 
-                        <div id="site-header-menu" class="site-header-menu">
-                            <?php if ( has_nav_menu( 'primary' ) ) : ?>
-                            <nav id="site-navigation" class="main-navigation" role="navigation" aria-label="<?php _e( 'Primary Menu', 'twentysixteen' ); ?>">
-                                <?php
-                                wp_nav_menu( array(
-                                    'theme_location' => 'primary',
-                                    'menu_class'     => 'primary-menu',
-                                ) );
-                                ?>
-                            </nav><!-- .main-navigation -->
-                            <?php endif; ?>
+                    <?php if ( has_nav_menu( 'main' ) ) : ?>
+                    <nav role="navigation" aria-label="Menu principal">
+                        <?php
+                        wp_nav_menu( array(
+                            'theme_location'    => 'main',
+                            'depth'             => 2,
+                            'container'         => false,
+                            'items_wrap'        => '<ul role="menubar" itemscope itemtype="http://schema.org/SiteNavigationElement">%3$s</ul>',
+                            'walker'            => new LCDP_Walker_Nav_Menu()
+                        ) );
+                        ?>
+                    </nav>
+                    <?php endif; ?>
+                </div>
+            </aside>
 
-                            <?php if ( has_nav_menu( 'social' ) ) : ?>
-                            <nav id="social-navigation" class="social-navigation" role="navigation" aria-label="<?php _e( 'Social Links Menu', 'twentysixteen' ); ?>">
-                                <?php
-                                wp_nav_menu( array(
-                                    'theme_location' => 'social',
-                                    'menu_class'     => 'social-links-menu',
-                                    'depth'          => 1,
-                                    'link_before'    => '<span class="screen-reader-text">',
-                                    'link_after'     => '</span>',
-                                ) );
-                                ?>
-                            </nav><!-- .social-navigation -->
-                            <?php endif; ?>
-                        </div><!-- .site-header-menu -->
-                        <?php endif; ?>
-                    </div><!-- .site-header-main -->
-                </header><!-- .site-header -->
+            <button aria-pressed="false" type="button" id="menu-button" tabindex="1">Menu <span></span></button>
 
-                <div id="content" class="site-content">
+            <main role="main">
+                <div id="content">
+                    <?php
+                    if ( function_exists('yoast_breadcrumb') ) {
+                        yoast_breadcrumb('<div id="breadcrumbs">','</div>');
+                    }
+                    ?>
