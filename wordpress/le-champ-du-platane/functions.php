@@ -14,7 +14,7 @@ function theme_setup() {
     add_theme_support( 'title-tag' );
 
     add_theme_support( 'post-thumbnails' );
-    //    add_image_size( 'twentyseventeen-featured-image', 2000, 1200, true );
+    add_image_size( 'archive-single', 280, 280, true );
     //    add_image_size( 'twentyseventeen-thumbnail-avatar', 100, 100, true );
 
     /* Ajout les menus au theme */

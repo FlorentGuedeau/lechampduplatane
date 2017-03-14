@@ -17,10 +17,12 @@ jQuery(document).ready(function(){
 
     // Bouton ">" du menu
     $('ul[role="menubar"] > li > ul').each(function() {
+        var parent = $(this).parent('li');
         var btn = $(this).parent('li').find('span[role="button"]');
         var item = $(this).parent('li').find('> a').text();
 
-        if( btn.hasClass('active') ) {
+        if( parent.hasClass('active') || parent.hasClass('current-menu-item') || parent.hasClass('current-menu-ancestor') ) {
+            btn.addClass('active');
             btn.attr("aria-pressed", "true");
             btn.attr("title", "Cliquez ici pour fermer le sous-menu de " + item + "");
         } else {
@@ -29,7 +31,8 @@ jQuery(document).ready(function(){
         }
     });
 
-    if( $('ul[role="menubar"]').find('span[role="button"]').hasClass('active') ) {
+    //    if( $('ul[role="menubar"]').find('span[role="button"]').hasClass('active') ) {
+    if( $('ul[role="menubar"] > li').hasClass('active') || $('ul[role="menubar"] > li').hasClass('current-menu-item') || $('ul[role="menubar"] > li').hasClass('current-menu-ancestor') ) {
         $(this).parent().find('ul').show();
     }
 

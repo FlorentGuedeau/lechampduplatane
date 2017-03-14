@@ -63,7 +63,8 @@ main {
 
         h1 {
             padding-bottom: 0.3em;
-            border-bottom: solid 3px #ccc;
+            //            border-bottom: solid 3px #ccc;
+            border-bottom: solid 3px $color-orange;
             margin: {
                 top: 1em;
                 bottom: 1.5em;

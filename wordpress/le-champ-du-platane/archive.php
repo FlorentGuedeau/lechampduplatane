@@ -1,64 +1,27 @@
-<?php
-/**
- * The template for displaying archive pages
- *
- * Used to display archive-type pages if nothing more specific matches a query.
- * For example, puts together date-based pages if no date.php file exists.
- *
- * If you'd like to further customize these archive views, you may create a
- * new template file for each one. For example, tag.php (Tag archives),
- * category.php (Category archives), author.php (Author archives), etc.
- *
- * @link https://codex.wordpress.org/Template_Hierarchy
- *
- * @package WordPress
- * @subpackage Twenty_Fifteen
- * @since Twenty Fifteen 1.0
- */
+<?php get_header(); ?>
 
-get_header(); ?>
+<?php if ( have_posts() ) : ?>
 
-	<section id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+<section itemprop="mainContentOfPage" id="realisations" class="archive">
+    <h1 itemprop="name"><?php the_archive_title(); ?></h1>
 
-		<?php if ( have_posts() ) : ?>
+    <?php the_archive_description(); ?>
 
-			<header class="page-header">
-				<?php
-					the_archive_title( '<h1 class="page-title">', '</h1>' );
-					the_archive_description( '<div class="taxonomy-description">', '</div>' );
-				?>
-			</header><!-- .page-header -->
+    <div class="cols">
+        <?php while ( have_posts() ) : the_post(); ?>
 
-			<?php
-			// Start the Loop.
-			while ( have_posts() ) : the_post();
+        <?php get_template_part( 'archive', 'single' ); ?>
 
-				/*
-				 * Include the Post-Format-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-				 */
-				get_template_part( 'content', get_post_format() );
+        <?php endwhile; ?>
+    </div>
 
-			// End the loop.
-			endwhile;
+    <?php the_posts_pagination(); ?>
+</section>
 
-			// Previous/next page navigation.
-			the_posts_pagination( array(
-				'prev_text'          => __( 'Previous page', 'twentyfifteen' ),
-				'next_text'          => __( 'Next page', 'twentyfifteen' ),
-				'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'twentyfifteen' ) . ' </span>',
-			) );
+<?php else : ?>
 
-		// If no content, include the "No posts found" template.
-		else :
-			get_template_part( 'content', 'none' );
+<?php get_template_part( 'archive', 'none' ); ?>
 
-		endif;
-		?>
+<?php endif; ?>
 
-		</main><!-- .site-main -->
-	</section><!-- .content-area -->
-
-<?php get_footer(); ?>
+<?php get_footer();
