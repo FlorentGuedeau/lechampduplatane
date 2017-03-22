@@ -1,50 +1,37 @@
 <?php get_header(); ?>
 
-<div class="wrap">
+<section itemprop="mainContentOfPage" id="search" class="archive">
 
-	<header class="page-header">
-		<?php if ( have_posts() ) : ?>
-			<h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'twentyseventeen' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
-		<?php else : ?>
-			<h1 class="page-title"><?php _e( 'Nothing Found', 'twentyseventeen' ); ?></h1>
-		<?php endif; ?>
-	</header><!-- .page-header -->
+    <?php if ( have_posts() ) : ?>
+    <h1 itemprop="name">Résultats de recherche pour &laquo; <em><?php echo get_search_query(); ?></em> &raquo;</h1>
+    <?php else : ?>
+    <h1 itemprop="name">Aucun résultat</h1>
+    <?php endif; ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
 
-		<?php
-		if ( have_posts() ) :
-			/* Start the Loop */
-			while ( have_posts() ) : the_post();
+    <?php if ( have_posts() ) : ?>
 
-				/**
-				 * Run the loop for the search to output the results.
-				 * If you want to overload this in a child theme then include a file
-				 * called content-search.php and that will be used instead.
-				 */
-				get_template_part( 'template-parts/post/content', 'excerpt' );
+    <div class="cols">
+        <?php while ( have_posts() ) : the_post(); ?>
 
-			endwhile; // End of the loop.
+        <?php get_template_part( 'archive', 'search' ); ?>
 
-			the_posts_pagination( array(
-				'prev_text' => twentyseventeen_get_svg( array( 'icon' => 'arrow-left' ) ) . '<span class="screen-reader-text">' . __( 'Previous page', 'twentyseventeen' ) . '</span>',
-				'next_text' => '<span class="screen-reader-text">' . __( 'Next page', 'twentyseventeen' ) . '</span>' . twentyseventeen_get_svg( array( 'icon' => 'arrow-right' ) ),
-				'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'twentyseventeen' ) . ' </span>',
-			) );
+        <?php endwhile; ?>
+    </div>
 
-		else : ?>
+    <?php if ( lcdp_pagination() ) : ?>
+    <nav id="navigation">
+        <?php lcdp_pagination(); ?>
+    </nav>
+    <?php endif; ?>
 
-			<p><?php _e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'twentyseventeen' ); ?></p>
-			<?php
-				get_search_form();
+    <?php else : ?>
 
-		endif;
-		?>
+    <p>Désolé, mais rien ne correspond à votre recherche. Veuillez réessayer avec des mots différents.</p>
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
-	<?php get_sidebar(); ?>
-</div><!-- .wrap -->
+    <?php get_search_form(); ?>
+
+    <?php endif; ?>
+</section>
 
 <?php get_footer();

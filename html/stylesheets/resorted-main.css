@@ -4692,23 +4692,33 @@ body [id='wrapper'] ul[role='menubar'] > li > a:active
 {
     color: #9bc407;
 }
-body [id='wrapper'] ul[role='menubar'] > li.active > a
+body [id='wrapper'] ul[role='menubar'] > li.active > a,
+body [id='wrapper'] ul[role='menubar'] > li.current-menu-item > a,
+body [id='wrapper'] ul[role='menubar'] > li.current-menu-ancestor > a
 {
     color: #b89500;
 }
-body [id='wrapper'] ul[role='menubar'] > li.active > a:visited
+body [id='wrapper'] ul[role='menubar'] > li.active > a:visited,
+body [id='wrapper'] ul[role='menubar'] > li.current-menu-item > a:visited,
+body [id='wrapper'] ul[role='menubar'] > li.current-menu-ancestor > a:visited
 {
     color: #b89500;
 }
-body [id='wrapper'] ul[role='menubar'] > li.active > a:focus
+body [id='wrapper'] ul[role='menubar'] > li.active > a:focus,
+body [id='wrapper'] ul[role='menubar'] > li.current-menu-item > a:focus,
+body [id='wrapper'] ul[role='menubar'] > li.current-menu-ancestor > a:focus
 {
     color: #b89500;
 }
-body [id='wrapper'] ul[role='menubar'] > li.active > a:hover
+body [id='wrapper'] ul[role='menubar'] > li.active > a:hover,
+body [id='wrapper'] ul[role='menubar'] > li.current-menu-item > a:hover,
+body [id='wrapper'] ul[role='menubar'] > li.current-menu-ancestor > a:hover
 {
     color: #ebbe00;
 }
-body [id='wrapper'] ul[role='menubar'] > li.active > a:active
+body [id='wrapper'] ul[role='menubar'] > li.active > a:active,
+body [id='wrapper'] ul[role='menubar'] > li.current-menu-item > a:active,
+body [id='wrapper'] ul[role='menubar'] > li.current-menu-ancestor > a:active
 {
     color: #9bc407;
 }
@@ -4787,23 +4797,28 @@ body [id='wrapper'] ul[role='menubar'] > li > ul > li > a:active
 {
     color: #9bc407;
 }
-body [id='wrapper'] ul[role='menubar'] > li > ul > li.active > a
+body [id='wrapper'] ul[role='menubar'] > li > ul > li.active > a,
+body [id='wrapper'] ul[role='menubar'] > li > ul > li.current-menu-item > a
 {
     color: #b89500;
 }
-body [id='wrapper'] ul[role='menubar'] > li > ul > li.active > a:visited
+body [id='wrapper'] ul[role='menubar'] > li > ul > li.active > a:visited,
+body [id='wrapper'] ul[role='menubar'] > li > ul > li.current-menu-item > a:visited
 {
     color: #b89500;
 }
-body [id='wrapper'] ul[role='menubar'] > li > ul > li.active > a:focus
+body [id='wrapper'] ul[role='menubar'] > li > ul > li.active > a:focus,
+body [id='wrapper'] ul[role='menubar'] > li > ul > li.current-menu-item > a:focus
 {
     color: #b89500;
 }
-body [id='wrapper'] ul[role='menubar'] > li > ul > li.active > a:hover
+body [id='wrapper'] ul[role='menubar'] > li > ul > li.active > a:hover,
+body [id='wrapper'] ul[role='menubar'] > li > ul > li.current-menu-item > a:hover
 {
     color: #ebbe00;
 }
-body [id='wrapper'] ul[role='menubar'] > li > ul > li.active > a:active
+body [id='wrapper'] ul[role='menubar'] > li > ul > li.active > a:active,
+body [id='wrapper'] ul[role='menubar'] > li > ul > li.current-menu-item > a:active
 {
     color: #9bc407;
 }
@@ -4914,7 +4929,7 @@ body [id='wrapper'] main [id='content'] h1
     margin-bottom: 1.5em; 
     padding-bottom: .3em;
 
-    border-bottom: solid 3px #ccc;
+    border-bottom: solid 3px #ebbe00;
 }
 body [id='wrapper'] main [id='content'] h2
 {

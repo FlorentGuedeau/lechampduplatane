@@ -114,6 +114,27 @@ main {
             @import 'forms';
         }
 
+        [id="navigation"] {
+            text-align: center;
+            border-top: solid 3px #ccc;
+            margin-top: 5rem;
+
+            .page-numbers {
+                display: inline-block;
+                padding: 1.5rem 2rem;
+                text-decoration: none;
+
+                &.current {
+                    box-shadow: 0 -3px 0 $color-grey;
+                    font-weight: bold;
+                }
+            }
+
+            a {
+                @include link-colors($color-text, $color-orange, $color-green, $color-text, $color-orange);
+            }
+        }
+
         [id="tarif"] {
             display: flex;
             flex-wrap: wrap;
@@ -180,7 +201,7 @@ main {
                 }
             }
 
-            &[id="realisations"] {
+            &[id="realisations"], &[id="search"] {
                 .cols {
                     display: flex;
                     flex-wrap: wrap;
@@ -190,7 +211,7 @@ main {
                         display: block;
                     }
 
-                    > article {
+                    > article, .article {
                         margin: .5em;
 
                         @include from('desktop') {
@@ -210,7 +231,7 @@ main {
                     }
                 }
 
-                article {
+                article, .article {
                     max-width: 280px; // valeur fixe car les images font 300px de large
                     box-shadow: 0 0px 3px rgba(0, 0, 0, 0.2);
                     background-color: #ffffff;
@@ -266,7 +287,7 @@ main {
 
                     .illustration {
                         a {
-                            display: inline-block;
+                            display: block;
 
                             img {
                                 @include transition-duration(400ms);

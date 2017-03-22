@@ -161,6 +161,36 @@ function wpc_excerpt_pages() {
 }
 add_action('admin_menu', 'wpc_excerpt_pages');
 
+// Customise le nombre de mot dans l'excerpt (fait a partir du contenu) - par defaut : 50 mots
+function custom_excerpt_length($length) {
+    return 50;
+}
+add_filter('excerpt_length', 'custom_excerpt_length', 999);
+
+
+// modification de la fin de l'excerpt [...]
+function new_excerpt_more($more) {
+    return '...';
+}
+add_filter('excerpt_more', 'new_excerpt_more');
+
+
+function abuzz_custom_excerpt($length, $more = null) {
+    if ( get_the_excerpt() ) {
+        $content = get_the_excerpt();
+    } else {
+        $content = get_the_content();
+    }
+
+    if ( !$more ) {
+        $more == "...";
+    }
+
+    $trimmed_content = wp_trim_words($content, $length, $more);
+
+    return $trimmed_content;
+}
+
 
 // ajoute l'attribut ordre au type post (article)
 function theme_posts_order() {
@@ -533,5 +563,47 @@ class LCDP_Walker_Nav_Menu extends Walker_Nav_Menu {
             $n = "\n";
         }
         $output .= "</li>{$n}";
+    }
+}
+
+
+// http://www.wpexplorer.com/pagination-wordpress-theme/
+function lcdp_pagination() {
+    $prev_arrow = is_rtl() ? '<span class="screen-reader-text visuallyhidden">Page suivante</span> <i class="fa fa-angle-right" aria-hidden="true"></i>' : '<i class="fa fa-angle-left" aria-hidden="true"></i> <span class="screen-reader-text visuallyhidden">Page précédente</span>';
+    $next_arrow = is_rtl() ? '<i class="fa fa-angle-left" aria-hidden="true"></i> <span class="screen-reader-text visuallyhidden">Page précédente</span>' : '<span class="screen-reader-text visuallyhidden">Page suivante</span> <i class="fa fa-angle-right" aria-hidden="true"></i>';
+
+    global $wp_query;
+    $total = $wp_query->max_num_pages;
+    $big = 999999999; // need an unlikely integer
+
+    if( $total > 1 )  {
+        if( !$current_page = get_query_var('paged') ) {
+            $current_page = 1;
+        }
+
+        if( get_option('permalink_structure') ) {
+            $format = 'page/%#%/';
+        } else {
+            $format = '&paged=%#%';
+        }
+
+        echo paginate_links(array(
+            'base'			        => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+            'format'		        => $format,
+            'current'		        => max( 1, get_query_var('paged') ),
+            'current'		        => $current_page,
+            'total' 		        => $total,
+            'mid_size'		        => 5,
+            'type' 			        => 'plain',
+            'prev_text'             => $prev_arrow,
+            'next_text'             => $next_arrow,
+            'show_all'              => false,
+            'end_size'              => 1,
+            'prev_next'             => true,
+            'add_args'              => false,
+            'add_fragment'          => '',
+            'before_page_number'    => '<span class="meta-nav screen-reader-text visuallyhidden">Page </span>',
+            'after_page_number'     => ''
+        ) );
     }
 }
