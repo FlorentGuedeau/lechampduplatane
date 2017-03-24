@@ -6,6 +6,7 @@ main {
         min-height: 100vh;
         margin-bottom: $footer-height * -1;  // sticky footer
         padding-bottom: 1px; // hack pour le footer, pour éviter la superposition
+        max-width: 1600px;
     }
 
     [id="content"] {
@@ -69,23 +70,29 @@ main {
                 top: 1em;
                 bottom: 1.5em;
             }
+            font: {
+                weight: bold;
+            }
         }
 
         h2, .title-h2 {
             font: {
                 size: 1.6em;
+                weight: bold;
             }
         }
 
         h3, .title-h3 {
             font: {
                 size: 1.4em;
+                weight: bold;
             }
         }
 
         h4, .title-h4 {
             font: {
                 size: 1.2em;
+                weight: bold;
             }
             color: $color-text;
         }
@@ -132,6 +139,69 @@ main {
 
             a {
                 @include link-colors($color-text, $color-orange, $color-green, $color-text, $color-orange);
+            }
+        }
+
+        .sharedaddy {
+            border-top: solid 3px #ccc;
+            margin-top: 5rem;
+
+            .title-h2 {
+                margin-top: 0;
+            }
+        }
+
+        #jp-relatedposts {
+            margin: 3rem 0 0 0;
+            padding: 0;
+
+            .title-h2 {
+                margin-top: 0;
+            }
+
+            .jp-relatedposts-items {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+
+                .jp-relatedposts-post {
+                    box-shadow: 0 0px 3px rgba(0, 0, 0, 0.2);
+                    background-color: #ffffff;
+                    margin: .5em;
+                    max-width: 280px;
+
+                    .jp-relatedposts-post-a {
+                        display: block;
+
+                        img {
+                            @include transition-duration(400ms);
+                            display: block;
+                        }
+
+                        &:hover, &:focus {
+                            img {
+                                opacity: .5;
+                            }
+                        }  
+                    }
+
+                    .jp-relatedposts-post-excerpt {
+                        @extend .visuallyhidden;
+                    }
+
+                    .jp-relatedposts-post-title {
+                        font: {
+                            size: 1.4em;
+                            weight: bold;
+                        }
+                        margin: 0.8em 1em;
+
+                        a {
+                            text-decoration: none;
+                            @include link-colors($color-text, $color-orange, $color-green, $color-text, $color-orange);
+                        }
+                    }
+                }
             }
         }
 

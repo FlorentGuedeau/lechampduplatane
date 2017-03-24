@@ -4694,31 +4694,31 @@ body [id='wrapper'] ul[role='menubar'] > li > a:active
 }
 body [id='wrapper'] ul[role='menubar'] > li.active > a,
 body [id='wrapper'] ul[role='menubar'] > li.current-menu-item > a,
-body [id='wrapper'] ul[role='menubar'] > li.current-menu-ancestor > a
+body [id='wrapper'] ul[role='menubar'] > li.current-menu-parent > a
 {
     color: #b89500;
 }
 body [id='wrapper'] ul[role='menubar'] > li.active > a:visited,
 body [id='wrapper'] ul[role='menubar'] > li.current-menu-item > a:visited,
-body [id='wrapper'] ul[role='menubar'] > li.current-menu-ancestor > a:visited
+body [id='wrapper'] ul[role='menubar'] > li.current-menu-parent > a:visited
 {
     color: #b89500;
 }
 body [id='wrapper'] ul[role='menubar'] > li.active > a:focus,
 body [id='wrapper'] ul[role='menubar'] > li.current-menu-item > a:focus,
-body [id='wrapper'] ul[role='menubar'] > li.current-menu-ancestor > a:focus
+body [id='wrapper'] ul[role='menubar'] > li.current-menu-parent > a:focus
 {
     color: #b89500;
 }
 body [id='wrapper'] ul[role='menubar'] > li.active > a:hover,
 body [id='wrapper'] ul[role='menubar'] > li.current-menu-item > a:hover,
-body [id='wrapper'] ul[role='menubar'] > li.current-menu-ancestor > a:hover
+body [id='wrapper'] ul[role='menubar'] > li.current-menu-parent > a:hover
 {
     color: #ebbe00;
 }
 body [id='wrapper'] ul[role='menubar'] > li.active > a:active,
 body [id='wrapper'] ul[role='menubar'] > li.current-menu-item > a:active,
-body [id='wrapper'] ul[role='menubar'] > li.current-menu-ancestor > a:active
+body [id='wrapper'] ul[role='menubar'] > li.current-menu-parent > a:active
 {
     color: #9bc407;
 }
@@ -4923,7 +4923,8 @@ body [id='wrapper'] main [id='content'] a:not([role='button']):active
         color: #000;
     }
 }
-body [id='wrapper'] main [id='content'] h1
+body [id='wrapper'] main [id='content'] h1,
+body [id='wrapper'] main [id='content'] .title-h1
 {
     margin-top: 1em;
     margin-bottom: 1.5em; 
@@ -4931,15 +4932,18 @@ body [id='wrapper'] main [id='content'] h1
 
     border-bottom: solid 3px #ebbe00;
 }
-body [id='wrapper'] main [id='content'] h2
+body [id='wrapper'] main [id='content'] h2,
+body [id='wrapper'] main [id='content'] .title-h2
 {
     font-size: 1.6em;
 }
-body [id='wrapper'] main [id='content'] h3
+body [id='wrapper'] main [id='content'] h3,
+body [id='wrapper'] main [id='content'] .title-h3
 {
     font-size: 1.4em;
 }
-body [id='wrapper'] main [id='content'] h4
+body [id='wrapper'] main [id='content'] h4,
+body [id='wrapper'] main [id='content'] .title-h4
 {
     font-size: 1.2em;
 

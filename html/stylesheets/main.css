@@ -3008,7 +3008,8 @@ body {
         margin-left: 265px;
         min-height: 100vh;
         margin-bottom: -250px;
-        padding-bottom: 1px; } }
+        padding-bottom: 1px;
+        max-width: 1600px; } }
     body [id="wrapper"] main [id="content"] {
       padding: 1px 1em; }
       @media (min-width: 1001px) {
@@ -3055,13 +3056,17 @@ body {
         padding-bottom: 0.3em;
         border-bottom: solid 3px #ebbe00;
         margin-top: 1em;
-        margin-bottom: 1.5em; }
+        margin-bottom: 1.5em;
+        font-weight: bold; }
       body [id="wrapper"] main [id="content"] h2, body [id="wrapper"] main [id="content"] .title-h2 {
-        font-size: 1.6em; }
+        font-size: 1.6em;
+        font-weight: bold; }
       body [id="wrapper"] main [id="content"] h3, body [id="wrapper"] main [id="content"] .title-h3 {
-        font-size: 1.4em; }
+        font-size: 1.4em;
+        font-weight: bold; }
       body [id="wrapper"] main [id="content"] h4, body [id="wrapper"] main [id="content"] .title-h4 {
         font-size: 1.2em;
+        font-weight: bold;
         color: #000; }
       body [id="wrapper"] main [id="content"] blockquote {
         padding: 1em;
@@ -3179,6 +3184,50 @@ body {
             color: #ebbe00; }
           body [id="wrapper"] main [id="content"] [id="navigation"] a:active {
             color: #9bc407; }
+      body [id="wrapper"] main [id="content"] .sharedaddy {
+        border-top: solid 3px #ccc;
+        margin-top: 5rem; }
+        body [id="wrapper"] main [id="content"] .sharedaddy .title-h2 {
+          margin-top: 0; }
+      body [id="wrapper"] main [id="content"] #jp-relatedposts {
+        margin: 3rem 0 0 0;
+        padding: 0; }
+        body [id="wrapper"] main [id="content"] #jp-relatedposts .title-h2 {
+          margin-top: 0; }
+        body [id="wrapper"] main [id="content"] #jp-relatedposts .jp-relatedposts-items {
+          display: -ms-flexbox;
+          display: flex;
+          -ms-flex-wrap: wrap;
+              flex-wrap: wrap;
+          -ms-flex-pack: center;
+              justify-content: center; }
+          body [id="wrapper"] main [id="content"] #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post {
+            box-shadow: 0 0px 3px rgba(0, 0, 0, 0.2);
+            background-color: #ffffff;
+            margin: .5em;
+            max-width: 280px; }
+            body [id="wrapper"] main [id="content"] #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post .jp-relatedposts-post-a {
+              display: block; }
+              body [id="wrapper"] main [id="content"] #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post .jp-relatedposts-post-a img {
+                transition-duration: 400ms;
+                display: block; }
+              body [id="wrapper"] main [id="content"] #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post .jp-relatedposts-post-a:hover img, body [id="wrapper"] main [id="content"] #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post .jp-relatedposts-post-a:focus img {
+                opacity: .5; }
+            body [id="wrapper"] main [id="content"] #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post .jp-relatedposts-post-title {
+              font-size: 1.4em;
+              font-weight: bold;
+              margin: 0.8em 1em; }
+              body [id="wrapper"] main [id="content"] #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post .jp-relatedposts-post-title a {
+                text-decoration: none;
+                color: #000; }
+                body [id="wrapper"] main [id="content"] #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post .jp-relatedposts-post-title a:visited {
+                  color: #000; }
+                body [id="wrapper"] main [id="content"] #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post .jp-relatedposts-post-title a:focus {
+                  color: #ebbe00; }
+                body [id="wrapper"] main [id="content"] #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post .jp-relatedposts-post-title a:hover {
+                  color: #ebbe00; }
+                body [id="wrapper"] main [id="content"] #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post .jp-relatedposts-post-title a:active {
+                  color: #9bc407; }
       body [id="wrapper"] main [id="content"] [id="tarif"] {
         display: -ms-flexbox;
         display: flex;
@@ -3458,6 +3507,14 @@ body {
   body .aligncenter {
     margin-left: auto;
     margin-right: auto; }
+  body .edit-post-link {
+    font-style: italic; }
+  body .txt-right {
+    text-align: right; }
+  body .txt-center {
+    text-align: center; }
+  body .text-left {
+    text-align: left; }
   body .wp-caption {
     max-width: 100%; }
   body .wp-caption-text {
@@ -3479,7 +3536,7 @@ body {
     height: 0;
     width: 0;
     clear: both; }
-  body .visuallyhidden {
+  body .visuallyhidden, body [id="wrapper"] main [id="content"] #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post .jp-relatedposts-post-excerpt {
     font: 0/0 serif;
     text-shadow: none;
     color: transparent; }

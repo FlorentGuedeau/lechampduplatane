@@ -1,13 +1,9 @@
 <div class="article">
     <?php if( has_post_thumbnail() ) : $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'archive-single' ); ?>
-    <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject" class="illustration">
+    <div class="illustration">
         <a href="<?php the_permalink() ?>" title="Cliquez ici pour en savoir plus">
-            <?php //the_post_thumbnail( 'archive-single' ); ?>
-            <img src="http://placehold.it/280x280">
+            <?php the_post_thumbnail( 'archive-single' ); ?>
         </a>
-        <meta itemprop="url" content="<?php echo $thumb[0]; ?>">
-        <meta itemprop="width" content="<?php echo $thumb[1]; ?>">
-        <meta itemprop="height" content="<?php echo $thumb[2]; ?>">
     </div>
     <?php endif; ?>
 
@@ -24,6 +20,7 @@
 
         <footer>
             <a role="button" href="<?php the_permalink() ?>" title="Cliquez ici pour en savoir plus">En savoir plus</a>
+            <?php edit_post_link('Modifier ce contenu', '<p class="edit-post-link">', '</p>'); ?>
         </footer>
     </div>
 </div>

@@ -21,7 +21,7 @@
                 <span itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
                     <span itemprop="name">Le Champ du Platane</span>
                     <span itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
-                        <meta itemprop="url" content="<?php echo get_template_directory_uri(); ?>/images/logo-le-champ-du-platane-paysagiste-concepteur-schemaORG.jpg" alt="Logo <?php bloginfo( 'name' ); ?><?php echo ', '; ?><?php bloginfo( 'description' ); ?>">
+                        <meta itemprop="url" content="<?php echo get_template_directory_uri(); ?>/images/logo-le-champ-du-platane-paysagiste-concepteur-schemaORG.jpg">
                         <meta itemprop="width" content="500">
                         <meta itemprop="height" content="495">
                     </span> 
@@ -36,6 +36,7 @@
 
         <footer>
             <a itemprop="url" role="button" href="<?php the_permalink() ?>" title="Cliquez ici pour en savoir plus">En savoir plus</a>
+            <?php edit_post_link('Modifier l\'article', '<p class="edit-post-link">', '</p>'); ?>
         </footer>
     </div>
 </article>

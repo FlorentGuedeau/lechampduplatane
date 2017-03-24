@@ -9,7 +9,7 @@
             <span itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
                 <span itemprop="name">Le Champ du Platane</span>
                 <span itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
-                    <meta itemprop="url" content="<?php echo get_template_directory_uri(); ?>/images/logo-le-champ-du-platane-paysagiste-concepteur-schemaORG.jpg" alt="Logo <?php bloginfo( 'name' ); ?><?php echo ', '; ?><?php bloginfo( 'description' ); ?>">
+                    <meta itemprop="url" content="<?php echo get_template_directory_uri(); ?>/images/logo-le-champ-du-platane-paysagiste-concepteur-schemaORG.jpg">
                     <meta itemprop="width" content="500">
                     <meta itemprop="height" content="495">
                 </span> 
@@ -30,14 +30,14 @@
         <?php the_content(); ?>
 
         <div class="clear"></div>
-
-        <?php
-        wp_link_pages( array(
-            'before'      => '<div class="page-links">Pages:',
-            'after'       => '</div>',
-            'link_before' => '<span class="page-number">',
-            'link_after'  => '</span>',
-        ) );
-        ?>
     </div>
 </article>
+
+<?php
+$categories = get_the_category();
+if ( class_exists( 'Jetpack_RelatedPosts' ) && $categories[0]->term_id == 2 ) {
+    echo do_shortcode( '[jetpack-related-posts]' );
+}
+?>
+
+<?php edit_post_link('Modifier l\'article', '<p class="edit-post-link txt-right">', '</p>'); ?>

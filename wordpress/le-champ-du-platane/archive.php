@@ -15,7 +15,7 @@
         <?php endwhile; ?>
     </div>
 
-    <?php if ( lcdp_pagination() ) : ?>
+    <?php if ( is_paginated() ) : ?>
     <nav id="navigation">
         <?php lcdp_pagination(); ?>
     </nav>
