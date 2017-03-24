@@ -61,7 +61,7 @@ main {
             }
         }
 
-        h1 {
+        h1, .title-h1 {
             padding-bottom: 0.3em;
             //            border-bottom: solid 3px #ccc;
             border-bottom: solid 3px $color-orange;
@@ -71,19 +71,19 @@ main {
             }
         }
 
-        h2 {
+        h2, .title-h2 {
             font: {
                 size: 1.6em;
             }
         }
 
-        h3 {
+        h3, .title-h3 {
             font: {
                 size: 1.4em;
             }
         }
 
-        h4 {
+        h4, .title-h4 {
             font: {
                 size: 1.2em;
             }

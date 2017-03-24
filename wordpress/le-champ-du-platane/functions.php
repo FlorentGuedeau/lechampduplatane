@@ -5,9 +5,15 @@ remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
 remove_action( 'wp_print_styles', 'print_emoji_styles' );
 remove_action( 'admin_print_styles', 'print_emoji_styles' );
 
+
+if ( ! isset( $content_width ) ) {
+    $content_width = 1600;
+}
+
+
 function theme_setup() {
     // Charge les langues
-    //    load_theme_textdomain( 'lechampduplatane', get_template_directory() . '/languages' );
+    //    load_theme_textdomain( 'le-champ-du-platane', get_template_directory() . '/languages' );
 
     add_theme_support( 'automatic-feed-links' );
 
@@ -363,7 +369,8 @@ class LCDP_Walker_Nav_Menu extends Walker_Nav_Menu {
         }
         $indent = str_repeat( $t, $depth );
         //        $output .= "{$n}{$indent}<ul class=\"sub-menu\">{$n}";
-        $output .= '<span tabindex="' . $tabindex . '" role="button" aria-controls="smenu' . $nb_smenu . '" aria-pressed="false" title="Cliquez ici pour ouvrir ou fermer le sous-menu de Nos services"><i class="fa fa-chevron-right" aria-hidden="true"></i></span>';
+        //        $output .= '<span tabindex="' . $tabindex . '" role="button" aria-controls="smenu' . $nb_smenu . '" aria-pressed="false" title="Cliquez ici pour ouvrir ou fermer le sous-menu de Nos services"><i class="fa fa-chevron-right" aria-hidden="true"></i></span>';
+        $output .= '<span role="button" aria-controls="smenu' . $nb_smenu . '" aria-pressed="false" title="Cliquez ici pour ouvrir ou fermer le sous-menu de Nos services"><i class="fa fa-chevron-right" aria-hidden="true"></i></span>';
         $output .= "{$n}{$indent}<ul id=\"smenu$nb_smenu\" role=\"menu\" aria-hidden=\"true\">{$n}";
     }
 
@@ -516,9 +523,11 @@ class LCDP_Walker_Nav_Menu extends Walker_Nav_Menu {
 
         $aria_current = strpos($class_names, 'current-menu-item');
         if( $aria_current === false ) {
-            $item_output .= '<a tabindex="' . $tabindex . '" itemprop="url"'. $attributes .'><span itemprop="name">';
+            //            $item_output .= '<a tabindex="' . $tabindex . '" itemprop="url"'. $attributes .'><span itemprop="name">';
+            $item_output .= '<a itemprop="url"'. $attributes .'><span itemprop="name">';
         } else {
-            $item_output .= '<a aria-current="page" tabindex="' . $tabindex . '" itemprop="url"'. $attributes .'><span itemprop="name">';
+            //            $item_output .= '<a aria-current="page" tabindex="' . $tabindex . '" itemprop="url"'. $attributes .'><span itemprop="name">';
+            $item_output .= '<a aria-current="page" itemprop="url"'. $attributes .'><span itemprop="name">';
         }
 
         $item_output .= $args->link_before . $title . $args->link_after;
@@ -607,3 +616,16 @@ function lcdp_pagination() {
         ) );
     }
 }
+
+
+// Remplace la balise h3 du titre de partage => https://github.com/Automattic/jetpack/pull/5011
+function jeherve_custom_heading( $headline, $label, $module ) {
+    if ( 'sharing' == $module ) {
+        $headline = sprintf(
+            '<p class="title-h2" role="heading">%s</p>',
+            $label
+        );
+    }
+    return $headline;
+}
+add_filter( 'jetpack_sharing_headline_html', 'jeherve_custom_heading', 10, 3 );

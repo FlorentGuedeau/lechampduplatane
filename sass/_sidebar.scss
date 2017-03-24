@@ -246,7 +246,7 @@ ul[role="menubar"] {
             @include link-colors($color-text, $color-orange, $color-green, $color-text, $color-orange); // $normal, $hover, $active, $visited, $focus
         }
 
-        &.active, &.current-menu-item, &.current-menu-ancestor {
+        &.active, &.current-menu-item, &.current-menu-parent {
             > a {
                 @include link-colors(darken($color-orange, 10%), $color-orange, $color-green, darken($color-orange, 10%), darken($color-orange, 10%));
             }

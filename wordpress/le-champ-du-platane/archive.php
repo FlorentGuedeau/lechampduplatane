@@ -15,7 +15,11 @@
         <?php endwhile; ?>
     </div>
 
-    <?php the_posts_pagination(); ?>
+    <?php if ( lcdp_pagination() ) : ?>
+    <nav id="navigation">
+        <?php lcdp_pagination(); ?>
+    </nav>
+    <?php endif; ?>
 </section>
 
 <?php else : ?>

@@ -5244,6 +5244,48 @@ body [id='wrapper'] main [id='content'] form [type='submit']:active
 {
     background-color: #263002;
 }
+body [id='wrapper'] main [id='content'] [id='navigation']
+{
+    margin-top: 5rem; 
+
+    text-align: center;
+
+    border-top: solid 3px #ccc;
+}
+body [id='wrapper'] main [id='content'] [id='navigation'] .page-numbers
+{
+    display: inline-block;
+
+    padding: 1.5rem 2rem;
+
+    text-decoration: none;
+}
+body [id='wrapper'] main [id='content'] [id='navigation'] .page-numbers.current
+{
+    font-weight: bold; 
+
+    box-shadow: 0 -3px 0 #333b3b;
+}
+body [id='wrapper'] main [id='content'] [id='navigation'] a
+{
+    color: #000;
+}
+body [id='wrapper'] main [id='content'] [id='navigation'] a:visited
+{
+    color: #000;
+}
+body [id='wrapper'] main [id='content'] [id='navigation'] a:focus
+{
+    color: #ebbe00;
+}
+body [id='wrapper'] main [id='content'] [id='navigation'] a:hover
+{
+    color: #ebbe00;
+}
+body [id='wrapper'] main [id='content'] [id='navigation'] a:active
+{
+    color: #9bc407;
+}
 body [id='wrapper'] main [id='content'] [id='tarif']
 {
     display: -ms-flexbox;
@@ -5339,7 +5381,8 @@ body [id='wrapper'] main [id='content'] > section[id='contact'] .cols i
 {
     margin-right: .2em;
 }
-body [id='wrapper'] main [id='content'] > section[id='realisations'] .cols
+body [id='wrapper'] main [id='content'] > section[id='realisations'] .cols,
+body [id='wrapper'] main [id='content'] > section[id='search'] .cols
 {
     display: -ms-flexbox;
     display: flex;
@@ -5351,36 +5394,52 @@ body [id='wrapper'] main [id='content'] > section[id='realisations'] .cols
 }
 @media (min-width: 1001px)
 {
-    body [id='wrapper'] main [id='content'] > section[id='realisations'] .cols
+    body [id='wrapper'] main [id='content'] > section[id='realisations'] .cols,
+    body [id='wrapper'] main [id='content'] > section[id='search'] .cols
     {
         display: block;
     }
 }
-body [id='wrapper'] main [id='content'] > section[id='realisations'] .cols > article
+body [id='wrapper'] main [id='content'] > section[id='realisations'] .cols > article,
+body [id='wrapper'] main [id='content'] > section[id='realisations'] .cols .article,
+body [id='wrapper'] main [id='content'] > section[id='search'] .cols > article,
+body [id='wrapper'] main [id='content'] > section[id='search'] .cols .article
 {
     margin: .5em;
 }
 @media (min-width: 1001px)
 {
-    body [id='wrapper'] main [id='content'] > section[id='realisations'] .cols > article
+    body [id='wrapper'] main [id='content'] > section[id='realisations'] .cols > article,
+    body [id='wrapper'] main [id='content'] > section[id='realisations'] .cols .article,
+    body [id='wrapper'] main [id='content'] > section[id='search'] .cols > article,
+    body [id='wrapper'] main [id='content'] > section[id='search'] .cols .article
     {
         margin: 0;
         margin-bottom: 1.5em;
     }
-    body [id='wrapper'] main [id='content'] > section[id='realisations'] .cols > article:last-child
+    body [id='wrapper'] main [id='content'] > section[id='realisations'] .cols > article:last-child,
+    body [id='wrapper'] main [id='content'] > section[id='realisations'] .cols .article:last-child,
+    body [id='wrapper'] main [id='content'] > section[id='search'] .cols > article:last-child,
+    body [id='wrapper'] main [id='content'] > section[id='search'] .cols .article:last-child
     {
         margin-bottom: 0;
     }
 }
 @media (min-width: 1001px)
 {
-    body [id='wrapper'] main [id='content'] > section[id='realisations'] .cols > article .illustration
+    body [id='wrapper'] main [id='content'] > section[id='realisations'] .cols > article .illustration,
+    body [id='wrapper'] main [id='content'] > section[id='realisations'] .cols .article .illustration,
+    body [id='wrapper'] main [id='content'] > section[id='search'] .cols > article .illustration,
+    body [id='wrapper'] main [id='content'] > section[id='search'] .cols .article .illustration
     {
         -ms-flex-negative: 0;
         flex-shrink: 0;
     }
 }
-body [id='wrapper'] main [id='content'] > section[id='realisations'] article
+body [id='wrapper'] main [id='content'] > section[id='realisations'] article,
+body [id='wrapper'] main [id='content'] > section[id='realisations'] .article,
+body [id='wrapper'] main [id='content'] > section[id='search'] article,
+body [id='wrapper'] main [id='content'] > section[id='search'] .article
 {
     max-width: 280px;
 
@@ -5389,7 +5448,10 @@ body [id='wrapper'] main [id='content'] > section[id='realisations'] article
 }
 @media (min-width: 1001px)
 {
-    body [id='wrapper'] main [id='content'] > section[id='realisations'] article
+    body [id='wrapper'] main [id='content'] > section[id='realisations'] article,
+    body [id='wrapper'] main [id='content'] > section[id='realisations'] .article,
+    body [id='wrapper'] main [id='content'] > section[id='search'] article,
+    body [id='wrapper'] main [id='content'] > section[id='search'] .article
     {
         display: -ms-flexbox;
         display: flex; 
@@ -5399,7 +5461,10 @@ body [id='wrapper'] main [id='content'] > section[id='realisations'] article
 }
 @media (min-width: 1001px)
 {
-    body [id='wrapper'] main [id='content'] > section[id='realisations'] article a[role='button']
+    body [id='wrapper'] main [id='content'] > section[id='realisations'] article a[role='button'],
+    body [id='wrapper'] main [id='content'] > section[id='realisations'] .article a[role='button'],
+    body [id='wrapper'] main [id='content'] > section[id='search'] article a[role='button'],
+    body [id='wrapper'] main [id='content'] > section[id='search'] .article a[role='button']
     {
         display: inline-block;
 
@@ -5443,7 +5508,7 @@ body [id='wrapper'] main [id='content'] > section.archive .article .content-arti
 body [id='wrapper'] main [id='content'] > section.archive article .illustration a,
 body [id='wrapper'] main [id='content'] > section.archive .article .illustration a
 {
-    display: inline-block;
+    display: block;
 }
 body [id='wrapper'] main [id='content'] > section.archive article .illustration a img,
 body [id='wrapper'] main [id='content'] > section.archive .article .illustration a img

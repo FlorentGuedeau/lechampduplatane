@@ -3,10 +3,7 @@
 <?php while ( have_posts() ) : the_post(); ?>
 
 <section itemprop="mainContentOfPage">
-    <h1 itemprop="name"><?php the_title(); ?></h1>
-
-    <?php the_content(); ?>
-
+    <?php get_template_part( 'page', 'content' ); ?>
     <div class="clear"></div>
 </section>
 
