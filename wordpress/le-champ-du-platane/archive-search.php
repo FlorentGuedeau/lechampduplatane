@@ -1,4 +1,4 @@
-<div class="article">
+<div id="post-<?php the_ID(); ?>" <?php post_class( 'article' ); ?>>
     <?php if( has_post_thumbnail() ) : $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'archive-single' ); ?>
     <div class="illustration">
         <a href="<?php the_permalink() ?>" title="Cliquez ici pour en savoir plus">
