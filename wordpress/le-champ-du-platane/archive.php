@@ -10,7 +10,7 @@
     <div class="cols">
         <?php while ( have_posts() ) : the_post(); ?>
 
-        <?php get_template_part( 'archive', 'single' ); ?>
+        <?php get_template_part( 'archive', 'content' ); ?>
 
         <?php endwhile; ?>
     </div>
