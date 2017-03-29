@@ -14,7 +14,7 @@
     <div class="cols">
         <?php while ( have_posts() ) : the_post(); ?>
 
-        <?php get_template_part( 'archive', 'search' ); ?>
+        <?php get_template_part( 'search', 'content' ); ?>
 
         <?php endwhile; ?>
     </div>
