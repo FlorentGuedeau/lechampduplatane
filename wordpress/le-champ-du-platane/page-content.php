@@ -5,5 +5,4 @@
     <div class="clear"></div>
 </div>
 
-
 <?php edit_post_link('Modifier la page', '<p class="edit-post-link txt-right">', '</p>'); ?>
