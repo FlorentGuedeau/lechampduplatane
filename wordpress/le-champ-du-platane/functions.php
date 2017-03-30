@@ -745,3 +745,19 @@ function custom_jetpack_relatedposts_filter_thumbnail_size( $size ) {
     return $size;
 }
 add_filter( 'jetpack_relatedposts_filter_thumbnail_size', 'custom_jetpack_relatedposts_filter_thumbnail_size' );
+
+
+function jeherve_related_post_link( $context, $post_id ) {
+    $link = get_permalink( $post_id );
+
+
+    // Add the author name after the existing context.
+    //    if ( isset( $author_display_name ) && ! empty( $author_display_name ) ) {
+    return sprintf(
+        __( '<span class="domhidden">Publié %1$s</span><a onclick="jQuery(this).addClass(\'is-loading\')" role="button" href="%2$s" title="Cliquez ici pour en savoir plus">En savoir plus</a>', 'my-plugin-slug' ), $context, $link );
+    //    }
+
+    // Final fallback.
+    return $context;
+}
+add_filter( 'jetpack_relatedposts_filter_post_context', 'jeherve_related_post_link', 10, 2 );

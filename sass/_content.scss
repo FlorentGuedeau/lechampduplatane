@@ -201,6 +201,10 @@ main {
                             @include link-colors($color-text, $color-orange, $color-green, $color-text, $color-orange);
                         }
                     }
+
+                    .jp-relatedposts-post-context {
+                        margin: 0 0 1em 0;
+                    }
                 }
             }
         }

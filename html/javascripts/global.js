@@ -88,7 +88,14 @@ jQuery(document).ready(function(){
 
         e.preventDefault();
     });
+
+
+    // spinner des boutons
+    $('a[role="button"]').on('click', function() {
+        $(this).addClass('is-loading');
+    });
 });
+
 
 function init_sticky_bar() {
     if($(window).width() > 995) {

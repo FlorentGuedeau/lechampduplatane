@@ -173,6 +173,18 @@ a[role="button"] {
     &:active {
         background-color: darken($color-green, 30%);
     }
+
+    &.is-loading {
+        &::after {
+            @include content('\f110');
+            animation: spin 2s linear infinite;
+        }
+    }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
 
 .reverside {
