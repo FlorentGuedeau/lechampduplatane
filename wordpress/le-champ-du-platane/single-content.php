@@ -1,8 +1,9 @@
 <article <?php if( has_post_thumbnail() ) : ?> itemscope itemtype="https://schema.org/Article" <?php endif; ?> id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <header>
-        <h1 itemprop="headline">
-            <span itemprop="mainEntityOfPage"><?php the_title(); ?></span>
+        <h1 <?php if( has_post_thumbnail() ) : ?>itemprop="headline"<?php endif; ?>>
+            <span <?php if( has_post_thumbnail() ) : ?>itemprop="mainEntityOfPage"<?php endif; ?>><?php the_title(); ?></span>
         </h1>
+        <?php if( has_post_thumbnail() ) : ?>
         <small class="domhidden">
             Publié le <time itemprop="datePublished" datetime="<?php the_time('Y-m-d'); ?>"><?php the_time( get_option( 'date_format' ) ); ?></time>
             par <span itemprop="author">Constantin Gorioux</span> chez 
@@ -24,9 +25,10 @@
             </span>
             <?php endif; ?>
         </small>
+        <?php endif; ?>
     </header>
 
-    <div itemprop="articleBody" class="article-content">
+    <div <?php if( has_post_thumbnail() ) : ?>itemprop="articleBody"<?php endif; ?> class="article-content">
         <?php the_content(); ?>
 
         <div class="clear"></div>
