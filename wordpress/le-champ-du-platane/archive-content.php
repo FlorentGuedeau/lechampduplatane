@@ -12,9 +12,10 @@
 
     <div class="content-article">
         <header>
-            <h2 itemprop="headline">
-                <a href="<?php the_permalink() ?>" title="Cliquez ici pour en savoir plus"><span itemprop="mainEntityOfPage"><?php the_title(); ?></span></a>
+            <h2 <?php if( has_post_thumbnail() ) : ?>itemprop="headline"<?php endif; ?>>
+                <a href="<?php the_permalink() ?>" title="Cliquez ici pour en savoir plus"><span <?php if( has_post_thumbnail() ) : ?>itemprop="mainEntityOfPage"<?php endif; ?>><?php the_title(); ?></span></a>
             </h2>
+            <?php if( has_post_thumbnail() ) : ?>
             <small class="domhidden">
                 Publié le <time itemprop="datePublished" datetime="<?php the_time('Y-m-d'); ?>"><?php the_time( get_option( 'date_format' ) ); ?></time>
                 par <span itemprop="author">Constantin Gorioux</span> chez 
@@ -28,14 +29,15 @@
                 </span>
                 . Modifié le <time itemprop="dateModified" datetime="<?php the_modified_date('Y-m-d'); ?>"><?php the_modified_date( get_option( 'date_format' ) ); ?></time>
             </small>
+            <?php endif; ?>
         </header>
 
-        <div itemprop="description">
+        <div <?php if( has_post_thumbnail() ) : ?>itemprop="description"<?php endif; ?>>
             <?php the_excerpt(); ?>
         </div>
 
         <footer>
-            <a itemprop="url" role="button" href="<?php the_permalink() ?>" title="Cliquez ici pour en savoir plus">En savoir plus</a>
+            <a <?php if( has_post_thumbnail() ) : ?>itemprop="url"<?php endif; ?> role="button" href="<?php the_permalink() ?>" title="Cliquez ici pour en savoir plus">En savoir plus</a>
             <?php edit_post_link('Modifier l\'article', '<p class="edit-post-link">', '</p>'); ?>
         </footer>
     </div>
