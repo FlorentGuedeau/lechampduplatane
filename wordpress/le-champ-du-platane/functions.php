@@ -13,7 +13,7 @@ if ( ! isset( $content_width ) ) {
 
 function theme_setup() {
     // Charge les langues
-    //    load_theme_textdomain( 'le-champ-du-platane', get_template_directory() . '/languages' );
+    load_theme_textdomain( 'le-champ-du-platane', get_template_directory() . '/languages' );
 
     add_theme_support( 'automatic-feed-links' );
 

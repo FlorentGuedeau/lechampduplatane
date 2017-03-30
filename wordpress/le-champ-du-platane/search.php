@@ -1,7 +1,6 @@
 <?php get_header(); ?>
 
 <section itemprop="mainContentOfPage" id="search" class="archive">
-
     <?php if ( have_posts() ) : ?>
     <h1 itemprop="name">Résultats de recherche pour &laquo; <em><?php echo get_search_query(); ?></em> &raquo;</h1>
     <?php else : ?>

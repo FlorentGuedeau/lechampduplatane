@@ -1,4 +1,4 @@
-<article <?php if( has_post_thumbnail() ) : ?> itemscope itemtype="https://schema.org/Article" <?php endif; ?> id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> <?php if( has_post_thumbnail() ) : ?>itemscope itemtype="https://schema.org/Article"<?php endif; ?>>
     <header>
         <h1 <?php if( has_post_thumbnail() ) : ?>itemprop="headline"<?php endif; ?>>
             <span <?php if( has_post_thumbnail() ) : ?>itemprop="mainEntityOfPage"<?php endif; ?>><?php the_title(); ?></span>

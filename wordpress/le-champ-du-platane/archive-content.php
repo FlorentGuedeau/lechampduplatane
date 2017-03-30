@@ -1,4 +1,4 @@
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> <?php if( has_post_thumbnail() ) : ?> itemscope itemtype="https://schema.org/Article" <?php endif; ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> <?php if( has_post_thumbnail() ) : ?>itemscope itemtype="https://schema.org/Article"<?php endif; ?>>
     <?php if( has_post_thumbnail() ) : $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'archive-single' ); ?>
     <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject" class="illustration">
         <a href="<?php the_permalink() ?>" title="Cliquez ici pour en savoir plus">

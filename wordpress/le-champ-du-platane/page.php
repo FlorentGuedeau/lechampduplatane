@@ -2,7 +2,7 @@
 
 <?php while ( have_posts() ) : the_post(); ?>
 
-<section itemprop="mainContentOfPage">
+<section itemprop="mainContentOfPage" id="page" class="post">
     <?php get_template_part( 'page', 'content' ); ?>
 </section>
 
