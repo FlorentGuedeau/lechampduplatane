@@ -91,7 +91,7 @@ jQuery(document).ready(function(){
 
 
     // spinner des boutons
-    $('a[role="button"]').on('click', function() {
+    $('a[role="button"]', '[type="submit"]').on('click', function() {
         $(this).addClass('is-loading');
     });
 });

@@ -3163,6 +3163,9 @@ body {
           background-color: #4d6203; }
         body [id="wrapper"] main [id="content"] form [type="submit"]:active {
           background-color: #263002; }
+        body [id="wrapper"] main [id="content"] form [type="submit"].is-loading::after {
+          content: "";
+          animation: spin 2s linear infinite; }
       body [id="wrapper"] main [id="content"] [id="navigation"] {
         text-align: center;
         border-top: solid 3px #ccc;
