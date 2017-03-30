@@ -13,7 +13,7 @@
     <div class="content-article">
         <header>
             <h2 itemprop="headline">
-                <a href="<?php the_permalink() ?>" title="Cliquez ici pour en savoir plus" itemprop="mainEntityOfPage"><?php the_title(); ?></a>
+                <a href="<?php the_permalink() ?>" title="Cliquez ici pour en savoir plus"><span itemprop="mainEntityOfPage"><?php the_title(); ?></span></a>
             </h2>
             <small class="domhidden">
                 Publié le <time itemprop="datePublished" datetime="<?php the_time('Y-m-d'); ?>"><?php the_time( get_option( 'date_format' ) ); ?></time>
