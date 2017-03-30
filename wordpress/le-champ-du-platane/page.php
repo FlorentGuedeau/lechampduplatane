@@ -4,7 +4,6 @@
 
 <section itemprop="mainContentOfPage">
     <?php get_template_part( 'page', 'content' ); ?>
-    <div class="clear"></div>
 </section>
 
 <?php endwhile; ?>
