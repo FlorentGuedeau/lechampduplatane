@@ -5254,6 +5254,11 @@ body [id='wrapper'] main [id='content'] form [type='submit']:active
 {
     background-color: #263002;
 }
+body [id='wrapper'] main [id='content'] form [type='submit'].is-loading::after
+{
+    content: '';
+    animation: spin 2s linear infinite;
+}
 body [id='wrapper'] main [id='content'] [id='navigation']
 {
     margin-top: 5rem; 
@@ -5376,6 +5381,10 @@ body [id='wrapper'] main [id='content'] #jp-relatedposts .jp-relatedposts-items 
 body [id='wrapper'] main [id='content'] #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post .jp-relatedposts-post-title a:active
 {
     color: #9bc407;
+}
+body [id='wrapper'] main [id='content'] #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post .jp-relatedposts-post-context
+{
+    margin: 0 0 1em 0;
 }
 body [id='wrapper'] main [id='content'] [id='tarif']
 {
@@ -6114,6 +6123,22 @@ body a[role='button']:focus
 body a[role='button']:active
 {
     background-color: #263002;
+}
+body a[role='button'].is-loading::after
+{
+    content: '';
+    animation: spin 2s linear infinite;
+}
+@keyframes spin
+{
+    0%
+    {
+        transform: rotate(0deg);
+    }
+    100%
+    {
+        transform: rotate(360deg);
+    }
 }
 body .reverside
 {

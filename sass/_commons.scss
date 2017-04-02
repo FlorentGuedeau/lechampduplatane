@@ -89,17 +89,13 @@ a:active, li:active, i:active, input:active, button:active {
     width: 0;
 }
 
-.states {
-    @include border-radius(3px);
-    text: {
-        align: center;
-    }
+.states, .wpcf7-response-output {
+    @include border-radius(.5rem);
+    text-align: center;
     margin: 1em 0;
     padding: 1em .5em;
-    font: {
-        size: 1em;
-    }
-    line-height: #{$golden-ratio}em;
+    font-size: 1em;
+    line-height: 1.6;
     display: none;
 
     &.info {
@@ -113,14 +109,14 @@ a:active, li:active, i:active, input:active, button:active {
 
     &.warning, &.alert, &.failure, &.wpcf7-validation-errors {
         color: #ffa800;
-        border: solid 1px #ffdd9a;
+        border: solid 1px #ffa800;
         background-color: #fefbe9;
         display: block;
     }
 
     &.success, &.notice, &.wpcf7-mail-sent-ok {
         color: #468847;
-        border: solid 1px #d6e9c6;
+        border: solid 1px #468847;
         background-color: #dff0d8;
         display: block;
     }

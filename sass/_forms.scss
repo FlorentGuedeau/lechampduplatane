@@ -63,7 +63,7 @@ label {
 
 [type="submit"] {
     border:none;
-    display: block;
+    display: inline-block;
     text-decoration: none;
     color: #ffffff;
     background-color: $color-green;
@@ -103,4 +103,8 @@ label {
             animation: spin 2s linear infinite;
         }
     }
+}
+
+span.wpcf7-not-valid-tip {
+    padding: .5em;
 }

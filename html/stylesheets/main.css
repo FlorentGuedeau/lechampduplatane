@@ -3138,7 +3138,7 @@ body {
             border-color: #d7d7d7; }
       body [id="wrapper"] main [id="content"] form [type="submit"] {
         border: none;
-        display: block;
+        display: inline-block;
         text-decoration: none;
         color: #ffffff;
         background-color: #9bc407;
@@ -3166,6 +3166,8 @@ body {
         body [id="wrapper"] main [id="content"] form [type="submit"].is-loading::after {
           content: "";
           animation: spin 2s linear infinite; }
+      body [id="wrapper"] main [id="content"] form span.wpcf7-not-valid-tip {
+        padding: .5em; }
       body [id="wrapper"] main [id="content"] [id="navigation"] {
         text-align: center;
         border-top: solid 3px #ccc;
@@ -3553,35 +3555,35 @@ body {
     position: absolute;
     text-shadow: none;
     width: 0; }
-  body .states {
-    border-radius: 3px;
+  body .states, body .wpcf7-response-output {
+    border-radius: 0.5rem;
     text-align: center;
     margin: 1em 0;
     padding: 1em .5em;
     font-size: 1em;
-    line-height: 1.62em;
+    line-height: 1.6;
     display: none; }
-    body .states.info {
+    body .states.info, body .wpcf7-response-output.info {
       color: #787878;
       border: solid 1px #d9d9d9;
       background-color: #f9f9f9;
       display: block; }
-    body .states.warning, body .states.alert, body .states.failure, body .states.wpcf7-validation-errors {
+    body .states.warning, body .states.alert, body .states.failure, body .states.wpcf7-validation-errors, body .wpcf7-response-output.warning, body .wpcf7-response-output.alert, body .wpcf7-response-output.failure, body .wpcf7-response-output.wpcf7-validation-errors {
       color: #ffa800;
-      border: solid 1px #ffdd9a;
+      border: solid 1px #ffa800;
       background-color: #fefbe9;
       display: block; }
-    body .states.success, body .states.notice, body .states.wpcf7-mail-sent-ok {
+    body .states.success, body .states.notice, body .states.wpcf7-mail-sent-ok, body .wpcf7-response-output.success, body .wpcf7-response-output.notice, body .wpcf7-response-output.wpcf7-mail-sent-ok {
       color: #468847;
-      border: solid 1px #d6e9c6;
+      border: solid 1px #468847;
       background-color: #dff0d8;
       display: block; }
-    body .states.error {
+    body .states.error, body .wpcf7-response-output.error {
       color: #e64545;
       border: solid 1px #fcbcbc;
       background-color: #fddede;
       display: block; }
-    body .states.highlight {
+    body .states.highlight, body .wpcf7-response-output.highlight {
       color: #3a87ad;
       border: solid 1px #bee1f3;
       background-color: #d9edf7;
