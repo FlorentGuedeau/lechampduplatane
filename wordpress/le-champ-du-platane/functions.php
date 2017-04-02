@@ -261,6 +261,7 @@ add_filter( 'get_the_archive_title', function ($title) {
 
 function theme_tinymce_settings($settings) {
     $settings['block_formats'] = 'Paragraph=p;Heading 2=h2;Heading 3=h3;Heading 4=h4;';
+    $settings['fontsize_formats'] = '1em 1.1em 1.2em 1.3em 1.4em 1.5em 1.7em 1.9em 2.1em';
 
     //    // Command separated string of extended elements
     //    $ext = 'ul[role|aria-label], span[itemscope|itemtype|itemprop|role]';
