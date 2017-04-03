@@ -94,6 +94,14 @@ jQuery(document).ready(function(){
     $('a[role="button"]').on('click', function() {
         $(this).addClass('is-loading');
     });
+
+
+    // Bouton en voir plus dans Nos services
+    $('section#service').find('.article').find('.visibility-toggle').fadeOut();
+    $('section#service').find('.article').find('.button').on('click', function() {
+        $('section#service').find('.article').find('.visibility-toggle').slideToggle('slow'); 
+        $('section#service').find('.article').find('.visibility-toggle').toggleClass('active'); 
+    });
 });
 
 

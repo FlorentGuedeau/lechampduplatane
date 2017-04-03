@@ -4854,7 +4854,9 @@ body [id='wrapper'] main [id='content'] > section
 }
 body [id='wrapper'] main [id='content'] p,
 body [id='wrapper'] main [id='content'] li,
-body [id='wrapper'] main [id='content'] blockquote
+body [id='wrapper'] main [id='content'] blockquote,
+body [id='wrapper'] main [id='content'] td,
+body [id='wrapper'] main [id='content'] th
 {
     line-height: 1.62;
 }
@@ -4979,6 +4981,14 @@ body [id='wrapper'] main [id='content'] blockquote::before
     display: block;
 
     content: '“';
+}
+body [id='wrapper'] main [id='content'] blockquote p:first-child
+{
+    margin-top: 0;
+}
+body [id='wrapper'] main [id='content'] blockquote p:last-child
+{
+    margin-bottom: 0;
 }
 body [id='wrapper'] main [id='content'] form > div
 {
@@ -5216,7 +5226,7 @@ body [id='wrapper'] main [id='content'] form [type='submit']
 
     position: relative;
 
-    display: block;
+    display: inline-block;
 
     padding: 1em;
 
@@ -5258,6 +5268,10 @@ body [id='wrapper'] main [id='content'] form [type='submit'].is-loading::after
 {
     content: '';
     animation: spin 2s linear infinite;
+}
+body [id='wrapper'] main [id='content'] form span.wpcf7-not-valid-tip
+{
+    padding: .5em;
 }
 body [id='wrapper'] main [id='content'] [id='navigation']
 {
@@ -6023,10 +6037,11 @@ body .domhidden
     color: transparent;
     text-shadow: none;
 }
-body .states
+body .states,
+body .wpcf7-response-output
 {
     font-size: 1em;
-    line-height: 1.62em;
+    line-height: 1.6;
 
     display: none; 
 
@@ -6035,9 +6050,10 @@ body .states
 
     text-align: center;
 
-    border-radius: 3px;
+    border-radius: .5rem;
 }
-body .states.info
+body .states.info,
+body .wpcf7-response-output.info
 {
     display: block; 
 
@@ -6048,25 +6064,33 @@ body .states.info
 body .states.warning,
 body .states.alert,
 body .states.failure,
-body .states.wpcf7-validation-errors
+body .states.wpcf7-validation-errors,
+body .wpcf7-response-output.warning,
+body .wpcf7-response-output.alert,
+body .wpcf7-response-output.failure,
+body .wpcf7-response-output.wpcf7-validation-errors
 {
     display: block; 
 
     color: #ffa800;
-    border: solid 1px #ffdd9a;
+    border: solid 1px #ffa800;
     background-color: #fefbe9;
 }
 body .states.success,
 body .states.notice,
-body .states.wpcf7-mail-sent-ok
+body .states.wpcf7-mail-sent-ok,
+body .wpcf7-response-output.success,
+body .wpcf7-response-output.notice,
+body .wpcf7-response-output.wpcf7-mail-sent-ok
 {
     display: block; 
 
     color: #468847;
-    border: solid 1px #d6e9c6;
+    border: solid 1px #468847;
     background-color: #dff0d8;
 }
-body .states.error
+body .states.error,
+body .wpcf7-response-output.error
 {
     display: block; 
 
@@ -6074,7 +6098,8 @@ body .states.error
     border: solid 1px #fcbcbc;
     background-color: #fddede;
 }
-body .states.highlight
+body .states.highlight,
+body .wpcf7-response-output.highlight
 {
     display: block; 
 

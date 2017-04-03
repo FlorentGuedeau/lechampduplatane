@@ -115,16 +115,16 @@ main {
                 left: 1rem;
                 line-height: normal;
             }
-            
-                p {
-        &:first-child {
-            margin-top: 0;
-        }
 
-        &:last-child {
-            margin-bottom: 0;
-        }
-    }
+            p {
+                &:first-child {
+                    margin-top: 0;
+                }
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
         }
 
         form {
@@ -219,41 +219,41 @@ main {
             }
         }
 
-        [id="tarif"] {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            background-color: $color-green;
-            color: #fff;
-            padding: 2rem;
-            justify-content: center;
-            margin-bottom: 2em;
-            margin-top: -1em;
-            text-align: center;
-
-            @include from('desktop') {
-                text-align: inherit;
-            }
-
-            > div {
-                font-size: 1.2em;
-            }
-
-            .title {
-                display: block;
-                font-size: 2em;
-                margin-right: 8rem;
-                margin-bottom: 2rem;
-            }
-
-            a {
-                @include link-colors(#fff, $color-grey, $color-blue, #fff, $color-grey); // $normal, $hover, $active, $visited, $focus
-            }
-
-            p {
-                margin: 0;
-            }
-        }
+        //        [id="tarif"] {
+        //            display: flex;
+        //            flex-wrap: wrap;
+        //            align-items: center;
+        //            background-color: $color-green;
+        //            color: #fff;
+        //            padding: 2rem;
+        //            justify-content: center;
+        //            margin-bottom: 2em;
+        //            margin-top: -1em;
+        //            text-align: center;
+        //
+        //            @include from('desktop') {
+        //                text-align: inherit;
+        //            }
+        //
+        //            > div {
+        //                font-size: 1.2em;
+        //            }
+        //
+        //            .title {
+        //                display: block;
+        //                font-size: 2em;
+        //                margin-right: 8rem;
+        //                margin-bottom: 2rem;
+        //            }
+        //
+        //            a {
+        //                @include link-colors(#fff, $color-grey, $color-blue, #fff, $color-grey); // $normal, $hover, $active, $visited, $focus
+        //            }
+        //
+        //            p {
+        //                margin: 0;
+        //            }
+        //        }
 
         > section {
             &[id="contact"] {
@@ -285,7 +285,7 @@ main {
                 }
             }
 
-            &[id="realisations"], &[id="search"] {
+            &[id="realisations"], &[id="search"], &[id="service"] {
                 .cols {
                     display: flex;
                     flex-wrap: wrap;
@@ -325,10 +325,17 @@ main {
                         display: flex;
                     }
 
-                    a[role="button"] {
+                    a[role="button"], .button {
                         @include from('desktop') {
                             display: inline-block;
                             margin-bottom: 1em;
+                            width: auto;
+                        }
+                    }
+
+                    .visibility-toggle {
+                        &.active {
+
                         }
                     }
                 }
@@ -370,9 +377,11 @@ main {
                     }
 
                     .illustration {
-                        a {
+                        a, img {
                             display: block;
+                        }
 
+                        a {
                             img {
                                 @include transition-duration(400ms);
                                 display: block;
@@ -396,15 +405,10 @@ main {
                         }
                     }
 
-                    a[role="button"] {
+                    a[role="button"], .button {
                         margin: {
-                            left: 0;
-                            right: 0;
+                            bottom: 1em;
                         }
-
-                        //                        @include from('desktop') {
-                        //                            display: inline-block;
-                        //                        }
                     }
                 }
             }

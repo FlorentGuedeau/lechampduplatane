@@ -24,6 +24,19 @@
         border-right: solid 5px $color-orange;
         width: $sidebar-width;
     }
+
+    a[role="button"], .button {
+        //    font-size: 1em;
+        margin: 0 2em 1em 2em;
+
+        @include from('desktop') {
+            margin: {
+                right: 1em;
+                left: 1em;
+                //                bottom: 0;
+            }
+        }
+    }
 }
 
 [id="menu-button"] {
@@ -122,7 +135,6 @@
     }
 }
 
-
 [id="sticky-sidebar"] {
     padding: {
         top: 1px;
@@ -190,19 +202,6 @@
                 left: inherit;
                 right: inherit;
             }
-        }
-    }
-}
-
-a[role="button"] {
-    font-size: 1em;
-    margin: 0 2em 1em 2em;
-
-    @include from('desktop') {
-        margin: {
-            right: 1em;
-            left: 1em;
-            bottom: 0;
         }
     }
 }

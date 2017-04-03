@@ -62,7 +62,7 @@ label {
 }
 
 [type="submit"] {
-    border:none;
+    border: none;
     display: inline-block;
     text-decoration: none;
     color: #ffffff;
@@ -76,6 +76,7 @@ label {
     }
     position: relative;
     cursor: pointer;
+    line-height: normal;
 
     &::after {
         @include content('\f054');

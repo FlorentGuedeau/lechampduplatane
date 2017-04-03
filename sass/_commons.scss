@@ -136,10 +136,9 @@ a:active, li:active, i:active, input:active, button:active {
     }
 }
 
-
-
-
-a[role="button"] {
+a[role="button"], .button {
+    border: none;
+    line-height: normal;
     display: block;
     text-decoration: none;
     color: #ffffff;
@@ -147,8 +146,10 @@ a[role="button"] {
     border-radius: .2em;
     text-align: center;
     padding: 1em;
-    font-size: 1.1em;
+    //    font-size: 1.1em;
+    font-size: 1em;
     position: relative;
+    width: 100%;
 
     &::after {
         @include content('\f054');

@@ -2777,6 +2777,12 @@ body {
           background-color: #ffffff;
           border-right: solid 5px #ebbe00;
           width: 265px; } }
+      body [id="wrapper"] [id="sidebar"] a[role="button"], body [id="wrapper"] [id="sidebar"] .button {
+        margin: 0 2em 1em 2em; }
+        @media (min-width: 1001px) {
+          body [id="wrapper"] [id="sidebar"] a[role="button"], body [id="wrapper"] [id="sidebar"] .button {
+            margin-right: 1em;
+            margin-left: 1em; } }
     body [id="wrapper"] [id="menu-button"] {
       position: fixed;
       z-index: 15;
@@ -2899,14 +2905,6 @@ body {
             display: inline-block;
             padding-left: inherit;
             padding-right: inherit; } }
-    body [id="wrapper"] a[role="button"] {
-      font-size: 1em;
-      margin: 0 2em 1em 2em; }
-      @media (min-width: 1001px) {
-        body [id="wrapper"] a[role="button"] {
-          margin-right: 1em;
-          margin-left: 1em;
-          margin-bottom: 0; } }
     body [id="wrapper"] ul[role="menubar"] {
       list-style: none;
       margin: 0;
@@ -3017,7 +3015,7 @@ body {
           margin-bottom: 250px; } }
       body [id="wrapper"] main [id="content"] > section {
         margin-bottom: 5em; }
-      body [id="wrapper"] main [id="content"] p, body [id="wrapper"] main [id="content"] li, body [id="wrapper"] main [id="content"] blockquote {
+      body [id="wrapper"] main [id="content"] p, body [id="wrapper"] main [id="content"] li, body [id="wrapper"] main [id="content"] blockquote, body [id="wrapper"] main [id="content"] td, body [id="wrapper"] main [id="content"] th {
         line-height: 1.62; }
       body [id="wrapper"] main [id="content"] img.float-right, body [id="wrapper"] main [id="content"] img.alignright {
         margin-left: 1em;
@@ -3083,6 +3081,10 @@ body {
           top: -1rem;
           left: 1rem;
           line-height: normal; }
+        body [id="wrapper"] main [id="content"] blockquote p:first-child {
+          margin-top: 0; }
+        body [id="wrapper"] main [id="content"] blockquote p:last-child {
+          margin-bottom: 0; }
       body [id="wrapper"] main [id="content"] form > div {
         margin: 1em 0; }
       body [id="wrapper"] main [id="content"] form label {
@@ -3148,7 +3150,8 @@ body {
         font-family: "latoregular", Arial, sans-serif;
         font-size: 1.1em;
         position: relative;
-        cursor: pointer; }
+        cursor: pointer;
+        line-height: normal; }
         body [id="wrapper"] main [id="content"] form [type="submit"]::after {
           content: "";
           font-family: 'FontAwesome';
@@ -3235,43 +3238,6 @@ body {
                   color: #9bc407; }
             body [id="wrapper"] main [id="content"] #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post .jp-relatedposts-post-context {
               margin: 0 0 1em 0; }
-      body [id="wrapper"] main [id="content"] [id="tarif"] {
-        display: -ms-flexbox;
-        display: flex;
-        -ms-flex-wrap: wrap;
-            flex-wrap: wrap;
-        -ms-flex-align: center;
-            align-items: center;
-        background-color: #9bc407;
-        color: #fff;
-        padding: 2rem;
-        -ms-flex-pack: center;
-            justify-content: center;
-        margin-bottom: 2em;
-        margin-top: -1em;
-        text-align: center; }
-        @media (min-width: 1001px) {
-          body [id="wrapper"] main [id="content"] [id="tarif"] {
-            text-align: inherit; } }
-        body [id="wrapper"] main [id="content"] [id="tarif"] > div {
-          font-size: 1.2em; }
-        body [id="wrapper"] main [id="content"] [id="tarif"] .title {
-          display: block;
-          font-size: 2em;
-          margin-right: 8rem;
-          margin-bottom: 2rem; }
-        body [id="wrapper"] main [id="content"] [id="tarif"] a {
-          color: #fff; }
-          body [id="wrapper"] main [id="content"] [id="tarif"] a:visited {
-            color: #fff; }
-          body [id="wrapper"] main [id="content"] [id="tarif"] a:focus {
-            color: #333b3b; }
-          body [id="wrapper"] main [id="content"] [id="tarif"] a:hover {
-            color: #333b3b; }
-          body [id="wrapper"] main [id="content"] [id="tarif"] a:active {
-            color: #00a8ec; }
-        body [id="wrapper"] main [id="content"] [id="tarif"] p {
-          margin: 0; }
       body [id="wrapper"] main [id="content"] > section[id="contact"] .cols {
         display: -ms-flexbox;
         display: flex;
@@ -3289,7 +3255,7 @@ body {
             margin-top: 1rem; }
         body [id="wrapper"] main [id="content"] > section[id="contact"] .cols i {
           margin-right: 0.2em; }
-      body [id="wrapper"] main [id="content"] > section[id="realisations"] .cols, body [id="wrapper"] main [id="content"] > section[id="search"] .cols {
+      body [id="wrapper"] main [id="content"] > section[id="realisations"] .cols, body [id="wrapper"] main [id="content"] > section[id="search"] .cols, body [id="wrapper"] main [id="content"] > section[id="service"] .cols {
         display: -ms-flexbox;
         display: flex;
         -ms-flex-wrap: wrap;
@@ -3297,33 +3263,34 @@ body {
         -ms-flex-pack: center;
             justify-content: center; }
         @media (min-width: 1001px) {
-          body [id="wrapper"] main [id="content"] > section[id="realisations"] .cols, body [id="wrapper"] main [id="content"] > section[id="search"] .cols {
+          body [id="wrapper"] main [id="content"] > section[id="realisations"] .cols, body [id="wrapper"] main [id="content"] > section[id="search"] .cols, body [id="wrapper"] main [id="content"] > section[id="service"] .cols {
             display: block; } }
-        body [id="wrapper"] main [id="content"] > section[id="realisations"] .cols > article, body [id="wrapper"] main [id="content"] > section[id="realisations"] .cols .article, body [id="wrapper"] main [id="content"] > section[id="search"] .cols > article, body [id="wrapper"] main [id="content"] > section[id="search"] .cols .article {
+        body [id="wrapper"] main [id="content"] > section[id="realisations"] .cols > article, body [id="wrapper"] main [id="content"] > section[id="realisations"] .cols .article, body [id="wrapper"] main [id="content"] > section[id="search"] .cols > article, body [id="wrapper"] main [id="content"] > section[id="search"] .cols .article, body [id="wrapper"] main [id="content"] > section[id="service"] .cols > article, body [id="wrapper"] main [id="content"] > section[id="service"] .cols .article {
           margin: .5em; }
           @media (min-width: 1001px) {
-            body [id="wrapper"] main [id="content"] > section[id="realisations"] .cols > article, body [id="wrapper"] main [id="content"] > section[id="realisations"] .cols .article, body [id="wrapper"] main [id="content"] > section[id="search"] .cols > article, body [id="wrapper"] main [id="content"] > section[id="search"] .cols .article {
+            body [id="wrapper"] main [id="content"] > section[id="realisations"] .cols > article, body [id="wrapper"] main [id="content"] > section[id="realisations"] .cols .article, body [id="wrapper"] main [id="content"] > section[id="search"] .cols > article, body [id="wrapper"] main [id="content"] > section[id="search"] .cols .article, body [id="wrapper"] main [id="content"] > section[id="service"] .cols > article, body [id="wrapper"] main [id="content"] > section[id="service"] .cols .article {
               margin: 0;
               margin-bottom: 1.5em; }
-              body [id="wrapper"] main [id="content"] > section[id="realisations"] .cols > article:last-child, body [id="wrapper"] main [id="content"] > section[id="realisations"] .cols .article:last-child, body [id="wrapper"] main [id="content"] > section[id="search"] .cols > article:last-child, body [id="wrapper"] main [id="content"] > section[id="search"] .cols .article:last-child {
+              body [id="wrapper"] main [id="content"] > section[id="realisations"] .cols > article:last-child, body [id="wrapper"] main [id="content"] > section[id="realisations"] .cols .article:last-child, body [id="wrapper"] main [id="content"] > section[id="search"] .cols > article:last-child, body [id="wrapper"] main [id="content"] > section[id="search"] .cols .article:last-child, body [id="wrapper"] main [id="content"] > section[id="service"] .cols > article:last-child, body [id="wrapper"] main [id="content"] > section[id="service"] .cols .article:last-child {
                 margin-bottom: 0; } }
           @media (min-width: 1001px) {
-            body [id="wrapper"] main [id="content"] > section[id="realisations"] .cols > article .illustration, body [id="wrapper"] main [id="content"] > section[id="realisations"] .cols .article .illustration, body [id="wrapper"] main [id="content"] > section[id="search"] .cols > article .illustration, body [id="wrapper"] main [id="content"] > section[id="search"] .cols .article .illustration {
+            body [id="wrapper"] main [id="content"] > section[id="realisations"] .cols > article .illustration, body [id="wrapper"] main [id="content"] > section[id="realisations"] .cols .article .illustration, body [id="wrapper"] main [id="content"] > section[id="search"] .cols > article .illustration, body [id="wrapper"] main [id="content"] > section[id="search"] .cols .article .illustration, body [id="wrapper"] main [id="content"] > section[id="service"] .cols > article .illustration, body [id="wrapper"] main [id="content"] > section[id="service"] .cols .article .illustration {
               -ms-flex-negative: 0;
                   flex-shrink: 0; } }
-      body [id="wrapper"] main [id="content"] > section[id="realisations"] article, body [id="wrapper"] main [id="content"] > section[id="realisations"] .article, body [id="wrapper"] main [id="content"] > section[id="search"] article, body [id="wrapper"] main [id="content"] > section[id="search"] .article {
+      body [id="wrapper"] main [id="content"] > section[id="realisations"] article, body [id="wrapper"] main [id="content"] > section[id="realisations"] .article, body [id="wrapper"] main [id="content"] > section[id="search"] article, body [id="wrapper"] main [id="content"] > section[id="search"] .article, body [id="wrapper"] main [id="content"] > section[id="service"] article, body [id="wrapper"] main [id="content"] > section[id="service"] .article {
         max-width: 280px;
         box-shadow: 0 0px 3px rgba(0, 0, 0, 0.2);
         background-color: #ffffff; }
         @media (min-width: 1001px) {
-          body [id="wrapper"] main [id="content"] > section[id="realisations"] article, body [id="wrapper"] main [id="content"] > section[id="realisations"] .article, body [id="wrapper"] main [id="content"] > section[id="search"] article, body [id="wrapper"] main [id="content"] > section[id="search"] .article {
+          body [id="wrapper"] main [id="content"] > section[id="realisations"] article, body [id="wrapper"] main [id="content"] > section[id="realisations"] .article, body [id="wrapper"] main [id="content"] > section[id="search"] article, body [id="wrapper"] main [id="content"] > section[id="search"] .article, body [id="wrapper"] main [id="content"] > section[id="service"] article, body [id="wrapper"] main [id="content"] > section[id="service"] .article {
             max-width: none;
             display: -ms-flexbox;
             display: flex; } }
         @media (min-width: 1001px) {
-          body [id="wrapper"] main [id="content"] > section[id="realisations"] article a[role="button"], body [id="wrapper"] main [id="content"] > section[id="realisations"] .article a[role="button"], body [id="wrapper"] main [id="content"] > section[id="search"] article a[role="button"], body [id="wrapper"] main [id="content"] > section[id="search"] .article a[role="button"] {
+          body [id="wrapper"] main [id="content"] > section[id="realisations"] article a[role="button"], body [id="wrapper"] main [id="content"] > section[id="realisations"] article .button, body [id="wrapper"] main [id="content"] > section[id="realisations"] .article a[role="button"], body [id="wrapper"] main [id="content"] > section[id="realisations"] .article .button, body [id="wrapper"] main [id="content"] > section[id="search"] article a[role="button"], body [id="wrapper"] main [id="content"] > section[id="search"] article .button, body [id="wrapper"] main [id="content"] > section[id="search"] .article a[role="button"], body [id="wrapper"] main [id="content"] > section[id="search"] .article .button, body [id="wrapper"] main [id="content"] > section[id="service"] article a[role="button"], body [id="wrapper"] main [id="content"] > section[id="service"] article .button, body [id="wrapper"] main [id="content"] > section[id="service"] .article a[role="button"], body [id="wrapper"] main [id="content"] > section[id="service"] .article .button {
             display: inline-block;
-            margin-bottom: 1em; } }
+            margin-bottom: 1em;
+            width: auto; } }
       body [id="wrapper"] main [id="content"] > section[id="services"] .cols {
         display: -ms-flexbox;
         display: flex;
@@ -3343,13 +3310,13 @@ body {
       body [id="wrapper"] main [id="content"] > section.archive article .content-article, body [id="wrapper"] main [id="content"] > section.archive .article .content-article {
         padding-left: 1em;
         padding-right: 1em; }
-      body [id="wrapper"] main [id="content"] > section.archive article .illustration a, body [id="wrapper"] main [id="content"] > section.archive .article .illustration a {
+      body [id="wrapper"] main [id="content"] > section.archive article .illustration a, body [id="wrapper"] main [id="content"] > section.archive article .illustration img, body [id="wrapper"] main [id="content"] > section.archive .article .illustration a, body [id="wrapper"] main [id="content"] > section.archive .article .illustration img {
         display: block; }
-        body [id="wrapper"] main [id="content"] > section.archive article .illustration a img, body [id="wrapper"] main [id="content"] > section.archive .article .illustration a img {
-          transition-duration: 400ms;
-          display: block; }
-        body [id="wrapper"] main [id="content"] > section.archive article .illustration a:not(.reverside):hover img, body [id="wrapper"] main [id="content"] > section.archive article .illustration a:not(.reverside):focus img, body [id="wrapper"] main [id="content"] > section.archive .article .illustration a:not(.reverside):hover img, body [id="wrapper"] main [id="content"] > section.archive .article .illustration a:not(.reverside):focus img {
-          opacity: .5; }
+      body [id="wrapper"] main [id="content"] > section.archive article .illustration a img, body [id="wrapper"] main [id="content"] > section.archive .article .illustration a img {
+        transition-duration: 400ms;
+        display: block; }
+      body [id="wrapper"] main [id="content"] > section.archive article .illustration a:not(.reverside):hover img, body [id="wrapper"] main [id="content"] > section.archive article .illustration a:not(.reverside):focus img, body [id="wrapper"] main [id="content"] > section.archive .article .illustration a:not(.reverside):hover img, body [id="wrapper"] main [id="content"] > section.archive .article .illustration a:not(.reverside):focus img {
+        opacity: .5; }
       body [id="wrapper"] main [id="content"] > section.archive article h2 a, body [id="wrapper"] main [id="content"] > section.archive .article h2 a {
         text-decoration: none;
         color: #000; }
@@ -3361,9 +3328,8 @@ body {
           color: #ebbe00; }
         body [id="wrapper"] main [id="content"] > section.archive article h2 a:active, body [id="wrapper"] main [id="content"] > section.archive .article h2 a:active {
           color: #9bc407; }
-      body [id="wrapper"] main [id="content"] > section.archive article a[role="button"], body [id="wrapper"] main [id="content"] > section.archive .article a[role="button"] {
-        margin-left: 0;
-        margin-right: 0; }
+      body [id="wrapper"] main [id="content"] > section.archive article a[role="button"], body [id="wrapper"] main [id="content"] > section.archive article .button, body [id="wrapper"] main [id="content"] > section.archive .article a[role="button"], body [id="wrapper"] main [id="content"] > section.archive .article .button {
+        margin-bottom: 1em; }
     body [id="wrapper"] main [id="breadcrumbs"] {
       font-size: .8em;
       margin-bottom: -1em;
@@ -3501,7 +3467,7 @@ body {
             -ms-flex-pack: justify;
                 justify-content: space-between;
             margin-top: auto; } }
-        body.landing #wrapper main > div a[role="button"] {
+        body.landing #wrapper main > div a[role="button"], body.landing #wrapper main > div button {
           margin: 1em 0; }
   body a, body li, body i, body input, body textarea, body button {
     transition-duration: 0.4s; }
@@ -3588,7 +3554,9 @@ body {
       border: solid 1px #bee1f3;
       background-color: #d9edf7;
       display: block; }
-  body a[role="button"] {
+  body a[role="button"], body .button {
+    border: none;
+    line-height: normal;
     display: block;
     text-decoration: none;
     color: #ffffff;
@@ -3596,9 +3564,10 @@ body {
     border-radius: .2em;
     text-align: center;
     padding: 1em;
-    font-size: 1.1em;
-    position: relative; }
-    body a[role="button"]::after {
+    font-size: 1em;
+    position: relative;
+    width: 100%; }
+    body a[role="button"]::after, body .button::after {
       content: "";
       font-family: 'FontAwesome';
       font-size: 1em;
@@ -3608,11 +3577,11 @@ body {
       *zoom: 1;
       *display: inline;
       margin-left: 1em; }
-    body a[role="button"]:hover, body a[role="button"]:focus {
+    body a[role="button"]:hover, body a[role="button"]:focus, body .button:hover, body .button:focus {
       background-color: #4d6203; }
-    body a[role="button"]:active {
+    body a[role="button"]:active, body .button:active {
       background-color: #263002; }
-    body a[role="button"].is-loading::after {
+    body a[role="button"].is-loading::after, body .button.is-loading::after {
       content: "";
       animation: spin 2s linear infinite; }
 @keyframes spin {
