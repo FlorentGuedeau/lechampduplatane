@@ -72,6 +72,7 @@ main {
             }
             font: {
                 weight: bold;
+                size: 2em;
             }
         }
 
@@ -213,7 +214,7 @@ main {
                     }
 
                     .jp-relatedposts-post-context {
-                        margin: 0 0 1em 0;
+                        margin: 0 1em 1em 1em;
                     }
                 }
             }
@@ -285,7 +286,7 @@ main {
                 }
             }
 
-            &[id="realisations"], &[id="search"], &[id="service"] {
+            &[id="realisations"], &[id="search"] {
                 .cols {
                     display: flex;
                     flex-wrap: wrap;
@@ -326,6 +327,12 @@ main {
                     }
 
                     a[role="button"], .button {
+                        &.active {
+                            &::after {
+                                transform: rotate(-90deg);
+                            }
+                        }
+
                         @include from('desktop') {
                             display: inline-block;
                             margin-bottom: 1em;
@@ -334,14 +341,12 @@ main {
                     }
 
                     .visibility-toggle {
-                        &.active {
-
-                        }
+                        padding: 1px 0; // Hack pour éviter le sur saut au toggle
                     }
                 }
             }
 
-            &[id="services"] {
+            &[id="services"], &[id="service"] {
                 .cols {
                     display: flex;
                     flex-wrap: wrap;
@@ -364,6 +369,24 @@ main {
                             }
                         }
                     }
+
+                    .visibility-toggle {
+                        padding: 1px 0; // Hack pour éviter le sur saut au toggle
+                    }
+
+                    a[role="button"], .button {
+                        &.active {
+                            &::after {
+                                transform: rotate(-90deg);
+                            }
+                        }
+                    }
+                }
+            }
+
+            &[id="service"] {
+                .cols {
+                    align-items: flex-start;
                 }
             }
 

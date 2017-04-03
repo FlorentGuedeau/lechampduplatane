@@ -150,8 +150,10 @@ a[role="button"], .button {
     font-size: 1em;
     position: relative;
     width: 100%;
+    cursor: pointer;
 
     &::after {
+        transition-duration: 0.4s;
         @include content('\f054');
         font: {
             family: 'FontAwesome';
@@ -169,6 +171,11 @@ a[role="button"], .button {
 
     &:active {
         background-color: darken($color-green, 30%);
+
+        //        &::after {
+        //            @include content('\f110');
+        //            animation: spin 2s linear infinite;
+        //        }
     }
 
     &.is-loading {

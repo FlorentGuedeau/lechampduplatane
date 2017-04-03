@@ -38,7 +38,7 @@
 
         <footer>
             <a <?php if( has_post_thumbnail() ) : ?>itemprop="url"<?php endif; ?> role="button" href="<?php the_permalink() ?>" title="Cliquez ici pour en savoir plus">En savoir plus</a>
-            <?php edit_post_link('Modifier l\'article', '<p class="edit-post-link">', '</p>'); ?>
+            <?php edit_post_link('Modifier l\'article', '/// <span class="edit-post-link">', '</span>'); ?>
         </footer>
     </div>
 </article>

@@ -41,9 +41,9 @@ jQuery(document).ready(function(){
         //change la valeur de aria-pressed quand le bouton est basculé :
         $(this).attr("aria-pressed", pressed ? "false" : "true");
 
-        $(this).toggleClass('active');
-        $(this).blur();
-        $(this).parent().find('ul').slideToggle();
+        $(this).stop( true, true ).toggleClass('active');
+        $(this).blur(); // Supprime le focus
+        $(this).parent().find('ul').stop( true, true ).slideToggle();
 
         var item = $(this).parent('li').find('> a').text();
 
@@ -61,8 +61,8 @@ jQuery(document).ready(function(){
             //change la valeur de aria-pressed quand le bouton est basculé :
             $(this).attr("aria-pressed", pressed ? "false" : "true");
 
-            $(this).toggleClass('active');
-            $(this).parent().find('ul').slideToggle();
+            $(this).stop( true, true ).toggleClass('active');
+            $(this).parent().find('ul').stop( true, true ).slideToggle();
 
             var item = $(this).parent('li').find('> a').text();
 
@@ -82,9 +82,9 @@ jQuery(document).ready(function(){
         var pressed = $(this).attr("aria-pressed") == "true";
         //change la valeur de aria-pressed quand le bouton est basculé :
         $(this).attr("aria-pressed", pressed ? "false" : "true");
-
-        $(this).toggleClass('active');
-        $('#sidebar').toggleClass('active');
+        $(this).blur(); // Supprime le focus
+        $(this).stop( true, true ).toggleClass('active');
+        $('#sidebar').stop( true, true ).toggleClass('active');
 
         e.preventDefault();
     });
@@ -99,8 +99,19 @@ jQuery(document).ready(function(){
     // Bouton en voir plus dans Nos services
     $('section#service').find('.article').find('.visibility-toggle').fadeOut();
     $('section#service').find('.article').find('.button').on('click', function() {
-        $('section#service').find('.article').find('.visibility-toggle').slideToggle('slow'); 
-        $('section#service').find('.article').find('.visibility-toggle').toggleClass('active'); 
+        var $btn = $(this);
+        $btn.parents('.content-article').find('.visibility-toggle').stop( true, true ).slideToggle('slow', function(){
+            $btn.blur(); // Supprime le focus
+            $btn.toggleClass('active');
+
+            if( $btn.hasClass('active') ) {
+                $btn.attr("title", "Cliquez ici pour en voir moins");
+                $btn.html("En voir moins");
+            } else {
+                $btn.attr("title", "Cliquez ici pour en voir plus");
+                $btn.html("En voir plus");
+            }
+        }); 
     });
 });
 

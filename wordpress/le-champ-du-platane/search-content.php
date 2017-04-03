@@ -20,7 +20,7 @@
 
         <footer>
             <a role="button" href="<?php the_permalink() ?>" title="Cliquez ici pour en savoir plus">En savoir plus</a>
-            <?php edit_post_link('Modifier ce contenu', '<p class="edit-post-link">', '</p>'); ?>
+            <?php edit_post_link('Modifier ce contenu', ' /// <span class="edit-post-link">', '</span>'); ?>
         </footer>
     </div>
 </div>

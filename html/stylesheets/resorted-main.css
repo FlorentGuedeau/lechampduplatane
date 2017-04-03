@@ -4386,6 +4386,20 @@ body [id='wrapper'] [id='sidebar'].active
         background-color: #fff;
     }
 }
+body [id='wrapper'] [id='sidebar'] a[role='button'],
+body [id='wrapper'] [id='sidebar'] .button
+{
+    margin: 0 2em 1em 2em;
+}
+@media (min-width: 1001px)
+{
+    body [id='wrapper'] [id='sidebar'] a[role='button'],
+    body [id='wrapper'] [id='sidebar'] .button
+    {
+        margin-right: 1em;
+        margin-left: 1em;
+    }
+}
 body [id='wrapper'] [id='menu-button']
 {
     font-family: 'latoregular', Arial, sans-serif;
@@ -4610,21 +4624,6 @@ body [id='wrapper'] .main-logo a:active
 
         padding-right: inherit; 
         padding-left: inherit;
-    }
-}
-body [id='wrapper'] a[role='button']
-{
-    font-size: 1em;
-
-    margin: 0 2em 1em 2em;
-}
-@media (min-width: 1001px)
-{
-    body [id='wrapper'] a[role='button']
-    {
-        margin-right: 1em;
-        margin-bottom: 0; 
-        margin-left: 1em;
     }
 }
 body [id='wrapper'] ul[role='menubar']
@@ -5223,6 +5222,7 @@ body [id='wrapper'] main [id='content'] form [type='submit']
 {
     font-family: 'latoregular', Arial, sans-serif;
     font-size: 1.1em;
+    line-height: normal; 
 
     position: relative;
 
@@ -5230,7 +5230,7 @@ body [id='wrapper'] main [id='content'] form [type='submit']
 
     padding: 1em;
 
-    cursor: pointer; 
+    cursor: pointer;
     text-align: center;
     text-decoration: none;
 
@@ -5400,71 +5400,6 @@ body [id='wrapper'] main [id='content'] #jp-relatedposts .jp-relatedposts-items 
 {
     margin: 0 0 1em 0;
 }
-body [id='wrapper'] main [id='content'] [id='tarif']
-{
-    display: -ms-flexbox;
-    display: flex;
-
-    margin-top: -1em;
-    margin-bottom: 2em;
-    padding: 2rem;
-
-    text-align: center; 
-
-    color: #fff;
-    background-color: #9bc407;
-
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    -ms-flex-align: center;
-    align-items: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-}
-@media (min-width: 1001px)
-{
-    body [id='wrapper'] main [id='content'] [id='tarif']
-    {
-        text-align: inherit;
-    }
-}
-body [id='wrapper'] main [id='content'] [id='tarif'] > div
-{
-    font-size: 1.2em;
-}
-body [id='wrapper'] main [id='content'] [id='tarif'] .title
-{
-    font-size: 2em;
-
-    display: block;
-
-    margin-right: 8rem;
-    margin-bottom: 2rem;
-}
-body [id='wrapper'] main [id='content'] [id='tarif'] a
-{
-    color: #fff;
-}
-body [id='wrapper'] main [id='content'] [id='tarif'] a:visited
-{
-    color: #fff;
-}
-body [id='wrapper'] main [id='content'] [id='tarif'] a:focus
-{
-    color: #333b3b;
-}
-body [id='wrapper'] main [id='content'] [id='tarif'] a:hover
-{
-    color: #333b3b;
-}
-body [id='wrapper'] main [id='content'] [id='tarif'] a:active
-{
-    color: #00a8ec;
-}
-body [id='wrapper'] main [id='content'] [id='tarif'] p
-{
-    margin: 0;
-}
 body [id='wrapper'] main [id='content'] > section[id='contact'] .cols
 {
     display: -ms-flexbox;
@@ -5496,7 +5431,8 @@ body [id='wrapper'] main [id='content'] > section[id='contact'] .cols i
     margin-right: .2em;
 }
 body [id='wrapper'] main [id='content'] > section[id='realisations'] .cols,
-body [id='wrapper'] main [id='content'] > section[id='search'] .cols
+body [id='wrapper'] main [id='content'] > section[id='search'] .cols,
+body [id='wrapper'] main [id='content'] > section[id='service'] .cols
 {
     display: -ms-flexbox;
     display: flex;
@@ -5509,7 +5445,8 @@ body [id='wrapper'] main [id='content'] > section[id='search'] .cols
 @media (min-width: 1001px)
 {
     body [id='wrapper'] main [id='content'] > section[id='realisations'] .cols,
-    body [id='wrapper'] main [id='content'] > section[id='search'] .cols
+    body [id='wrapper'] main [id='content'] > section[id='search'] .cols,
+    body [id='wrapper'] main [id='content'] > section[id='service'] .cols
     {
         display: block;
     }
@@ -5517,7 +5454,9 @@ body [id='wrapper'] main [id='content'] > section[id='search'] .cols
 body [id='wrapper'] main [id='content'] > section[id='realisations'] .cols > article,
 body [id='wrapper'] main [id='content'] > section[id='realisations'] .cols .article,
 body [id='wrapper'] main [id='content'] > section[id='search'] .cols > article,
-body [id='wrapper'] main [id='content'] > section[id='search'] .cols .article
+body [id='wrapper'] main [id='content'] > section[id='search'] .cols .article,
+body [id='wrapper'] main [id='content'] > section[id='service'] .cols > article,
+body [id='wrapper'] main [id='content'] > section[id='service'] .cols .article
 {
     margin: .5em;
 }
@@ -5526,7 +5465,9 @@ body [id='wrapper'] main [id='content'] > section[id='search'] .cols .article
     body [id='wrapper'] main [id='content'] > section[id='realisations'] .cols > article,
     body [id='wrapper'] main [id='content'] > section[id='realisations'] .cols .article,
     body [id='wrapper'] main [id='content'] > section[id='search'] .cols > article,
-    body [id='wrapper'] main [id='content'] > section[id='search'] .cols .article
+    body [id='wrapper'] main [id='content'] > section[id='search'] .cols .article,
+    body [id='wrapper'] main [id='content'] > section[id='service'] .cols > article,
+    body [id='wrapper'] main [id='content'] > section[id='service'] .cols .article
     {
         margin: 0;
         margin-bottom: 1.5em;
@@ -5534,7 +5475,9 @@ body [id='wrapper'] main [id='content'] > section[id='search'] .cols .article
     body [id='wrapper'] main [id='content'] > section[id='realisations'] .cols > article:last-child,
     body [id='wrapper'] main [id='content'] > section[id='realisations'] .cols .article:last-child,
     body [id='wrapper'] main [id='content'] > section[id='search'] .cols > article:last-child,
-    body [id='wrapper'] main [id='content'] > section[id='search'] .cols .article:last-child
+    body [id='wrapper'] main [id='content'] > section[id='search'] .cols .article:last-child,
+    body [id='wrapper'] main [id='content'] > section[id='service'] .cols > article:last-child,
+    body [id='wrapper'] main [id='content'] > section[id='service'] .cols .article:last-child
     {
         margin-bottom: 0;
     }
@@ -5544,7 +5487,9 @@ body [id='wrapper'] main [id='content'] > section[id='search'] .cols .article
     body [id='wrapper'] main [id='content'] > section[id='realisations'] .cols > article .illustration,
     body [id='wrapper'] main [id='content'] > section[id='realisations'] .cols .article .illustration,
     body [id='wrapper'] main [id='content'] > section[id='search'] .cols > article .illustration,
-    body [id='wrapper'] main [id='content'] > section[id='search'] .cols .article .illustration
+    body [id='wrapper'] main [id='content'] > section[id='search'] .cols .article .illustration,
+    body [id='wrapper'] main [id='content'] > section[id='service'] .cols > article .illustration,
+    body [id='wrapper'] main [id='content'] > section[id='service'] .cols .article .illustration
     {
         -ms-flex-negative: 0;
         flex-shrink: 0;
@@ -5553,7 +5498,9 @@ body [id='wrapper'] main [id='content'] > section[id='search'] .cols .article
 body [id='wrapper'] main [id='content'] > section[id='realisations'] article,
 body [id='wrapper'] main [id='content'] > section[id='realisations'] .article,
 body [id='wrapper'] main [id='content'] > section[id='search'] article,
-body [id='wrapper'] main [id='content'] > section[id='search'] .article
+body [id='wrapper'] main [id='content'] > section[id='search'] .article,
+body [id='wrapper'] main [id='content'] > section[id='service'] article,
+body [id='wrapper'] main [id='content'] > section[id='service'] .article
 {
     max-width: 280px;
 
@@ -5565,7 +5512,9 @@ body [id='wrapper'] main [id='content'] > section[id='search'] .article
     body [id='wrapper'] main [id='content'] > section[id='realisations'] article,
     body [id='wrapper'] main [id='content'] > section[id='realisations'] .article,
     body [id='wrapper'] main [id='content'] > section[id='search'] article,
-    body [id='wrapper'] main [id='content'] > section[id='search'] .article
+    body [id='wrapper'] main [id='content'] > section[id='search'] .article,
+    body [id='wrapper'] main [id='content'] > section[id='service'] article,
+    body [id='wrapper'] main [id='content'] > section[id='service'] .article
     {
         display: -ms-flexbox;
         display: flex; 
@@ -5576,12 +5525,21 @@ body [id='wrapper'] main [id='content'] > section[id='search'] .article
 @media (min-width: 1001px)
 {
     body [id='wrapper'] main [id='content'] > section[id='realisations'] article a[role='button'],
+    body [id='wrapper'] main [id='content'] > section[id='realisations'] article .button,
     body [id='wrapper'] main [id='content'] > section[id='realisations'] .article a[role='button'],
+    body [id='wrapper'] main [id='content'] > section[id='realisations'] .article .button,
     body [id='wrapper'] main [id='content'] > section[id='search'] article a[role='button'],
-    body [id='wrapper'] main [id='content'] > section[id='search'] .article a[role='button']
+    body [id='wrapper'] main [id='content'] > section[id='search'] article .button,
+    body [id='wrapper'] main [id='content'] > section[id='search'] .article a[role='button'],
+    body [id='wrapper'] main [id='content'] > section[id='search'] .article .button,
+    body [id='wrapper'] main [id='content'] > section[id='service'] article a[role='button'],
+    body [id='wrapper'] main [id='content'] > section[id='service'] article .button,
+    body [id='wrapper'] main [id='content'] > section[id='service'] .article a[role='button'],
+    body [id='wrapper'] main [id='content'] > section[id='service'] .article .button
     {
         display: inline-block;
 
+        width: auto; 
         margin-bottom: 1em;
     }
 }
@@ -5620,7 +5578,9 @@ body [id='wrapper'] main [id='content'] > section.archive .article .content-arti
     padding-left: 1em;
 }
 body [id='wrapper'] main [id='content'] > section.archive article .illustration a,
-body [id='wrapper'] main [id='content'] > section.archive .article .illustration a
+body [id='wrapper'] main [id='content'] > section.archive article .illustration img,
+body [id='wrapper'] main [id='content'] > section.archive .article .illustration a,
+body [id='wrapper'] main [id='content'] > section.archive .article .illustration img
 {
     display: block;
 }
@@ -5666,10 +5626,11 @@ body [id='wrapper'] main [id='content'] > section.archive .article h2 a:active
     color: #9bc407;
 }
 body [id='wrapper'] main [id='content'] > section.archive article a[role='button'],
-body [id='wrapper'] main [id='content'] > section.archive .article a[role='button']
+body [id='wrapper'] main [id='content'] > section.archive article .button,
+body [id='wrapper'] main [id='content'] > section.archive .article a[role='button'],
+body [id='wrapper'] main [id='content'] > section.archive .article .button
 {
-    margin-right: 0; 
-    margin-left: 0;
+    margin-bottom: 1em;
 }
 body [id='wrapper'] main [id='breadcrumbs']
 {
@@ -5924,7 +5885,8 @@ body.landing #wrapper main > div
         justify-content: space-between;
     }
 }
-body.landing #wrapper main > div a[role='button']
+body.landing #wrapper main > div a[role='button'],
+body.landing #wrapper main > div button
 {
     margin: 1em 0;
 }
@@ -6107,24 +6069,29 @@ body .wpcf7-response-output.highlight
     border: solid 1px #bee1f3;
     background-color: #d9edf7;
 }
-body a[role='button']
+body a[role='button'],
+body .button
 {
-    font-size: 1.1em;
+    font-size: 1em;
+    line-height: normal;
 
-    position: relative; 
+    position: relative;
 
     display: block;
 
+    width: 100%; 
     padding: 1em;
 
     text-align: center;
     text-decoration: none;
 
     color: #fff;
+    border: none;
     border-radius: .2em;
     background-color: #9bc407;
 }
-body a[role='button']::after
+body a[role='button']::after,
+body .button::after
 {
     font-family: 'FontAwesome';
     font-size: 1em;
@@ -6141,15 +6108,19 @@ body a[role='button']::after
     *display: inline;
 }
 body a[role='button']:hover,
-body a[role='button']:focus
+body a[role='button']:focus,
+body .button:hover,
+body .button:focus
 {
     background-color: #4d6203;
 }
-body a[role='button']:active
+body a[role='button']:active,
+body .button:active
 {
     background-color: #263002;
 }
-body a[role='button'].is-loading::after
+body a[role='button'].is-loading::after,
+body .button.is-loading::after
 {
     content: '';
     animation: spin 2s linear infinite;

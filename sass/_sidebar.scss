@@ -30,6 +30,7 @@
         margin: 0 2em 1em 2em;
 
         @include from('desktop') {
+            width: auto;
             margin: {
                 right: 1em;
                 left: 1em;
@@ -253,12 +254,14 @@ ul[role="menubar"] {
 
         span[role="button"] {
             position: absolute;
-            top: 1px;
+            //            top: 1px;
+            top: 0;
             right: 0;
             display: flex;
             align-items: center;
             cursor: pointer;
-            padding: 0.8em 1em;
+            //            padding: 0.8em 1em;
+            padding: 0.75em 1em;
             background-color: #F1F1F1;
             z-index: 10;
             @include transition-duration(400ms);
