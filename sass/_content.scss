@@ -22,7 +22,7 @@ main {
             }
         }
 
-        p, li, blockquote {
+        p, li, blockquote, td, th {
             line-height: $golden-ratio;
         }
 
