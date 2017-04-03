@@ -115,6 +115,16 @@ main {
                 left: 1rem;
                 line-height: normal;
             }
+            
+                p {
+        &:first-child {
+            margin-top: 0;
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
         }
 
         form {
