@@ -256,6 +256,116 @@ main {
         //            }
         //        }
 
+        [id="tarifs"] {
+            table {
+                border-collapse: collapse;
+                margin: {
+                    left: auto;
+                    right: auto;
+                }
+                table-layout: fixed;
+                width: 100%;
+
+                thead {
+                    text-align: center;
+
+                    tr {
+                        th {
+                            background-color: #fff;
+                            border: solid 3px #F1F1F1;
+                            font-size: 1.1em;
+
+                            &:first-child {
+                                background-color: transparent;
+                                //                                width: 10%;
+                            }
+                        }
+                    }
+                }
+
+                tbody {
+                    text-align: center;
+
+                    tr {
+                        td {
+                            border: solid 3px #F1F1F1;
+                            background-color: #fff;
+
+                            &:first-child {
+                                font-weight: bold;
+                                font-size: 1.1em;
+                                //                                width: 10%;
+                            }
+                        }
+                        //                        &:nth-child(even) {
+                        //                            td {
+                        //                                background-color: #fff;
+                        //                                border: solid 3px #F1F1F1;
+                        //
+                        //                                &:first-child {
+                        //                                    background-color: transparent;
+                        //                                }
+                        //                            }
+                        //                        }
+                    }
+                }
+
+                tfoot {
+                    text-align: center;
+
+                    td {
+                        &:not(:empty) {
+                            background-color: #fff;
+                            border: solid 3px #F1F1F1;
+                        }
+                        //                        padding: {
+                        //                            top: 3rem;
+                        //                        }
+
+                        &:last-child {
+                            background-color: transparent;
+                        }
+                    }
+
+                    [role="button"] {
+                        margin: 1em 0;
+                    }
+                }
+
+                tr {
+
+                }
+
+                td, th {
+                    padding: 1rem 2rem;
+                }
+
+                td {
+                    &:first-child {
+                        white-space: nowrap;
+                    }
+                }
+
+                th {
+                    white-space: nowrap;
+                }
+
+                .price {
+                    display: block;
+                    font-size: 2em;
+                    color: $color-orange;
+                }
+
+                i {
+                    font-size: 1.2em;
+
+                    &.fa-check {
+                        color: $color-green;
+                    }
+                }
+            }
+        }
+
         > section {
             &[id="contact"] {
                 .cols {

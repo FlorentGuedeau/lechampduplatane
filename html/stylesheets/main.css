@@ -3240,6 +3240,51 @@ body {
                   color: #9bc407; }
             body [id="wrapper"] main [id="content"] #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post .jp-relatedposts-post-context {
               margin: 0 1em 1em 1em; }
+      body [id="wrapper"] main [id="content"] [id="tarifs"] table {
+        border-collapse: collapse;
+        margin-left: auto;
+        margin-right: auto;
+        table-layout: fixed;
+        width: 100%; }
+        body [id="wrapper"] main [id="content"] [id="tarifs"] table thead {
+          text-align: center; }
+          body [id="wrapper"] main [id="content"] [id="tarifs"] table thead tr th {
+            background-color: #fff;
+            border: solid 3px #F1F1F1;
+            font-size: 1.1em; }
+            body [id="wrapper"] main [id="content"] [id="tarifs"] table thead tr th:first-child {
+              background-color: transparent; }
+        body [id="wrapper"] main [id="content"] [id="tarifs"] table tbody {
+          text-align: center; }
+          body [id="wrapper"] main [id="content"] [id="tarifs"] table tbody tr td {
+            border: solid 3px #F1F1F1;
+            background-color: #fff; }
+            body [id="wrapper"] main [id="content"] [id="tarifs"] table tbody tr td:first-child {
+              font-weight: bold;
+              font-size: 1.1em; }
+        body [id="wrapper"] main [id="content"] [id="tarifs"] table tfoot {
+          text-align: center; }
+          body [id="wrapper"] main [id="content"] [id="tarifs"] table tfoot td:not(:empty) {
+            background-color: #fff;
+            border: solid 3px #F1F1F1; }
+          body [id="wrapper"] main [id="content"] [id="tarifs"] table tfoot td:last-child {
+            background-color: transparent; }
+          body [id="wrapper"] main [id="content"] [id="tarifs"] table tfoot [role="button"] {
+            margin: 1em 0; }
+        body [id="wrapper"] main [id="content"] [id="tarifs"] table td, body [id="wrapper"] main [id="content"] [id="tarifs"] table th {
+          padding: 1rem 2rem; }
+        body [id="wrapper"] main [id="content"] [id="tarifs"] table td:first-child {
+          white-space: nowrap; }
+        body [id="wrapper"] main [id="content"] [id="tarifs"] table th {
+          white-space: nowrap; }
+        body [id="wrapper"] main [id="content"] [id="tarifs"] table .price {
+          display: block;
+          font-size: 2em;
+          color: #ebbe00; }
+        body [id="wrapper"] main [id="content"] [id="tarifs"] table i {
+          font-size: 1.2em; }
+          body [id="wrapper"] main [id="content"] [id="tarifs"] table i.fa-check {
+            color: #9bc407; }
       body [id="wrapper"] main [id="content"] > section[id="contact"] .cols {
         display: -ms-flexbox;
         display: flex;
@@ -3599,6 +3644,9 @@ body {
     body a[role="button"].is-loading::after, body .button.is-loading::after {
       content: "";
       animation: spin 2s linear infinite; }
+    body a[role="button"].not-full, body .button.not-full {
+      display: inline-block;
+      width: auto; }
 @keyframes spin {
   0% {
     transform: rotate(0deg); }

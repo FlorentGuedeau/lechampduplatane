@@ -184,6 +184,11 @@ a[role="button"], .button {
             animation: spin 2s linear infinite;
         }
     }
+
+    &.not-full {
+        display: inline-block;
+        width: auto;
+    }
 }
 
 @keyframes spin {
