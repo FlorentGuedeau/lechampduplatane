@@ -4880,48 +4880,48 @@ body [id='wrapper'] main [id='content'] strong
 {
     color: #9bc407;
 }
-body [id='wrapper'] main [id='content'] a:not([role='button'])
+body [id='wrapper'] main [id='content'] a:not([role='button']):not(.button)
 {
     color: #00a8ec;
 }
-body [id='wrapper'] main [id='content'] a:not([role='button']):visited
+body [id='wrapper'] main [id='content'] a:not([role='button']):not(.button):visited
 {
     color: #00a8ec;
 }
-body [id='wrapper'] main [id='content'] a:not([role='button']):focus
+body [id='wrapper'] main [id='content'] a:not([role='button']):not(.button):focus
 {
     color: #ebbe00;
 }
-body [id='wrapper'] main [id='content'] a:not([role='button']):hover
+body [id='wrapper'] main [id='content'] a:not([role='button']):not(.button):hover
 {
     color: #ebbe00;
 }
-body [id='wrapper'] main [id='content'] a:not([role='button']):active
+body [id='wrapper'] main [id='content'] a:not([role='button']):not(.button):active
 {
     color: #9bc407;
 }
 @media (min-width: 1001px)
 {
-    body [id='wrapper'] main [id='content'] a:not([role='button'])[href^='tel:']
+    body [id='wrapper'] main [id='content'] a:not([role='button']):not(.button)[href^='tel:']
     {
         cursor: default; 
         text-decoration: none;
 
         color: #000;
     }
-    body [id='wrapper'] main [id='content'] a:not([role='button'])[href^='tel:']:visited
+    body [id='wrapper'] main [id='content'] a:not([role='button']):not(.button)[href^='tel:']:visited
     {
         color: #000;
     }
-    body [id='wrapper'] main [id='content'] a:not([role='button'])[href^='tel:']:focus
+    body [id='wrapper'] main [id='content'] a:not([role='button']):not(.button)[href^='tel:']:focus
     {
         color: #000;
     }
-    body [id='wrapper'] main [id='content'] a:not([role='button'])[href^='tel:']:hover
+    body [id='wrapper'] main [id='content'] a:not([role='button']):not(.button)[href^='tel:']:hover
     {
         color: #000;
     }
-    body [id='wrapper'] main [id='content'] a:not([role='button'])[href^='tel:']:active
+    body [id='wrapper'] main [id='content'] a:not([role='button']):not(.button)[href^='tel:']:active
     {
         color: #000;
     }
@@ -5402,17 +5402,129 @@ body [id='wrapper'] main [id='content'] #jp-relatedposts .jp-relatedposts-items 
 {
     margin: 0 1em 1em 1em;
 }
+body [id='wrapper'] main [id='content'] [id='tarifs'] table
+{
+    width: 100%; 
+    margin-right: auto;
+    margin-left: auto;
+
+    table-layout: fixed;
+    border-collapse: collapse;
+}
 body [id='wrapper'] main [id='content'] [id='tarifs'] table thead
 {
     text-align: center;
+}
+body [id='wrapper'] main [id='content'] [id='tarifs'] table thead tr th,
+body [id='wrapper'] main [id='content'] [id='tarifs'] table thead tr td
+{
+    font-size: 1.1em;
+    font-weight: bold; 
+
+    white-space: nowrap;
+
+    border: solid 3px #f1f1f1;
+    background-color: #fff;
+}
+body [id='wrapper'] main [id='content'] [id='tarifs'] table thead tr th:first-child,
+body [id='wrapper'] main [id='content'] [id='tarifs'] table thead tr td:first-child
+{
+    background-color: transparent;
+}
+body [id='wrapper'] main [id='content'] [id='tarifs'] table tbody
+{
+    text-align: center;
+}
+body [id='wrapper'] main [id='content'] [id='tarifs'] table tbody tr td
+{
+    border: solid 3px #f1f1f1;
+    background-color: #fff;
+}
+body [id='wrapper'] main [id='content'] [id='tarifs'] table tbody tr td:first-child
+{
+    font-size: 1.1em; 
+    font-weight: bold;
 }
 body [id='wrapper'] main [id='content'] [id='tarifs'] table tfoot
 {
     text-align: center;
 }
-body [id='wrapper'] main [id='content'] [id='tarifs'] table button
+body [id='wrapper'] main [id='content'] [id='tarifs'] table tfoot tr:last-child td
 {
-    display: inline-block;
+    background-color: transparent;
+}
+body [id='wrapper'] main [id='content'] [id='tarifs'] table tfoot td:not(:empty)
+{
+    border: solid 3px #f1f1f1; 
+    background-color: #fff;
+}
+body [id='wrapper'] main [id='content'] [id='tarifs'] table tfoot [role='button'],
+body [id='wrapper'] main [id='content'] [id='tarifs'] table tfoot .button
+{
+    margin: 1em 0;
+}
+body [id='wrapper'] main [id='content'] [id='tarifs'] table td,
+body [id='wrapper'] main [id='content'] [id='tarifs'] table th
+{
+    height: auto; 
+    padding: 1rem 2rem;
+}
+body [id='wrapper'] main [id='content'] [id='tarifs'] table td:first-child
+{
+    white-space: nowrap;
+}
+body [id='wrapper'] main [id='content'] [id='tarifs'] table .price
+{
+    font-size: 2em;
+
+    display: block;
+
+    color: #ebbe00;
+}
+body [id='wrapper'] main [id='content'] [id='tarifs'] table i
+{
+    font-size: 1.2em;
+}
+body [id='wrapper'] main [id='content'] [id='tarifs'] table i.fa-check
+{
+    color: #9bc407;
+}
+body [id='wrapper'] main [id='content'] [id='tarifs'] table thead td:first-child,
+body [id='wrapper'] main [id='content'] [id='tarifs'] table tbody td:first-child,
+body [id='wrapper'] main [id='content'] [id='tarifs'] table tfoot td:first-child
+{
+    width: 25rem;
+}
+@media screen and (max-width: 600px)
+{
+    body [id='wrapper'] main [id='content'] [id='tarifs'] thead
+    {
+        display: none;
+    }
+    body [id='wrapper'] main [id='content'] [id='tarifs'] tr:nth-of-type(2n)
+    {
+        background-color: inherit;
+    }
+    body [id='wrapper'] main [id='content'] [id='tarifs'] tr td:first-child
+    {
+        font-size: 1.3em; 
+        font-weight: bold;
+
+        background: #f0f0f0;
+    }
+    body [id='wrapper'] main [id='content'] [id='tarifs'] tbody td
+    {
+        display: block;
+
+        text-align: center;
+    }
+    body [id='wrapper'] main [id='content'] [id='tarifs'] tbody td:before
+    {
+        display: block;
+
+        content: attr(data-th);
+        text-align: center;
+    }
 }
 body [id='wrapper'] main [id='content'] > section[id='contact'] .cols
 {
@@ -5600,11 +5712,6 @@ body [id='wrapper'] main [id='content'] > section[id='service'] .article a[role=
 body [id='wrapper'] main [id='content'] > section[id='service'] .article .button.active::after
 {
     transform: rotate(-90deg);
-}
-body [id='wrapper'] main [id='content'] > section[id='service'] .cols
-{
-    -ms-flex-align: start;
-    align-items: flex-start;
 }
 body [id='wrapper'] main [id='content'] > section.archive article .content-article,
 body [id='wrapper'] main [id='content'] > section.archive .article .content-article
@@ -6162,6 +6269,13 @@ body .button.is-loading::after
     content: '';
     animation: spin 2s linear infinite;
 }
+body a[role='button'].not-full,
+body .button.not-full
+{
+    display: inline-block;
+
+    width: auto;
+}
 @keyframes spin
 {
     0%
@@ -6233,7 +6347,13 @@ body iframe
 {
     max-width: 100%; 
 
-    border: 0;
+    border: none;
+}
+body table td,
+body table th
+{
+    width: auto !important;
+    height: auto !important;
 }
 
 /*# sourceMappingURL=main.css.map */

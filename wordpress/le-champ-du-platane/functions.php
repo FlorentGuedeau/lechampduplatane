@@ -287,29 +287,20 @@ function theme_tinymce_settings($settings) {
     $settings['extended_valid_elements'] = $ext;
 
     //    // Define the style_formats array
-    //    $style_formats = array(
-    //        // Each array child is a format with it's own settings
-    //        array(
-    //        'title'     => 'Transformer un lien en bouton',
-    //        'classes'   => 'btn',
-    //        'wrapper'   => false,
-    //        'selector'  => 'a'
-    //    ),
-    //        array(
-    //        'title'     => 'H2 => H4',
-    //        'classes'   => 'title-4',
-    //        'wrapper'   => false,
-    //        'selector'  => 'h2'
-    //    ),
-    //        array(
-    //        'title'     => 'H3 => H4',
-    //        'classes'   => 'title-4',
-    //        'wrapper'   => false,
-    //        'selector'  => 'h3'
-    //    ),
-    //    );
-    // Insert the array, JSON ENCODED, into 'style_formats'
-    //    $settings['style_formats'] = json_encode( $style_formats );
+    $style_formats = array(
+        array(
+            'title'     => 'Prix',
+            'classes'   => 'price',
+            'inline'    => 'span',
+        ),
+        array(
+            'title'     => 'Transformer un lien en bouton',
+            'classes'   => 'button not-full',
+            'selector'  => 'a'
+        ),
+    );
+    //    Insert the array, JSON ENCODED, into 'style_formats'
+    $settings['style_formats'] = json_encode( $style_formats );
 
     return $settings;
 }

@@ -16,7 +16,7 @@ $_normalize-exclude: ('table');
 @import 'breakpoint-slicer';
 
 @import "fonts";
-@import "font-awesome/font-awesome";
+@import "font-awesome/font-awesome"; // A supprimer car est importé via un plugin WP
 
 $sidebar-width: 265px;
 $footer-height : 250px;

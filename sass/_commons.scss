@@ -254,6 +254,13 @@ img {
 }
 
 iframe {
-    border: 0;
+    border: none;
     max-width: 100%;
+}
+
+table {
+    td, th { // J'en suis pas fier mais c'est le seul moyen de contrer la mise en place des hauteur dans TinyMCE
+        width: auto !important;
+        height: auto !important;
+    }
 }

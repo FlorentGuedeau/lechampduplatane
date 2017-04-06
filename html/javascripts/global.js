@@ -4,6 +4,9 @@ jQuery(document).ready(function(){
     // sticky sidebar
     init_sticky_bar();
 
+    // ok
+    be_responsive_fucking_table();
+
     var the_timer;
     $(window).on('resize', function(){
         init_sticky_bar();
@@ -91,7 +94,7 @@ jQuery(document).ready(function(){
 
 
     // spinner des boutons
-    $('a[role="button"]').on('click', function() {
+    $('a[role="button"], .button').on('click', function() {
         $(this).addClass('is-loading');
     });
 
@@ -126,5 +129,30 @@ function init_sticky_bar() {
         try {
             $("#sticky-sidebar").trigger("sticky_kit:detach");
         } catch(e) {}
+    }
+}
+
+// Source => https://sitesforprofit.com/responsive-tables-in-wordpress
+function be_responsive_fucking_table() {
+    var headertext = [];
+    var headers = document.querySelectorAll("thead");
+    var tablebody = document.querySelectorAll("tbody");
+
+    for(var i = 0; i < headers.length; i++) {
+        headertext[i]=[];
+        for (var j = 0, headrow; headrow = headers[i].rows[0].cells[j]; j++) {
+            var current = headrow;
+            headertext[i].push(current.textContent.replace(/\r?\n|\r/,""));
+        }
+    } 
+
+    if (headers.length > 0) {
+        for (var h = 0, tbody; tbody = tablebody[h]; h++) {
+            for (var i = 0, row; row = tbody.rows[i]; i++) {
+                for (var j = 0, col; col = row.cells[j]; j++) {
+                    col.setAttribute("data-th", headertext[h][j]);
+                } 
+            }
+        }
     }
 }

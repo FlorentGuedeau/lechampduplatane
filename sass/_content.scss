@@ -50,7 +50,7 @@ main {
             color: $color-green;
         }
 
-        a:not([role="button"]) {
+        a:not([role="button"]):not(.button) {
             @include link-colors($color-blue, $color-orange, $color-green, $color-blue, $color-orange);
 
             @include from('desktop') {
@@ -193,7 +193,7 @@ main {
                             img {
                                 opacity: .5;
                             }
-                        }  
+                        }
                     }
 
                     .jp-relatedposts-post-excerpt {
@@ -270,10 +270,12 @@ main {
                     text-align: center;
 
                     tr {
-                        th {
+                        th, td {
                             background-color: #fff;
                             border: solid 3px #F1F1F1;
                             font-size: 1.1em;
+                            white-space: nowrap;
+                            font-weight: bold;
 
                             &:first-child {
                                 background-color: transparent;
@@ -313,6 +315,14 @@ main {
                 tfoot {
                     text-align: center;
 
+                    tr {
+                        &:last-child {
+                            td {
+                                background-color: transparent;
+                            }
+                        }
+                    }
+
                     td {
                         &:not(:empty) {
                             background-color: #fff;
@@ -322,12 +332,12 @@ main {
                         //                            top: 3rem;
                         //                        }
 
-                        &:last-child {
-                            background-color: transparent;
-                        }
+                        //                        &:last-child {
+                        //                            background-color: transparent;
+                        //                        }
                     }
 
-                    [role="button"] {
+                    [role="button"], .button {
                         margin: 1em 0;
                     }
                 }
@@ -338,16 +348,13 @@ main {
 
                 td, th {
                     padding: 1rem 2rem;
+                    height: auto;
                 }
 
                 td {
                     &:first-child {
                         white-space: nowrap;
                     }
-                }
-
-                th {
-                    white-space: nowrap;
                 }
 
                 .price {
@@ -363,7 +370,31 @@ main {
                         color: $color-green;
                     }
                 }
+
+                thead, tbody, tfoot {
+                    td {
+                        &:first-child {
+                            width: 25rem !important; // Pas bien de figer la largeur des colonnes mais c'est plus joli + le bon vieux important mais là je suis obligé pour pouvoir gérer les largeurs 
+                        }
+                    }
+                }
             }
+
+            // source => https://sitesforprofit.com/responsive-tables-in-wordpress
+
+            // A REFAIR EN MOBILE FIRST !!!
+            @media screen and (max-width: 600px) {
+                thead {display: none;}
+                tr:nth-of-type(2n) {background-color: inherit;}
+                tr td:first-child {background: #f0f0f0; font-weight:bold;font-size:1.3em;}
+                tbody td {display: block;  text-align:center;}
+                tbody td:before { 
+                    content: attr(data-th); 
+                    display: block;
+                    text-align:center;  
+                }
+            }
+
         }
 
         > section {
@@ -526,7 +557,7 @@ main {
                                         //box-shadow: 0 0 0 5px $color-green inset;
                                         opacity: .5;
                                     }
-                                }   
+                                }
                             }
                         }
                     }

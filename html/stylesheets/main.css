@@ -3028,28 +3028,28 @@ body {
         display: block; }
       body [id="wrapper"] main [id="content"] strong {
         color: #9bc407; }
-      body [id="wrapper"] main [id="content"] a:not([role="button"]) {
+      body [id="wrapper"] main [id="content"] a:not([role="button"]):not(.button) {
         color: #00a8ec; }
-        body [id="wrapper"] main [id="content"] a:not([role="button"]):visited {
+        body [id="wrapper"] main [id="content"] a:not([role="button"]):not(.button):visited {
           color: #00a8ec; }
-        body [id="wrapper"] main [id="content"] a:not([role="button"]):focus {
+        body [id="wrapper"] main [id="content"] a:not([role="button"]):not(.button):focus {
           color: #ebbe00; }
-        body [id="wrapper"] main [id="content"] a:not([role="button"]):hover {
+        body [id="wrapper"] main [id="content"] a:not([role="button"]):not(.button):hover {
           color: #ebbe00; }
-        body [id="wrapper"] main [id="content"] a:not([role="button"]):active {
+        body [id="wrapper"] main [id="content"] a:not([role="button"]):not(.button):active {
           color: #9bc407; }
         @media (min-width: 1001px) {
-          body [id="wrapper"] main [id="content"] a:not([role="button"])[href^="tel:"] {
+          body [id="wrapper"] main [id="content"] a:not([role="button"]):not(.button)[href^="tel:"] {
             text-decoration: none;
             color: #000;
             cursor: default; }
-            body [id="wrapper"] main [id="content"] a:not([role="button"])[href^="tel:"]:visited {
+            body [id="wrapper"] main [id="content"] a:not([role="button"]):not(.button)[href^="tel:"]:visited {
               color: #000; }
-            body [id="wrapper"] main [id="content"] a:not([role="button"])[href^="tel:"]:focus {
+            body [id="wrapper"] main [id="content"] a:not([role="button"]):not(.button)[href^="tel:"]:focus {
               color: #000; }
-            body [id="wrapper"] main [id="content"] a:not([role="button"])[href^="tel:"]:hover {
+            body [id="wrapper"] main [id="content"] a:not([role="button"]):not(.button)[href^="tel:"]:hover {
               color: #000; }
-            body [id="wrapper"] main [id="content"] a:not([role="button"])[href^="tel:"]:active {
+            body [id="wrapper"] main [id="content"] a:not([role="button"]):not(.button)[href^="tel:"]:active {
               color: #000; } }
       body [id="wrapper"] main [id="content"] h1, body [id="wrapper"] main [id="content"] .title-h1 {
         padding-bottom: 0.3em;
@@ -3248,11 +3248,13 @@ body {
         width: 100%; }
         body [id="wrapper"] main [id="content"] [id="tarifs"] table thead {
           text-align: center; }
-          body [id="wrapper"] main [id="content"] [id="tarifs"] table thead tr th {
+          body [id="wrapper"] main [id="content"] [id="tarifs"] table thead tr th, body [id="wrapper"] main [id="content"] [id="tarifs"] table thead tr td {
             background-color: #fff;
             border: solid 3px #F1F1F1;
-            font-size: 1.1em; }
-            body [id="wrapper"] main [id="content"] [id="tarifs"] table thead tr th:first-child {
+            font-size: 1.1em;
+            white-space: nowrap;
+            font-weight: bold; }
+            body [id="wrapper"] main [id="content"] [id="tarifs"] table thead tr th:first-child, body [id="wrapper"] main [id="content"] [id="tarifs"] table thead tr td:first-child {
               background-color: transparent; }
         body [id="wrapper"] main [id="content"] [id="tarifs"] table tbody {
           text-align: center; }
@@ -3264,18 +3266,17 @@ body {
               font-size: 1.1em; }
         body [id="wrapper"] main [id="content"] [id="tarifs"] table tfoot {
           text-align: center; }
+          body [id="wrapper"] main [id="content"] [id="tarifs"] table tfoot tr:last-child td {
+            background-color: transparent; }
           body [id="wrapper"] main [id="content"] [id="tarifs"] table tfoot td:not(:empty) {
             background-color: #fff;
             border: solid 3px #F1F1F1; }
-          body [id="wrapper"] main [id="content"] [id="tarifs"] table tfoot td:last-child {
-            background-color: transparent; }
-          body [id="wrapper"] main [id="content"] [id="tarifs"] table tfoot [role="button"] {
+          body [id="wrapper"] main [id="content"] [id="tarifs"] table tfoot [role="button"], body [id="wrapper"] main [id="content"] [id="tarifs"] table tfoot .button {
             margin: 1em 0; }
         body [id="wrapper"] main [id="content"] [id="tarifs"] table td, body [id="wrapper"] main [id="content"] [id="tarifs"] table th {
-          padding: 1rem 2rem; }
+          padding: 1rem 2rem;
+          height: auto; }
         body [id="wrapper"] main [id="content"] [id="tarifs"] table td:first-child {
-          white-space: nowrap; }
-        body [id="wrapper"] main [id="content"] [id="tarifs"] table th {
           white-space: nowrap; }
         body [id="wrapper"] main [id="content"] [id="tarifs"] table .price {
           display: block;
@@ -3285,6 +3286,24 @@ body {
           font-size: 1.2em; }
           body [id="wrapper"] main [id="content"] [id="tarifs"] table i.fa-check {
             color: #9bc407; }
+        body [id="wrapper"] main [id="content"] [id="tarifs"] table thead td:first-child, body [id="wrapper"] main [id="content"] [id="tarifs"] table tbody td:first-child, body [id="wrapper"] main [id="content"] [id="tarifs"] table tfoot td:first-child {
+          width: 25rem !important; }
+      @media screen and (max-width: 600px) {
+        body [id="wrapper"] main [id="content"] [id="tarifs"] thead {
+          display: none; }
+        body [id="wrapper"] main [id="content"] [id="tarifs"] tr:nth-of-type(2n) {
+          background-color: inherit; }
+        body [id="wrapper"] main [id="content"] [id="tarifs"] tr td:first-child {
+          background: #f0f0f0;
+          font-weight: bold;
+          font-size: 1.3em; }
+        body [id="wrapper"] main [id="content"] [id="tarifs"] tbody td {
+          display: block;
+          text-align: center; }
+        body [id="wrapper"] main [id="content"] [id="tarifs"] tbody td:before {
+          content: attr(data-th);
+          display: block;
+          text-align: center; } }
       body [id="wrapper"] main [id="content"] > section[id="contact"] .cols {
         display: -ms-flexbox;
         display: flex;
@@ -3362,9 +3381,6 @@ body {
           padding: 1px 0; }
         body [id="wrapper"] main [id="content"] > section[id="services"] .article a[role="button"].active::after, body [id="wrapper"] main [id="content"] > section[id="services"] .article .button.active::after, body [id="wrapper"] main [id="content"] > section[id="service"] .article a[role="button"].active::after, body [id="wrapper"] main [id="content"] > section[id="service"] .article .button.active::after {
           transform: rotate(-90deg); }
-      body [id="wrapper"] main [id="content"] > section[id="service"] .cols {
-        -ms-flex-align: start;
-            align-items: flex-start; }
       body [id="wrapper"] main [id="content"] > section.archive article .content-article, body [id="wrapper"] main [id="content"] > section.archive .article .content-article {
         padding-left: 1em;
         padding-right: 1em; }
@@ -3682,7 +3698,10 @@ body {
     max-width: 100%;
     height: auto; }
   body iframe {
-    border: 0;
+    border: none;
     max-width: 100%; }
+  body table td, body table th {
+    width: auto !important;
+    height: auto !important; }
 
 /*# sourceMappingURL=main.css.map */

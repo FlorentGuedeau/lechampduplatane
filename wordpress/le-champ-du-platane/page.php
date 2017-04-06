@@ -2,9 +2,17 @@
 
 <?php while ( have_posts() ) : the_post(); ?>
 
-<section itemprop="mainContentOfPage" id="page" class="post">
-    <?php get_template_part( 'page', 'content' ); ?>
-</section>
+<?php
+switch( $post->post_parent ) {
+    case 8:
+        get_template_part( 'page', 'service' ); // page individuelle pour les services
+        break;
+
+    default:
+        get_template_part( 'page', 'content' );
+        break;
+}
+?>
 
 <?php endwhile; ?>
 
