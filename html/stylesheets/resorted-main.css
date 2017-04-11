@@ -5493,7 +5493,7 @@ body [id='wrapper'] main [id='content'] [id='tarifs'] table thead td:first-child
 body [id='wrapper'] main [id='content'] [id='tarifs'] table tbody td:first-child,
 body [id='wrapper'] main [id='content'] [id='tarifs'] table tfoot td:first-child
 {
-    width: 25rem;
+    width: 25rem !important;
 }
 @media screen and (max-width: 600px)
 {

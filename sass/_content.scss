@@ -259,15 +259,23 @@ main {
         [id="tarifs"] {
             table {
                 border-collapse: collapse;
-                margin: {
-                    left: auto;
-                    right: auto;
+
+                @include from('desktop') {
+                    table-layout: fixed;
+                    width: 100%;
+                    margin: {
+                        left: auto;
+                        right: auto;
+                    }
                 }
-                table-layout: fixed;
-                width: 100%;
 
                 thead {
-                    text-align: center;
+                    display: none;
+
+                    @include from('desktop') {
+                        display: table-header-group;
+                        text-align: center;
+                    }
 
                     tr {
                         th, td {
@@ -279,7 +287,6 @@ main {
 
                             &:first-child {
                                 background-color: transparent;
-                                //                                width: 10%;
                             }
                         }
                     }
@@ -290,25 +297,22 @@ main {
 
                     tr {
                         td {
-                            border: solid 3px #F1F1F1;
-                            background-color: #fff;
+                            background-color: #fff;   
+
+                            @include from('desktop') {
+                                border: solid 3px #F1F1F1;
+                            }
 
                             &:first-child {
                                 font-weight: bold;
                                 font-size: 1.1em;
-                                //                                width: 10%;
+                                text-align: center;
+
+                                @include from('desktop') {
+                                    text-align: right;
+                                }
                             }
                         }
-                        //                        &:nth-child(even) {
-                        //                            td {
-                        //                                background-color: #fff;
-                        //                                border: solid 3px #F1F1F1;
-                        //
-                        //                                &:first-child {
-                        //                                    background-color: transparent;
-                        //                                }
-                        //                            }
-                        //                        }
                     }
                 }
 
@@ -324,17 +328,20 @@ main {
                     }
 
                     td {
+                        &:empty {
+                            display: none;
+                        }
+
                         &:not(:empty) {
                             background-color: #fff;
                             border: solid 3px #F1F1F1;
                         }
-                        //                        padding: {
-                        //                            top: 3rem;
-                        //                        }
 
-                        //                        &:last-child {
-                        //                            background-color: transparent;
-                        //                        }
+                        @include from('desktop') {
+                            &:empty {
+                                display: table-cell;
+                            }
+                        }
                     }
 
                     [role="button"], .button {
@@ -343,7 +350,12 @@ main {
                 }
 
                 tr {
+                    display: block;
+                    margin-bottom: 2em;
 
+                    @include from('desktop') {
+                        display: table-row;
+                    }
                 }
 
                 td, th {
@@ -373,8 +385,18 @@ main {
 
                 thead, tbody, tfoot {
                     td {
+                        display: block;
+
+                        @include from('desktop') {
+                            display: table-cell;
+                        }
+
                         &:first-child {
-                            width: 25rem !important; // Pas bien de figer la largeur des colonnes mais c'est plus joli + le bon vieux important mais là je suis obligé pour pouvoir gérer les largeurs 
+                            width: 100% !important;
+
+                            @include from('desktop') {
+                                width: 25rem !important; // Pas bien de figer la largeur des colonnes mais c'est plus joli + le bon vieux important mais là je suis obligé pour pouvoir gérer les largeurs 
+                            }
                         }
                     }
                 }
@@ -384,12 +406,17 @@ main {
 
             // A REFAIR EN MOBILE FIRST !!!
             @media screen and (max-width: 600px) {
-                thead {display: none;}
-                tr:nth-of-type(2n) {background-color: inherit;}
-                tr td:first-child {background: #f0f0f0; font-weight:bold;font-size:1.3em;}
-                tbody td {display: block;  text-align:center;}
+                //                tr:nth-of-type(2n) {background-color: inherit;}
+                //                tr td:first-child {background: #f0f0f0; font-weight:bold;font-size:1.3em;}
+                //                tbody td {display: block;  text-align:center;}
                 tbody td:before { 
                     content: attr(data-th); 
+                    display: block;
+                    text-align:center;  
+                }
+
+                tbody td:after { 
+                    content: attr(data-tf);
                     display: block;
                     text-align:center;  
                 }

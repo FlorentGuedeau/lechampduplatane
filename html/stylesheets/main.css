@@ -3241,13 +3241,19 @@ body {
             body [id="wrapper"] main [id="content"] #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post .jp-relatedposts-post-context {
               margin: 0 1em 1em 1em; }
       body [id="wrapper"] main [id="content"] [id="tarifs"] table {
-        border-collapse: collapse;
-        margin-left: auto;
-        margin-right: auto;
-        table-layout: fixed;
-        width: 100%; }
+        border-collapse: collapse; }
+        @media (min-width: 1001px) {
+          body [id="wrapper"] main [id="content"] [id="tarifs"] table {
+            table-layout: fixed;
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto; } }
         body [id="wrapper"] main [id="content"] [id="tarifs"] table thead {
-          text-align: center; }
+          display: none; }
+          @media (min-width: 1001px) {
+            body [id="wrapper"] main [id="content"] [id="tarifs"] table thead {
+              display: table-header-group;
+              text-align: center; } }
           body [id="wrapper"] main [id="content"] [id="tarifs"] table thead tr th, body [id="wrapper"] main [id="content"] [id="tarifs"] table thead tr td {
             background-color: #fff;
             border: solid 3px #F1F1F1;
@@ -3259,20 +3265,37 @@ body {
         body [id="wrapper"] main [id="content"] [id="tarifs"] table tbody {
           text-align: center; }
           body [id="wrapper"] main [id="content"] [id="tarifs"] table tbody tr td {
-            border: solid 3px #F1F1F1;
             background-color: #fff; }
+            @media (min-width: 1001px) {
+              body [id="wrapper"] main [id="content"] [id="tarifs"] table tbody tr td {
+                border: solid 3px #F1F1F1; } }
             body [id="wrapper"] main [id="content"] [id="tarifs"] table tbody tr td:first-child {
               font-weight: bold;
-              font-size: 1.1em; }
+              font-size: 1.1em;
+              text-align: center; }
+              @media (min-width: 1001px) {
+                body [id="wrapper"] main [id="content"] [id="tarifs"] table tbody tr td:first-child {
+                  text-align: right; } }
         body [id="wrapper"] main [id="content"] [id="tarifs"] table tfoot {
           text-align: center; }
           body [id="wrapper"] main [id="content"] [id="tarifs"] table tfoot tr:last-child td {
             background-color: transparent; }
+          body [id="wrapper"] main [id="content"] [id="tarifs"] table tfoot td:empty {
+            display: none; }
           body [id="wrapper"] main [id="content"] [id="tarifs"] table tfoot td:not(:empty) {
             background-color: #fff;
             border: solid 3px #F1F1F1; }
+          @media (min-width: 1001px) {
+            body [id="wrapper"] main [id="content"] [id="tarifs"] table tfoot td:empty {
+              display: table-cell; } }
           body [id="wrapper"] main [id="content"] [id="tarifs"] table tfoot [role="button"], body [id="wrapper"] main [id="content"] [id="tarifs"] table tfoot .button {
             margin: 1em 0; }
+        body [id="wrapper"] main [id="content"] [id="tarifs"] table tr {
+          display: block;
+          margin-bottom: 2em; }
+          @media (min-width: 1001px) {
+            body [id="wrapper"] main [id="content"] [id="tarifs"] table tr {
+              display: table-row; } }
         body [id="wrapper"] main [id="content"] [id="tarifs"] table td, body [id="wrapper"] main [id="content"] [id="tarifs"] table th {
           padding: 1rem 2rem;
           height: auto; }
@@ -3286,22 +3309,23 @@ body {
           font-size: 1.2em; }
           body [id="wrapper"] main [id="content"] [id="tarifs"] table i.fa-check {
             color: #9bc407; }
-        body [id="wrapper"] main [id="content"] [id="tarifs"] table thead td:first-child, body [id="wrapper"] main [id="content"] [id="tarifs"] table tbody td:first-child, body [id="wrapper"] main [id="content"] [id="tarifs"] table tfoot td:first-child {
-          width: 25rem !important; }
+        body [id="wrapper"] main [id="content"] [id="tarifs"] table thead td, body [id="wrapper"] main [id="content"] [id="tarifs"] table tbody td, body [id="wrapper"] main [id="content"] [id="tarifs"] table tfoot td {
+          display: block; }
+          @media (min-width: 1001px) {
+            body [id="wrapper"] main [id="content"] [id="tarifs"] table thead td, body [id="wrapper"] main [id="content"] [id="tarifs"] table tbody td, body [id="wrapper"] main [id="content"] [id="tarifs"] table tfoot td {
+              display: table-cell; } }
+          body [id="wrapper"] main [id="content"] [id="tarifs"] table thead td:first-child, body [id="wrapper"] main [id="content"] [id="tarifs"] table tbody td:first-child, body [id="wrapper"] main [id="content"] [id="tarifs"] table tfoot td:first-child {
+            width: 100% !important; }
+            @media (min-width: 1001px) {
+              body [id="wrapper"] main [id="content"] [id="tarifs"] table thead td:first-child, body [id="wrapper"] main [id="content"] [id="tarifs"] table tbody td:first-child, body [id="wrapper"] main [id="content"] [id="tarifs"] table tfoot td:first-child {
+                width: 25rem !important; } }
       @media screen and (max-width: 600px) {
-        body [id="wrapper"] main [id="content"] [id="tarifs"] thead {
-          display: none; }
-        body [id="wrapper"] main [id="content"] [id="tarifs"] tr:nth-of-type(2n) {
-          background-color: inherit; }
-        body [id="wrapper"] main [id="content"] [id="tarifs"] tr td:first-child {
-          background: #f0f0f0;
-          font-weight: bold;
-          font-size: 1.3em; }
-        body [id="wrapper"] main [id="content"] [id="tarifs"] tbody td {
-          display: block;
-          text-align: center; }
         body [id="wrapper"] main [id="content"] [id="tarifs"] tbody td:before {
           content: attr(data-th);
+          display: block;
+          text-align: center; }
+        body [id="wrapper"] main [id="content"] [id="tarifs"] tbody td:after {
+          content: attr(data-tf);
           display: block;
           text-align: center; } }
       body [id="wrapper"] main [id="content"] > section[id="contact"] .cols {
@@ -3700,7 +3724,7 @@ body {
   body iframe {
     border: none;
     max-width: 100%; }
-  body table td, body table th {
+  body table tr, body table td, body table th {
     width: auto !important;
     height: auto !important; }
 
