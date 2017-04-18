@@ -120,6 +120,8 @@ jQuery(document).ready(function(){
 
 
 function init_sticky_bar() {
+    $ = jQuery
+
     if($(window).width() > 995) {
         // Sticky sidebar : http://leafo.net/sticky-kit/
         try {
@@ -134,47 +136,57 @@ function init_sticky_bar() {
 
 // Source => https://sitesforprofit.com/responsive-tables-in-wordpress
 function be_responsive_fucking_table() {
-    var headertext = [];
-    var footertext = [];
-    var headers = document.querySelectorAll("thead");
-    var footers = document.querySelectorAll("tfoot");
-    var tablebody = document.querySelectorAll("tbody");
+    $ = jQuery
 
-    for( var i = 0; i < headers.length; i++ ) {
-        headertext[i]=[];
+    $('main').find('table').each(function() {
+        $(this).wrap( "<div class='table-wrapper'></div>" );
+    });
 
-        for ( var j = 0, headrow; headrow = headers[i].rows[0].cells[j]; j++ ) {
-            var current = headrow;
-            headertext[i].push(current.textContent.replace(/\r?\n|\r/,""));
-        }
-    }
+    $('.table-wrapper').on('click tap scroll', function() {
+        $(this).addClass('clicked');
+    });
 
-    for( var i = 0; i < footers.length; i++ ) {
-        footertext[i]=[];
-
-        for ( var j = 0, footrow; footrow = footers[i].rows[0].cells[j]; j++ ) {
-            var current = footrow;
-            footertext[i].push(current.textContent.replace(/\r?\n|\r/,""));
-        }
-    }
-
-    if ( headers.length > 0 ) {
-        for ( var h = 0, tbody; tbody = tablebody[h]; h++ ) {
-            for ( var i = 0, row; row = tbody.rows[i]; i++ ) {
-                for ( var j = 0, col; col = row.cells[j]; j++ ) {
-                    col.setAttribute("data-th", headertext[h][j]);
-                }
-            }
-        }
-    }
-
-    if ( footers.length > 0 ) {
-        for ( var h = 0, tbody; tbody = tablebody[h]; h++ ) {
-            for ( var i = 0, row; row = tbody.rows[i]; i++ ) {
-                for ( var j = 0, col; col = row.cells[j]; j++ ) {
-                    col.setAttribute("data-tf", footertext[h][j]);
-                }
-            }
-        }
-    }
+    //    var headertext = [];
+    //    var footertext = [];
+    //    var headers = document.querySelectorAll("thead");
+    //    var footers = document.querySelectorAll("tfoot");
+    //    var tablebody = document.querySelectorAll("tbody");
+    //
+    //    for( var i = 0; i < headers.length; i++ ) {
+    //        headertext[i]=[];
+    //
+    //        for ( var j = 0, headrow; headrow = headers[i].rows[0].cells[j]; j++ ) {
+    //            var current = headrow;
+    //            headertext[i].push(current.textContent.replace(/\r?\n|\r/,""));
+    //        }
+    //    }
+    //
+    //    for( var i = 0; i < footers.length; i++ ) {
+    //        footertext[i]=[];
+    //
+    //        for ( var j = 0, footrow; footrow = footers[i].rows[0].cells[j]; j++ ) {
+    //            var current = footrow;
+    //            footertext[i].push(current.textContent.replace(/\r?\n|\r/,""));
+    //        }
+    //    }
+    //
+    //    if ( headers.length > 0 ) {
+    //        for ( var h = 0, tbody; tbody = tablebody[h]; h++ ) {
+    //            for ( var i = 0, row; row = tbody.rows[i]; i++ ) {
+    //                for ( var j = 0, col; col = row.cells[j]; j++ ) {
+    //                    col.setAttribute("data-th", headertext[h][j]);
+    //                }
+    //            }
+    //        }
+    //    }
+    //
+    //    if ( footers.length > 0 ) {
+    //        for ( var h = 0, tbody; tbody = tablebody[h]; h++ ) {
+    //            for ( var i = 0, row; row = tbody.rows[i]; i++ ) {
+    //                for ( var j = 0, col; col = row.cells[j]; j++ ) {
+    //                    col.setAttribute("data-tf", footertext[h][j]);
+    //                }
+    //            }
+    //        }
+    //    }
 }

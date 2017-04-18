@@ -21,32 +21,32 @@
 
                     <div>
                         <?php $content = get_extended( $post->post_content ); ?>
-                        <?php echo $content['main']; ?>
+                        <?php echo $content['main']; ?></p> <!--  le </p> permet de fermer le début du lien more -->
 
-                        <?php if ( !empty($content['extended']) ) : ?>
-                        <div class="visibility-toggle">
-                            <?php echo $content['extended']; ?>
-                        </div>
-                        <?php endif; ?>
+                    <?php if ( !empty($content['extended']) ) : ?>
+                    <div class="visibility-toggle">
+                        <p><?php echo $content['extended']; ?><!--  le <p> permet d'ouvrir la fin du lien more -->
                     </div>
-
-                    <footer>
-                        <button class="button not-loading" title="Cliquez ici pour en voir plus">En voir plus</button>
-                        <?php edit_post_link('Modifier la page', '<p class="edit-post-link txt-center">', '</p>'); ?>
-                    </footer>
+                    <?php endif; ?>
                 </div>
-            </div>
-            <?php endwhile; wp_reset_postdata(); ?>
-        </div>
-        <?php endif; ?>
 
-        <?php if( get_field( "service_tarifs" ) ) : ?>
-        <div id="tarifs">
-            <h2 class="title-h1">Tarifs</h2>
-            <?php echo get_field( "service_tarifs" ); ?>
+                <footer>
+                    <button class="button not-loading" title="Cliquez ici pour en voir plus">En voir plus</button>
+                    <?php edit_post_link('Modifier la page', '<p class="edit-post-link txt-center">', '</p>'); ?>
+                </footer>
+            </div>
         </div>
-        <?php endif; ?>
+        <?php endwhile; wp_reset_postdata(); ?>
+    </div>
+    <?php endif; ?>
+
+    <?php if( get_field( "service_tarifs" ) ) : ?>
+    <div id="tarifs">
+        <h2 class="title-h1">Tarifs</h2>
+        <?php echo get_field( "service_tarifs" ); ?>
+    </div>
+    <?php endif; ?>
     </div>
 
-    <?php edit_post_link('Modifier la page', '<p class="edit-post-link txt-right">', '</p>'); ?>
+<?php edit_post_link('Modifier la page', '<p class="edit-post-link txt-right">', '</p>'); ?>
 </section>

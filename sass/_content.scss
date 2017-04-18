@@ -257,8 +257,57 @@ main {
         //        }
 
         [id="tarifs"] {
+            .table-wrapper {
+                overflow-x: auto;
+                position: relative;
+                border: solid 3px #ccc;
+
+                &::before {
+                    @include content('');
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-color: rgba(#000, .3);
+                    z-index: 1;
+                }
+
+                &::after {
+                    @include content('\f07e');
+                    color: #fff;
+                    font-size: 4em;
+                    font-family: 'FontAwesome';
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    z-index: 2;
+                }
+
+                &.clicked {
+                    &::before, &::after {
+                        display: none;
+                    }
+                }
+
+                @include from('desktop') {
+                    border: none;
+
+                    &::before, &::after {
+                        display: none;
+                    }
+                }
+            }
+
             table {
                 border-collapse: collapse;
+
+                //                overflow-x: auto; // table responsive
+                //                display: block; // table responsive
+
 
                 @include from('desktop') {
                     table-layout: fixed;
@@ -270,12 +319,12 @@ main {
                 }
 
                 thead {
-                    display: none;
+                    //                    display: none;
 
-                    @include from('desktop') {
-                        display: table-header-group;
-                        text-align: center;
-                    }
+                    //                    @include from('desktop') {
+                    //                        display: table-header-group;
+                    text-align: center;
+                    //                    }
 
                     tr {
                         th, td {
@@ -299,18 +348,18 @@ main {
                         td {
                             background-color: #fff;   
 
-                            @include from('desktop') {
-                                border: solid 3px #F1F1F1;
-                            }
+                            //                            @include from('desktop') {
+                            border: solid 3px #F1F1F1;
+                            //                            }
 
                             &:first-child {
                                 font-weight: bold;
                                 font-size: 1.1em;
-                                text-align: center;
+                                //                                text-align: center;
 
-                                @include from('desktop') {
-                                    text-align: right;
-                                }
+                                //                                @include from('desktop') {
+                                text-align: right;
+                                //                                }
                             }
                         }
                     }
@@ -328,20 +377,20 @@ main {
                     }
 
                     td {
-                        &:empty {
-                            display: none;
-                        }
+                        //                        &:empty {
+                        //                            display: none;
+                        //                        }
 
                         &:not(:empty) {
                             background-color: #fff;
                             border: solid 3px #F1F1F1;
                         }
 
-                        @include from('desktop') {
-                            &:empty {
-                                display: table-cell;
-                            }
+                        //                        @include from('desktop') {
+                        &:empty {
+                            display: table-cell;
                         }
+                        //                        }
                     }
 
                     [role="button"], .button {
@@ -350,12 +399,12 @@ main {
                 }
 
                 tr {
-                    display: block;
+                    //                    display: block;
                     margin-bottom: 2em;
 
-                    @include from('desktop') {
-                        display: table-row;
-                    }
+                    //                    @include from('desktop') {
+                    //                        display: table-row;
+                    //                    }
                 }
 
                 td, th {
@@ -385,14 +434,14 @@ main {
 
                 thead, tbody, tfoot {
                     td {
-                        display: block;
+                        //                        display: block;
 
-                        @include from('desktop') {
-                            display: table-cell;
-                        }
+                        //                        @include from('desktop') {
+                        //                        display: table-cell;
+                        //                        }
 
                         &:first-child {
-                            width: 100% !important;
+                            //                            width: 100% !important;
 
                             @include from('desktop') {
                                 width: 25rem !important; // Pas bien de figer la largeur des colonnes mais c'est plus joli + le bon vieux important mais là je suis obligé pour pouvoir gérer les largeurs 

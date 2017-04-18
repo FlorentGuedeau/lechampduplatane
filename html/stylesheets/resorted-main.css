@@ -5404,16 +5404,34 @@ body [id='wrapper'] main [id='content'] #jp-relatedposts .jp-relatedposts-items 
 }
 body [id='wrapper'] main [id='content'] [id='tarifs'] table
 {
-    width: 100%; 
-    margin-right: auto;
-    margin-left: auto;
+    display: block; 
+    overflow-x: auto;
 
-    table-layout: fixed;
     border-collapse: collapse;
+}
+@media (min-width: 1001px)
+{
+    body [id='wrapper'] main [id='content'] [id='tarifs'] table
+    {
+        width: 100%;
+        margin-right: auto; 
+        margin-left: auto;
+
+        table-layout: fixed;
+    }
 }
 body [id='wrapper'] main [id='content'] [id='tarifs'] table thead
 {
-    text-align: center;
+    display: none;
+}
+@media (min-width: 1001px)
+{
+    body [id='wrapper'] main [id='content'] [id='tarifs'] table thead
+    {
+        display: table-header-group;
+
+        text-align: center;
+    }
 }
 body [id='wrapper'] main [id='content'] [id='tarifs'] table thead tr th,
 body [id='wrapper'] main [id='content'] [id='tarifs'] table thead tr td
@@ -5437,13 +5455,28 @@ body [id='wrapper'] main [id='content'] [id='tarifs'] table tbody
 }
 body [id='wrapper'] main [id='content'] [id='tarifs'] table tbody tr td
 {
-    border: solid 3px #f1f1f1;
     background-color: #fff;
+}
+@media (min-width: 1001px)
+{
+    body [id='wrapper'] main [id='content'] [id='tarifs'] table tbody tr td
+    {
+        border: solid 3px #f1f1f1;
+    }
 }
 body [id='wrapper'] main [id='content'] [id='tarifs'] table tbody tr td:first-child
 {
-    font-size: 1.1em; 
+    font-size: 1.1em;
     font-weight: bold;
+
+    text-align: center;
+}
+@media (min-width: 1001px)
+{
+    body [id='wrapper'] main [id='content'] [id='tarifs'] table tbody tr td:first-child
+    {
+        text-align: right;
+    }
 }
 body [id='wrapper'] main [id='content'] [id='tarifs'] table tfoot
 {
@@ -5453,15 +5486,39 @@ body [id='wrapper'] main [id='content'] [id='tarifs'] table tfoot tr:last-child 
 {
     background-color: transparent;
 }
+body [id='wrapper'] main [id='content'] [id='tarifs'] table tfoot td:empty
+{
+    display: none;
+}
 body [id='wrapper'] main [id='content'] [id='tarifs'] table tfoot td:not(:empty)
 {
     border: solid 3px #f1f1f1; 
     background-color: #fff;
 }
+@media (min-width: 1001px)
+{
+    body [id='wrapper'] main [id='content'] [id='tarifs'] table tfoot td:empty
+    {
+        display: table-cell;
+    }
+}
 body [id='wrapper'] main [id='content'] [id='tarifs'] table tfoot [role='button'],
 body [id='wrapper'] main [id='content'] [id='tarifs'] table tfoot .button
 {
     margin: 1em 0;
+}
+body [id='wrapper'] main [id='content'] [id='tarifs'] table tr
+{
+    display: block;
+
+    margin-bottom: 2em;
+}
+@media (min-width: 1001px)
+{
+    body [id='wrapper'] main [id='content'] [id='tarifs'] table tr
+    {
+        display: table-row;
+    }
 }
 body [id='wrapper'] main [id='content'] [id='tarifs'] table td,
 body [id='wrapper'] main [id='content'] [id='tarifs'] table th
@@ -5489,40 +5546,50 @@ body [id='wrapper'] main [id='content'] [id='tarifs'] table i.fa-check
 {
     color: #9bc407;
 }
+body [id='wrapper'] main [id='content'] [id='tarifs'] table thead td,
+body [id='wrapper'] main [id='content'] [id='tarifs'] table tbody td,
+body [id='wrapper'] main [id='content'] [id='tarifs'] table tfoot td
+{
+    display: block;
+}
+@media (min-width: 1001px)
+{
+    body [id='wrapper'] main [id='content'] [id='tarifs'] table thead td,
+    body [id='wrapper'] main [id='content'] [id='tarifs'] table tbody td,
+    body [id='wrapper'] main [id='content'] [id='tarifs'] table tfoot td
+    {
+        display: table-cell;
+    }
+}
 body [id='wrapper'] main [id='content'] [id='tarifs'] table thead td:first-child,
 body [id='wrapper'] main [id='content'] [id='tarifs'] table tbody td:first-child,
 body [id='wrapper'] main [id='content'] [id='tarifs'] table tfoot td:first-child
 {
-    width: 25rem !important;
+    width: 100% !important;
+}
+@media (min-width: 1001px)
+{
+    body [id='wrapper'] main [id='content'] [id='tarifs'] table thead td:first-child,
+    body [id='wrapper'] main [id='content'] [id='tarifs'] table tbody td:first-child,
+    body [id='wrapper'] main [id='content'] [id='tarifs'] table tfoot td:first-child
+    {
+        width: 25rem !important;
+    }
 }
 @media screen and (max-width: 600px)
 {
-    body [id='wrapper'] main [id='content'] [id='tarifs'] thead
-    {
-        display: none;
-    }
-    body [id='wrapper'] main [id='content'] [id='tarifs'] tr:nth-of-type(2n)
-    {
-        background-color: inherit;
-    }
-    body [id='wrapper'] main [id='content'] [id='tarifs'] tr td:first-child
-    {
-        font-size: 1.3em; 
-        font-weight: bold;
-
-        background: #f0f0f0;
-    }
-    body [id='wrapper'] main [id='content'] [id='tarifs'] tbody td
-    {
-        display: block;
-
-        text-align: center;
-    }
     body [id='wrapper'] main [id='content'] [id='tarifs'] tbody td:before
     {
         display: block;
 
         content: attr(data-th);
+        text-align: center;
+    }
+    body [id='wrapper'] main [id='content'] [id='tarifs'] tbody td:after
+    {
+        display: block;
+
+        content: attr(data-tf);
         text-align: center;
     }
 }
@@ -6349,6 +6416,7 @@ body iframe
 
     border: none;
 }
+body table tr,
 body table td,
 body table th
 {

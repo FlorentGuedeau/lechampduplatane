@@ -3240,6 +3240,38 @@ body {
                   color: #9bc407; }
             body [id="wrapper"] main [id="content"] #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post .jp-relatedposts-post-context {
               margin: 0 1em 1em 1em; }
+      body [id="wrapper"] main [id="content"] [id="tarifs"] .table-wrapper {
+        overflow-x: auto;
+        position: relative;
+        border: solid 3px #ccc; }
+        body [id="wrapper"] main [id="content"] [id="tarifs"] .table-wrapper::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(0, 0, 0, 0.3);
+          z-index: 1; }
+        body [id="wrapper"] main [id="content"] [id="tarifs"] .table-wrapper::after {
+          content: "";
+          color: #fff;
+          font-size: 4em;
+          font-family: 'FontAwesome';
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          z-index: 2; }
+        body [id="wrapper"] main [id="content"] [id="tarifs"] .table-wrapper.clicked::before, body [id="wrapper"] main [id="content"] [id="tarifs"] .table-wrapper.clicked::after {
+          display: none; }
+        @media (min-width: 1001px) {
+          body [id="wrapper"] main [id="content"] [id="tarifs"] .table-wrapper {
+            border: none; }
+            body [id="wrapper"] main [id="content"] [id="tarifs"] .table-wrapper::before, body [id="wrapper"] main [id="content"] [id="tarifs"] .table-wrapper::after {
+              display: none; } }
       body [id="wrapper"] main [id="content"] [id="tarifs"] table {
         border-collapse: collapse; }
         @media (min-width: 1001px) {
@@ -3249,11 +3281,7 @@ body {
             margin-left: auto;
             margin-right: auto; } }
         body [id="wrapper"] main [id="content"] [id="tarifs"] table thead {
-          display: none; }
-          @media (min-width: 1001px) {
-            body [id="wrapper"] main [id="content"] [id="tarifs"] table thead {
-              display: table-header-group;
-              text-align: center; } }
+          text-align: center; }
           body [id="wrapper"] main [id="content"] [id="tarifs"] table thead tr th, body [id="wrapper"] main [id="content"] [id="tarifs"] table thead tr td {
             background-color: #fff;
             border: solid 3px #F1F1F1;
@@ -3265,37 +3293,25 @@ body {
         body [id="wrapper"] main [id="content"] [id="tarifs"] table tbody {
           text-align: center; }
           body [id="wrapper"] main [id="content"] [id="tarifs"] table tbody tr td {
-            background-color: #fff; }
-            @media (min-width: 1001px) {
-              body [id="wrapper"] main [id="content"] [id="tarifs"] table tbody tr td {
-                border: solid 3px #F1F1F1; } }
+            background-color: #fff;
+            border: solid 3px #F1F1F1; }
             body [id="wrapper"] main [id="content"] [id="tarifs"] table tbody tr td:first-child {
               font-weight: bold;
               font-size: 1.1em;
-              text-align: center; }
-              @media (min-width: 1001px) {
-                body [id="wrapper"] main [id="content"] [id="tarifs"] table tbody tr td:first-child {
-                  text-align: right; } }
+              text-align: right; }
         body [id="wrapper"] main [id="content"] [id="tarifs"] table tfoot {
           text-align: center; }
           body [id="wrapper"] main [id="content"] [id="tarifs"] table tfoot tr:last-child td {
             background-color: transparent; }
-          body [id="wrapper"] main [id="content"] [id="tarifs"] table tfoot td:empty {
-            display: none; }
           body [id="wrapper"] main [id="content"] [id="tarifs"] table tfoot td:not(:empty) {
             background-color: #fff;
             border: solid 3px #F1F1F1; }
-          @media (min-width: 1001px) {
-            body [id="wrapper"] main [id="content"] [id="tarifs"] table tfoot td:empty {
-              display: table-cell; } }
+          body [id="wrapper"] main [id="content"] [id="tarifs"] table tfoot td:empty {
+            display: table-cell; }
           body [id="wrapper"] main [id="content"] [id="tarifs"] table tfoot [role="button"], body [id="wrapper"] main [id="content"] [id="tarifs"] table tfoot .button {
             margin: 1em 0; }
         body [id="wrapper"] main [id="content"] [id="tarifs"] table tr {
-          display: block;
           margin-bottom: 2em; }
-          @media (min-width: 1001px) {
-            body [id="wrapper"] main [id="content"] [id="tarifs"] table tr {
-              display: table-row; } }
         body [id="wrapper"] main [id="content"] [id="tarifs"] table td, body [id="wrapper"] main [id="content"] [id="tarifs"] table th {
           padding: 1rem 2rem;
           height: auto; }
@@ -3309,16 +3325,9 @@ body {
           font-size: 1.2em; }
           body [id="wrapper"] main [id="content"] [id="tarifs"] table i.fa-check {
             color: #9bc407; }
-        body [id="wrapper"] main [id="content"] [id="tarifs"] table thead td, body [id="wrapper"] main [id="content"] [id="tarifs"] table tbody td, body [id="wrapper"] main [id="content"] [id="tarifs"] table tfoot td {
-          display: block; }
-          @media (min-width: 1001px) {
-            body [id="wrapper"] main [id="content"] [id="tarifs"] table thead td, body [id="wrapper"] main [id="content"] [id="tarifs"] table tbody td, body [id="wrapper"] main [id="content"] [id="tarifs"] table tfoot td {
-              display: table-cell; } }
+        @media (min-width: 1001px) {
           body [id="wrapper"] main [id="content"] [id="tarifs"] table thead td:first-child, body [id="wrapper"] main [id="content"] [id="tarifs"] table tbody td:first-child, body [id="wrapper"] main [id="content"] [id="tarifs"] table tfoot td:first-child {
-            width: 100% !important; }
-            @media (min-width: 1001px) {
-              body [id="wrapper"] main [id="content"] [id="tarifs"] table thead td:first-child, body [id="wrapper"] main [id="content"] [id="tarifs"] table tbody td:first-child, body [id="wrapper"] main [id="content"] [id="tarifs"] table tfoot td:first-child {
-                width: 25rem !important; } }
+            width: 25rem !important; } }
       @media screen and (max-width: 600px) {
         body [id="wrapper"] main [id="content"] [id="tarifs"] tbody td:before {
           content: attr(data-th);
