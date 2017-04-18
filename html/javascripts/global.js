@@ -85,7 +85,7 @@ jQuery(document).ready(function(){
         var pressed = $(this).attr("aria-pressed") == "true";
         //change la valeur de aria-pressed quand le bouton est basculé :
         $(this).attr("aria-pressed", pressed ? "false" : "true");
-        $(this).blur(); // Supprime le focus
+        //        $(this).blur(); // Supprime le focus => ne pas supprimer le focus car lors du clic au clavier on perd le focus
         $(this).stop( true, true ).toggleClass('active');
         $('#sidebar').stop( true, true ).toggleClass('active');
 
@@ -94,7 +94,7 @@ jQuery(document).ready(function(){
 
 
     // spinner des boutons
-    $('a[role="button"], .button').on('click', function() {
+    $('a[role="button"], .button').not('.not-loading').on('click', function() {
         $(this).addClass('is-loading');
     });
 
@@ -104,7 +104,7 @@ jQuery(document).ready(function(){
     $('section#service').find('.article').find('.button').on('click', function() {
         var $btn = $(this);
         $btn.parents('.content-article').find('.visibility-toggle').stop( true, true ).slideToggle('slow', function(){
-            $btn.blur(); // Supprime le focus
+            //            $btn.blur(); // Supprime le focus
             $btn.toggleClass('active');
 
             if( $btn.hasClass('active') ) {
