@@ -31,7 +31,7 @@
                 </div>
 
                 <footer>
-                    <button class="button not-loading" title="Cliquez ici pour en voir plus">En voir plus</button>
+                    <button type="button" class="button not-loading" title="Cliquez ici pour en voir plus">En voir plus</button>
                     <?php edit_post_link('Modifier la page', '<p class="edit-post-link txt-center">', '</p>'); ?>
                 </footer>
             </div>
