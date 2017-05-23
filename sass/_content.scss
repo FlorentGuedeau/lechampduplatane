@@ -74,6 +74,7 @@ main {
                 weight: bold;
                 size: 2em;
             }
+            line-height: normal;
         }
 
         h2, .title-h2 {
@@ -81,6 +82,7 @@ main {
                 size: 1.6em;
                 weight: bold;
             }
+            line-height: normal;
         }
 
         h3, .title-h3 {
@@ -88,6 +90,7 @@ main {
                 size: 1.4em;
                 weight: bold;
             }
+            line-height: normal;
         }
 
         h4, .title-h4 {
@@ -96,6 +99,7 @@ main {
                 weight: bold;
             }
             color: $color-text;
+            line-height: normal;
         }
 
         blockquote {

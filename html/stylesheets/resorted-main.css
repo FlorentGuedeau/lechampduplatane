@@ -5402,11 +5402,64 @@ body [id='wrapper'] main [id='content'] #jp-relatedposts .jp-relatedposts-items 
 {
     margin: 0 1em 1em 1em;
 }
-body [id='wrapper'] main [id='content'] [id='tarifs'] table
+body [id='wrapper'] main [id='content'] [id='tarifs'] .table-wrapper
 {
-    display: block; 
+    position: relative;
+
     overflow-x: auto;
 
+    border: solid 3px #ccc;
+}
+body [id='wrapper'] main [id='content'] [id='tarifs'] .table-wrapper::before
+{
+    position: absolute;
+    z-index: 1; 
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    content: '';
+
+    background-color: rgba(0, 0, 0, .3);
+}
+body [id='wrapper'] main [id='content'] [id='tarifs'] .table-wrapper::after
+{
+    font-family: 'FontAwesome';
+    font-size: 4em;
+
+    position: absolute;
+    z-index: 2; 
+    top: 50%;
+    left: 50%;
+
+    content: '';
+    transform: translate(-50%, -50%);
+
+    color: #fff;
+}
+body [id='wrapper'] main [id='content'] [id='tarifs'] .table-wrapper.clicked::before,
+body [id='wrapper'] main [id='content'] [id='tarifs'] .table-wrapper.clicked::after
+{
+    display: none;
+}
+@media (min-width: 1001px)
+{
+    body [id='wrapper'] main [id='content'] [id='tarifs'] .table-wrapper
+    {
+        border: none;
+    }
+    body [id='wrapper'] main [id='content'] [id='tarifs'] .table-wrapper::before,
+    body [id='wrapper'] main [id='content'] [id='tarifs'] .table-wrapper::after
+    {
+        display: none;
+    }
+}
+body [id='wrapper'] main [id='content'] [id='tarifs'] table
+{
     border-collapse: collapse;
 }
 @media (min-width: 1001px)
@@ -5422,16 +5475,7 @@ body [id='wrapper'] main [id='content'] [id='tarifs'] table
 }
 body [id='wrapper'] main [id='content'] [id='tarifs'] table thead
 {
-    display: none;
-}
-@media (min-width: 1001px)
-{
-    body [id='wrapper'] main [id='content'] [id='tarifs'] table thead
-    {
-        display: table-header-group;
-
-        text-align: center;
-    }
+    text-align: center;
 }
 body [id='wrapper'] main [id='content'] [id='tarifs'] table thead tr th,
 body [id='wrapper'] main [id='content'] [id='tarifs'] table thead tr td
@@ -5455,28 +5499,15 @@ body [id='wrapper'] main [id='content'] [id='tarifs'] table tbody
 }
 body [id='wrapper'] main [id='content'] [id='tarifs'] table tbody tr td
 {
+    border: solid 3px #f1f1f1; 
     background-color: #fff;
-}
-@media (min-width: 1001px)
-{
-    body [id='wrapper'] main [id='content'] [id='tarifs'] table tbody tr td
-    {
-        border: solid 3px #f1f1f1;
-    }
 }
 body [id='wrapper'] main [id='content'] [id='tarifs'] table tbody tr td:first-child
 {
     font-size: 1.1em;
     font-weight: bold;
 
-    text-align: center;
-}
-@media (min-width: 1001px)
-{
-    body [id='wrapper'] main [id='content'] [id='tarifs'] table tbody tr td:first-child
-    {
-        text-align: right;
-    }
+    text-align: right;
 }
 body [id='wrapper'] main [id='content'] [id='tarifs'] table tfoot
 {
@@ -5486,21 +5517,14 @@ body [id='wrapper'] main [id='content'] [id='tarifs'] table tfoot tr:last-child 
 {
     background-color: transparent;
 }
-body [id='wrapper'] main [id='content'] [id='tarifs'] table tfoot td:empty
-{
-    display: none;
-}
 body [id='wrapper'] main [id='content'] [id='tarifs'] table tfoot td:not(:empty)
 {
     border: solid 3px #f1f1f1; 
     background-color: #fff;
 }
-@media (min-width: 1001px)
+body [id='wrapper'] main [id='content'] [id='tarifs'] table tfoot td:empty
 {
-    body [id='wrapper'] main [id='content'] [id='tarifs'] table tfoot td:empty
-    {
-        display: table-cell;
-    }
+    display: table-cell;
 }
 body [id='wrapper'] main [id='content'] [id='tarifs'] table tfoot [role='button'],
 body [id='wrapper'] main [id='content'] [id='tarifs'] table tfoot .button
@@ -5509,16 +5533,7 @@ body [id='wrapper'] main [id='content'] [id='tarifs'] table tfoot .button
 }
 body [id='wrapper'] main [id='content'] [id='tarifs'] table tr
 {
-    display: block;
-
     margin-bottom: 2em;
-}
-@media (min-width: 1001px)
-{
-    body [id='wrapper'] main [id='content'] [id='tarifs'] table tr
-    {
-        display: table-row;
-    }
 }
 body [id='wrapper'] main [id='content'] [id='tarifs'] table td,
 body [id='wrapper'] main [id='content'] [id='tarifs'] table th
@@ -5545,27 +5560,6 @@ body [id='wrapper'] main [id='content'] [id='tarifs'] table i
 body [id='wrapper'] main [id='content'] [id='tarifs'] table i.fa-check
 {
     color: #9bc407;
-}
-body [id='wrapper'] main [id='content'] [id='tarifs'] table thead td,
-body [id='wrapper'] main [id='content'] [id='tarifs'] table tbody td,
-body [id='wrapper'] main [id='content'] [id='tarifs'] table tfoot td
-{
-    display: block;
-}
-@media (min-width: 1001px)
-{
-    body [id='wrapper'] main [id='content'] [id='tarifs'] table thead td,
-    body [id='wrapper'] main [id='content'] [id='tarifs'] table tbody td,
-    body [id='wrapper'] main [id='content'] [id='tarifs'] table tfoot td
-    {
-        display: table-cell;
-    }
-}
-body [id='wrapper'] main [id='content'] [id='tarifs'] table thead td:first-child,
-body [id='wrapper'] main [id='content'] [id='tarifs'] table tbody td:first-child,
-body [id='wrapper'] main [id='content'] [id='tarifs'] table tfoot td:first-child
-{
-    width: 100% !important;
 }
 @media (min-width: 1001px)
 {

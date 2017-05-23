@@ -3057,17 +3057,21 @@ body {
         margin-top: 1em;
         margin-bottom: 1.5em;
         font-weight: bold;
-        font-size: 2em; }
+        font-size: 2em;
+        line-height: normal; }
       body [id="wrapper"] main [id="content"] h2, body [id="wrapper"] main [id="content"] .title-h2 {
         font-size: 1.6em;
-        font-weight: bold; }
+        font-weight: bold;
+        line-height: normal; }
       body [id="wrapper"] main [id="content"] h3, body [id="wrapper"] main [id="content"] .title-h3 {
         font-size: 1.4em;
-        font-weight: bold; }
+        font-weight: bold;
+        line-height: normal; }
       body [id="wrapper"] main [id="content"] h4, body [id="wrapper"] main [id="content"] .title-h4 {
         font-size: 1.2em;
         font-weight: bold;
-        color: #000; }
+        color: #000;
+        line-height: normal; }
       body [id="wrapper"] main [id="content"] blockquote {
         padding: 1em;
         background-color: #ffffff;
