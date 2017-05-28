@@ -136,6 +136,17 @@ main {
             @import 'forms';
         }
 
+        .gallery {
+            clear: both;
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: center;
+
+            figure {
+                margin: 1em;
+            }
+        }
+
         [id="navigation"] {
             text-align: center;
             border-top: solid 3px #ccc;

@@ -3177,6 +3177,16 @@ body {
           animation: spin 2s linear infinite; }
       body [id="wrapper"] main [id="content"] form span.wpcf7-not-valid-tip {
         padding: .5em; }
+      body [id="wrapper"] main [id="content"] .gallery {
+        clear: both;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+        -ms-flex-pack: center;
+            justify-content: center; }
+        body [id="wrapper"] main [id="content"] .gallery figure {
+          margin: 1em; }
       body [id="wrapper"] main [id="content"] [id="navigation"] {
         text-align: center;
         border-top: solid 3px #ccc;

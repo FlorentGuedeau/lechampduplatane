@@ -4929,8 +4929,9 @@ body [id='wrapper'] main [id='content'] a:not([role='button']):not(.button):acti
 body [id='wrapper'] main [id='content'] h1,
 body [id='wrapper'] main [id='content'] .title-h1
 {
-    font-size: 2em; 
+    font-size: 2em;
     font-weight: bold;
+    line-height: normal; 
 
     margin-top: 1em;
     margin-bottom: 1.5em;
@@ -4943,18 +4944,21 @@ body [id='wrapper'] main [id='content'] .title-h2
 {
     font-size: 1.6em;
     font-weight: bold;
+    line-height: normal;
 }
 body [id='wrapper'] main [id='content'] h3,
 body [id='wrapper'] main [id='content'] .title-h3
 {
     font-size: 1.4em;
     font-weight: bold;
+    line-height: normal;
 }
 body [id='wrapper'] main [id='content'] h4,
 body [id='wrapper'] main [id='content'] .title-h4
 {
     font-size: 1.2em;
     font-weight: bold;
+    line-height: normal; 
 
     color: #000;
 }
