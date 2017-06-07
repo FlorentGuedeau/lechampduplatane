@@ -56,6 +56,12 @@ a:active, li:active, i:active, input:active, button:active {
 
 .gallery-caption {
     max-width: 100%;
+    text-align: center;
+    padding-top: .5rem;
+    font: {
+        style: italic;
+        size: .8em;
+    }
 }
 
 .bypostauthor {
