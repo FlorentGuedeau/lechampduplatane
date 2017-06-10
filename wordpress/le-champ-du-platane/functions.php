@@ -105,11 +105,11 @@ function theme_scripts() {
     //    wp_style_add_data( 'twentyseventeen-ie8', 'conditional', 'lt IE 9' );
     //
     //    // Load the html5 shiv.
-    wp_enqueue_script( 'html5', get_theme_file_uri( '/javascripts/modules/html5.js' ), array(), '3.7.3' );
+    wp_enqueue_script( 'html5', get_theme_file_uri( '/javascripts/modules/html5.js' ), array(), '3.7.3', false );
     wp_script_add_data( 'html5', 'conditional', 'lt IE 9' );
 
-    wp_enqueue_script( 'global-js', get_theme_file_uri( '/javascripts/global.js' ), array( 'jquery' ), true );
-    wp_enqueue_script( 'jquery-sticky-kit', get_theme_file_uri( '/javascripts/modules/jquery.sticky-kit.js' ), array( 'jquery' ), true );
+    wp_enqueue_script( 'jquery-sticky-kit', get_theme_file_uri( '/javascripts/modules/jquery.sticky-kit.js' ), array( 'jquery' ), '1.0.0', true );
+    wp_enqueue_script( 'global-js', get_theme_file_uri( '/javascripts/global.js' ), array( 'jquery' ), '1.0.0',  true );
 
     if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
         wp_enqueue_script( 'comment-reply' );
@@ -670,6 +670,23 @@ function jeherve_custom_image( $media, $post_id, $args ) {
     }
 }
 add_filter( 'jetpack_images_get_images', 'jeherve_custom_image', 10, 3 );
+
+
+function jetpackme_append_related_post( $hits, $post_id ) {
+    // $post_id is the post we are currently getting related posts for
+    //    if ( 366 == $post_id ) {
+    // Add 1036 to the front of the hits array
+    array_unshift( $hits, array( 'id' => 349 ) );
+    array_pop( $hits );
+    array_unshift( $hits, array( 'id' => 349 ) );
+    array_pop( $hits );
+    array_unshift( $hits, array( 'id' => 349 ) );
+    array_pop( $hits );
+    //    }
+
+    return $hits;
+}
+//add_filter( 'jetpack_relatedposts_filter_hits', 'jetpackme_append_related_post', 20, 2 );
 
 
 // If more than one page exists, return TRUE.
