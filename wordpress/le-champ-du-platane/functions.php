@@ -673,20 +673,78 @@ add_filter( 'jetpack_images_get_images', 'jeherve_custom_image', 10, 3 );
 
 
 function jetpackme_append_related_post( $hits, $post_id ) {
-    // $post_id is the post we are currently getting related posts for
-    //    if ( 366 == $post_id ) {
-    // Add 1036 to the front of the hits array
-    array_unshift( $hits, array( 'id' => 349 ) );
-    array_pop( $hits );
-    array_unshift( $hits, array( 'id' => 349 ) );
-    array_pop( $hits );
-    array_unshift( $hits, array( 'id' => 349 ) );
-    array_pop( $hits );
-    //    }
+    if( empty($hits[0]) ) { // il en manque 3
+        global $post;
+        $cat = get_the_category( $post_id );
+
+        $args = array(
+            'posts_per_page'    =>  3, // 3 post en +
+            'post_type'         =>  'post',
+            'cat'               =>  $cat[0]->term_id, // la catégorie du post courant
+            'post_status'       => 'publish',
+            'orderby'           => 'rand', // aléatoire
+            'post__not_in'      => array( $post_id ) // tous sauf le post en cours
+        );
+
+        $query = new WP_Query( $args );
+
+        while ( $query->have_posts() ) {
+            $query->the_post();
+            array_unshift( $hits, array( 'id' => $post->ID ) );
+        }
+
+        return $hits;
+    }
+
+    if( empty($hits[1]) ) { // il en manque 2
+        global $post;
+        $cat = get_the_category( $post_id );
+
+        $args = array(
+            'posts_per_page'    =>  2, // 2 post en +
+            'post_type'         =>  'post',
+            'cat'               =>  $cat[0]->term_id, // la catégorie du post courant
+            'post_status'       => 'publish',
+            'orderby'           => 'rand', // aléatoire
+            'post__not_in'      => array( $post_id, $hits[0]['id'] ) // tous sauf le post en cours ainsi que le post déjà présent dans le tableau $hits
+        );
+
+        $query = new WP_Query( $args );
+
+        while ( $query->have_posts() ) {
+            $query->the_post();
+            array_unshift( $hits, array( 'id' => $post->ID ) );
+        }
+
+        return $hits;
+    }
+
+    if( empty($hits[2]) ) { // il en manque 1 
+        global $post;
+        $cat = get_the_category( $post_id );
+
+        $args = array(
+            'posts_per_page'    =>  1, // 1 post en +
+            'post_type'         =>  'post',
+            'cat'               =>  $cat[0]->term_id, // la catégorie du post courant
+            'post_status'       => 'publish',
+            'orderby'           => 'rand', // aléatoire
+            'post__not_in'      => array( $post_id, $hits[0]['id'], $hits[1]['id'] ) // tous sauf le post en cours ainsi que les posts déjà présents dans le tableau $hits
+        );
+
+        $query = new WP_Query( $args );
+
+        while ( $query->have_posts() ) {
+            $query->the_post();
+            array_unshift( $hits, array( 'id' => $post->ID ) );
+        }
+
+        return $hits;
+    }
 
     return $hits;
 }
-//add_filter( 'jetpack_relatedposts_filter_hits', 'jetpackme_append_related_post', 20, 2 );
+add_filter( 'jetpack_relatedposts_filter_hits', 'jetpackme_append_related_post', 20, 2 );
 
 
 // If more than one page exists, return TRUE.
