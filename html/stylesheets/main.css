@@ -3417,6 +3417,10 @@ body {
             justify-content: center; }
         body [id="wrapper"] main [id="content"] > section[id="services"] .cols .article, body [id="wrapper"] main [id="content"] > section[id="service"] .cols .article {
           margin: 1em; }
+          body [id="wrapper"] main [id="content"] > section[id="services"] .cols .article:first-child, body [id="wrapper"] main [id="content"] > section[id="service"] .cols .article:first-child {
+            margin-left: 0; }
+          body [id="wrapper"] main [id="content"] > section[id="services"] .cols .article:last-child, body [id="wrapper"] main [id="content"] > section[id="service"] .cols .article:last-child {
+            margin-right: 0; }
       body [id="wrapper"] main [id="content"] > section[id="services"] .article, body [id="wrapper"] main [id="content"] > section[id="service"] .article {
         max-width: 280px;
         box-shadow: 0 0px 3px rgba(0, 0, 0, 0.2);
@@ -3618,7 +3622,11 @@ body {
   body .screen-reader-text {
     max-width: 100%; }
   body .gallery-caption {
-    max-width: 100%; }
+    max-width: 100%;
+    text-align: center;
+    padding-top: .5rem;
+    font-style: italic;
+    font-size: .8em; }
   body .bypostauthor {
     max-width: 100%; }
   body .reset-float {

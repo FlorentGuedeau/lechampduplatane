@@ -5279,6 +5279,21 @@ body [id='wrapper'] main [id='content'] form span.wpcf7-not-valid-tip
 {
     padding: .5em;
 }
+body [id='wrapper'] main [id='content'] .gallery
+{
+    display: -ms-flexbox;
+    display: flex;
+    clear: both;
+
+    -ms-flex-flow: row wrap;
+        flex-flow: row wrap;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+body [id='wrapper'] main [id='content'] .gallery figure
+{
+    margin: 1em;
+}
 body [id='wrapper'] main [id='content'] [id='navigation']
 {
     margin-top: 5rem; 
@@ -6163,7 +6178,13 @@ body .screen-reader-text
 }
 body .gallery-caption
 {
+    font-size: .8em; 
+    font-style: italic;
+
     max-width: 100%;
+    padding-top: .5rem;
+
+    text-align: center;
 }
 body .bypostauthor
 {
