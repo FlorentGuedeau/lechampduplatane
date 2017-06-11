@@ -3326,7 +3326,8 @@ body {
           body [id="wrapper"] main [id="content"] [id="tarifs"] table thead tr th, body [id="wrapper"] main [id="content"] [id="tarifs"] table thead tr td {
             background-color: #fff;
             border: solid 3px #F1F1F1;
-            font-size: 1.1em;
+            font-size: 1.5em;
+            text-transform: uppercase;
             white-space: nowrap;
             font-weight: bold; }
             body [id="wrapper"] main [id="content"] [id="tarifs"] table thead tr th:first-child, body [id="wrapper"] main [id="content"] [id="tarifs"] table thead tr td:first-child {
@@ -3349,8 +3350,15 @@ body {
             border: solid 3px #F1F1F1; }
           body [id="wrapper"] main [id="content"] [id="tarifs"] table tfoot td:empty {
             display: table-cell; }
+          body [id="wrapper"] main [id="content"] [id="tarifs"] table tfoot td:first-child {
+            font-weight: bold;
+            font-size: 1.1em;
+            text-align: right;
+            font-size: 1.5em;
+            text-transform: uppercase; }
           body [id="wrapper"] main [id="content"] [id="tarifs"] table tfoot [role="button"], body [id="wrapper"] main [id="content"] [id="tarifs"] table tfoot .button {
-            margin: 1em 0; }
+            margin: 1em 0;
+            white-space: nowrap; }
         body [id="wrapper"] main [id="content"] [id="tarifs"] table tr {
           margin-bottom: 2em; }
         body [id="wrapper"] main [id="content"] [id="tarifs"] table td, body [id="wrapper"] main [id="content"] [id="tarifs"] table th {
@@ -3362,6 +3370,8 @@ body {
           display: block;
           font-size: 2em;
           color: #ebbe00; }
+          body [id="wrapper"] main [id="content"] [id="tarifs"] table .price i {
+            font-size: 60%; }
         body [id="wrapper"] main [id="content"] [id="tarifs"] table i {
           font-size: 1.2em; }
           body [id="wrapper"] main [id="content"] [id="tarifs"] table i.fa-check {
