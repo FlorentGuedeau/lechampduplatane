@@ -177,6 +177,48 @@ main {
             }
         }
 
+        .faq {
+            padding: 1px 1em;
+            background-color: #fff;
+            box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+            margin-bottom: 1.5em;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            .question {
+                font-size: 1.2em;
+                cursor: pointer;
+                padding-right: 2em;
+                position: relative;
+
+                &::after {
+                    @include content('\f054');
+                    font-size: 2em;
+                    font-family: 'FontAwesome';
+                    position: absolute;
+                    right: 0;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    //                    color: $color-green;
+                    @include transition-duration(400ms);
+                }
+
+                &.active {
+                    &::after{
+                        margin-top: -3rem; // companser la rotation de l'icone
+                        transform: rotate(90deg);
+                    }
+                }
+            }
+
+            .answer {
+                color: #444;
+                padding: 1px 0; // pour évite le décalage à l'animation slideToggle
+            }
+        }
+
         #jp-relatedposts {
             margin: 3rem 0 0 0;
             padding: 0;

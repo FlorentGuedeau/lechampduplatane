@@ -116,6 +116,15 @@ jQuery(document).ready(function(){
             }
         });
     });
+
+
+    // FAQ Accueil
+    $('.answer').hide();
+    $('.question').on('click', function() {
+        $(this).parent('.faq').find('.answer').stop( true, true ).slideToggle('slow', function(){
+            $(this).parent('.faq').find('.question').toggleClass('active'); 
+        });
+    });
 });
 
 

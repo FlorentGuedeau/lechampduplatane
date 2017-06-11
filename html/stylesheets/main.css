@@ -3213,6 +3213,33 @@ body {
         margin-top: 5rem; }
         body [id="wrapper"] main [id="content"] .sharedaddy .title-h2 {
           margin-top: 0; }
+      body [id="wrapper"] main [id="content"] .faq {
+        padding: 1px 1em;
+        background-color: #fff;
+        box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+        margin-bottom: 1.5em; }
+        body [id="wrapper"] main [id="content"] .faq:last-child {
+          margin-bottom: 0; }
+        body [id="wrapper"] main [id="content"] .faq .question {
+          font-size: 1.2em;
+          cursor: pointer;
+          padding-right: 2em;
+          position: relative; }
+          body [id="wrapper"] main [id="content"] .faq .question::after {
+            content: "";
+            font-size: 2em;
+            font-family: 'FontAwesome';
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            transition-duration: 400ms; }
+          body [id="wrapper"] main [id="content"] .faq .question.active::after {
+            margin-top: -3rem;
+            transform: rotate(90deg); }
+        body [id="wrapper"] main [id="content"] .faq .answer {
+          color: #444;
+          padding: 1px 0; }
       body [id="wrapper"] main [id="content"] #jp-relatedposts {
         margin: 3rem 0 0 0;
         padding: 0; }

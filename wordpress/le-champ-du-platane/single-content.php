@@ -30,9 +30,8 @@
 
     <div <?php if( has_post_thumbnail() ) : ?>itemprop="articleBody"<?php endif; ?> class="article-content">
         <?php the_content(); ?>
-
-        <div class="clear"></div>
     </div>
+    <div class="clear"></div>
 </article>
 
 <?php
