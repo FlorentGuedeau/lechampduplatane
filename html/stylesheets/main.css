@@ -3327,9 +3327,7 @@ body {
             background-color: #fff;
             border: solid 3px #F1F1F1;
             font-size: 1.5em;
-            text-transform: uppercase;
-            white-space: nowrap;
-            font-weight: bold; }
+            font-weight: normal; }
             body [id="wrapper"] main [id="content"] [id="tarifs"] table thead tr th:first-child, body [id="wrapper"] main [id="content"] [id="tarifs"] table thead tr td:first-child {
               background-color: transparent; }
         body [id="wrapper"] main [id="content"] [id="tarifs"] table tbody {
@@ -3364,13 +3362,21 @@ body {
         body [id="wrapper"] main [id="content"] [id="tarifs"] table td, body [id="wrapper"] main [id="content"] [id="tarifs"] table th {
           padding: 1rem 2rem;
           height: auto; }
-        body [id="wrapper"] main [id="content"] [id="tarifs"] table td:first-child {
-          white-space: nowrap; }
         body [id="wrapper"] main [id="content"] [id="tarifs"] table .price {
           display: block;
           font-size: 2em;
           color: #ebbe00; }
           body [id="wrapper"] main [id="content"] [id="tarifs"] table .price i {
+            font-size: 60%; }
+        body [id="wrapper"] main [id="content"] [id="tarifs"] table .price-2 {
+          display: block;
+          color: #ebbe00;
+          text-transform: uppercase;
+          font-weight: bold; }
+          @media (min-width: 1001px) {
+            body [id="wrapper"] main [id="content"] [id="tarifs"] table .price-2 {
+              word-break: break-all; } }
+          body [id="wrapper"] main [id="content"] [id="tarifs"] table .price-2 i {
             font-size: 60%; }
         body [id="wrapper"] main [id="content"] [id="tarifs"] table i {
           font-size: 1.2em; }

@@ -5346,6 +5346,53 @@ body [id='wrapper'] main [id='content'] .sharedaddy .title-h2
 {
     margin-top: 0;
 }
+body [id='wrapper'] main [id='content'] .faq
+{
+    margin-bottom: 1.5em; 
+    padding: 1px 1em;
+
+    background-color: #fff;
+    box-shadow: 0 0 3px rgba(0, 0, 0, .2);
+}
+body [id='wrapper'] main [id='content'] .faq:last-child
+{
+    margin-bottom: 0;
+}
+body [id='wrapper'] main [id='content'] .faq .question
+{
+    font-size: 1.2em;
+
+    position: relative; 
+
+    padding-right: 2em;
+
+    cursor: pointer;
+}
+body [id='wrapper'] main [id='content'] .faq .question::after
+{
+    font-family: 'FontAwesome';
+    font-size: 2em;
+
+    position: absolute;
+    top: 50%;
+    right: 0;
+
+    content: '';
+    transition-duration: 400ms; 
+    transform: translateY(-50%);
+}
+body [id='wrapper'] main [id='content'] .faq .question.active::after
+{
+    margin-top: -3rem;
+
+    transform: rotate(90deg);
+}
+body [id='wrapper'] main [id='content'] .faq .answer
+{
+    padding: 1px 0; 
+
+    color: #444;
+}
 body [id='wrapper'] main [id='content'] #jp-relatedposts
 {
     margin: 3rem 0 0 0;
@@ -5499,10 +5546,11 @@ body [id='wrapper'] main [id='content'] [id='tarifs'] table thead
 body [id='wrapper'] main [id='content'] [id='tarifs'] table thead tr th,
 body [id='wrapper'] main [id='content'] [id='tarifs'] table thead tr td
 {
-    font-size: 1.1em;
+    font-size: 1.5em;
     font-weight: bold; 
 
     white-space: nowrap;
+    text-transform: uppercase;
 
     border: solid 3px #f1f1f1;
     background-color: #fff;
@@ -5545,10 +5593,21 @@ body [id='wrapper'] main [id='content'] [id='tarifs'] table tfoot td:empty
 {
     display: table-cell;
 }
+body [id='wrapper'] main [id='content'] [id='tarifs'] table tfoot td:first-child
+{
+    font-size: 1.1em;
+    font-size: 1.5em;
+    font-weight: bold;
+
+    text-align: right;
+    text-transform: uppercase;
+}
 body [id='wrapper'] main [id='content'] [id='tarifs'] table tfoot [role='button'],
 body [id='wrapper'] main [id='content'] [id='tarifs'] table tfoot .button
 {
     margin: 1em 0;
+
+    white-space: nowrap;
 }
 body [id='wrapper'] main [id='content'] [id='tarifs'] table tr
 {
@@ -5571,6 +5630,10 @@ body [id='wrapper'] main [id='content'] [id='tarifs'] table .price
     display: block;
 
     color: #ebbe00;
+}
+body [id='wrapper'] main [id='content'] [id='tarifs'] table .price i
+{
+    font-size: 60%;
 }
 body [id='wrapper'] main [id='content'] [id='tarifs'] table i
 {

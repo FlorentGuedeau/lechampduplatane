@@ -388,9 +388,9 @@ main {
                             background-color: #fff;
                             border: solid 3px #F1F1F1;
                             font-size: 1.5em;
-                            text-transform: uppercase;
-                            white-space: nowrap;
-                            font-weight: bold;
+                            //                            text-transform: uppercase;
+                            //                            white-space: nowrap;
+                            font-weight: normal;
 
                             &:first-child {
                                 background-color: transparent;
@@ -481,7 +481,7 @@ main {
 
                 td {
                     &:first-child {
-                        white-space: nowrap;
+                        //                        white-space: nowrap;
                     }
                 }
 
@@ -489,6 +489,22 @@ main {
                     display: block;
                     font-size: 2em;
                     color: $color-orange;
+
+                    i {
+                        font-size: 60%;
+                    }
+                }
+
+                .price-2 {
+                    display: block;
+                    //                    font-size: 1.2em;
+                    color: $color-orange;
+                    text-transform: uppercase;
+                    font-weight: bold;
+
+                    @include from('desktop') {
+                        word-break: break-all;
+                    }
 
                     i {
                         font-size: 60%;
