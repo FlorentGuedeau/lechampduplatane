@@ -659,12 +659,14 @@ main {
                     .article {
                         margin: 1em;
 
-                        &:first-child {
-                            margin-left: 0;
-                        }
+                        @include from("desktop") {
+                            &:first-child {
+                                margin-left: 0;
+                            }
 
-                        &:last-child {
-                            margin-right: 0;
+                            &:last-child {
+                                margin-right: 0;
+                            }
                         }
                     }
                 }
@@ -697,8 +699,64 @@ main {
             }
 
             &[id="service"] {
-                .cols {
-                    // align-items: flex-start;
+                [id="formules"] {
+                    .cols {
+                        display: flex;
+                        flex-wrap: wrap;
+                        justify-content: center;
+
+                        @include from('desktop') {
+                            display: block;
+                        }
+
+                        .article {
+                            margin: .5em;
+
+                            @include from('desktop') {
+                                margin: 0;
+                                margin-bottom: 1.5em;
+
+                                &:last-child {
+                                    margin-bottom: 0;
+                                }
+                            }
+
+                            .illustration {
+                                @include from('desktop') {
+                                    flex-shrink: 0;
+                                }
+                            }
+                        }
+                    }
+
+                    .article {
+                        max-width: 280px; // valeur fixe car les images font 300px de large
+                        box-shadow: 0 0px 3px rgba(0, 0, 0, 0.2);
+                        background-color: #ffffff;
+
+                        @include from('desktop') {
+                            max-width: none;
+                            display: flex;
+                        }
+
+                        a[role="button"], .button {
+                            &.active {
+                                &::after {
+                                    transform: rotate(-90deg);
+                                }
+                            }
+
+                            @include from('desktop') {
+                                display: inline-block;
+                                margin-bottom: 1em;
+                                width: auto;
+                            }
+                        }
+
+                        .visibility-toggle {
+                            padding: 1px 0; // Hack pour éviter le sur saut au toggle
+                        }
+                    }
                 }
             }
 
@@ -734,7 +792,7 @@ main {
                     }
 
                     h2 {
-                        a {
+                        a:not([role="button"]):not(.button) {
                             text-decoration: none;
                             @include link-colors($color-text, $color-orange, $color-green, $color-text, $color-orange);
                         }

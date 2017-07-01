@@ -2748,7 +2748,7 @@ body {
     height: auto;
     min-height: 100%;
     padding-top: 1px;
-    margin-bottom: -250px; }
+    margin-bottom: -25rem; }
     body [id="wrapper"] > noscript > div {
       margin-left: 1em;
       margin-right: 1em; }
@@ -2776,7 +2776,7 @@ body {
           overflow-x: hidden;
           background-color: #ffffff;
           border-right: solid 5px #ebbe00;
-          width: 265px; } }
+          width: 26.5rem; } }
       body [id="wrapper"] [id="sidebar"] a[role="button"], body [id="wrapper"] [id="sidebar"] .button {
         margin: 0 2em 1em 2em; }
         @media (min-width: 1001px) {
@@ -2856,7 +2856,7 @@ body {
         body [id="wrapper"] [id="sticky-sidebar"] {
           padding: inherit;
           float: left;
-          width: 265px;
+          width: 26.5rem;
           background-color: #ffffff;
           position: relative;
           border-right: solid 5px #ebbe00; } }
@@ -2870,7 +2870,7 @@ body {
         font-size: 15px;
         text-align: center;
         max-width: 200px; }
-        @media (max-width: 1000px) {
+        @media (max-width: 768px) {
           body [id="wrapper"] .main-logo img {
             display: none; } }
       body [id="wrapper"] .main-logo span {
@@ -3004,16 +3004,16 @@ body {
             display: none; }
     @media (min-width: 1001px) {
       body [id="wrapper"] main {
-        margin-left: 265px;
+        margin-left: 26.5rem;
         min-height: 100vh;
-        margin-bottom: -250px;
+        margin-bottom: -25rem;
         padding-bottom: 1px;
         max-width: 1600px; } }
     body [id="wrapper"] main [id="content"] {
       padding: 1px 1em; }
       @media (min-width: 1001px) {
         body [id="wrapper"] main [id="content"] {
-          margin-bottom: 250px; } }
+          margin-bottom: 25rem; } }
       body [id="wrapper"] main [id="content"] > section {
         margin-bottom: 5em; }
       body [id="wrapper"] main [id="content"] p, body [id="wrapper"] main [id="content"] li, body [id="wrapper"] main [id="content"] blockquote, body [id="wrapper"] main [id="content"] td, body [id="wrapper"] main [id="content"] th {
@@ -3460,10 +3460,11 @@ body {
             justify-content: center; }
         body [id="wrapper"] main [id="content"] > section[id="services"] .cols .article, body [id="wrapper"] main [id="content"] > section[id="service"] .cols .article {
           margin: 1em; }
-          body [id="wrapper"] main [id="content"] > section[id="services"] .cols .article:first-child, body [id="wrapper"] main [id="content"] > section[id="service"] .cols .article:first-child {
-            margin-left: 0; }
-          body [id="wrapper"] main [id="content"] > section[id="services"] .cols .article:last-child, body [id="wrapper"] main [id="content"] > section[id="service"] .cols .article:last-child {
-            margin-right: 0; }
+          @media (min-width: 1001px) {
+            body [id="wrapper"] main [id="content"] > section[id="services"] .cols .article:first-child, body [id="wrapper"] main [id="content"] > section[id="service"] .cols .article:first-child {
+              margin-left: 0; }
+            body [id="wrapper"] main [id="content"] > section[id="services"] .cols .article:last-child, body [id="wrapper"] main [id="content"] > section[id="service"] .cols .article:last-child {
+              margin-right: 0; } }
       body [id="wrapper"] main [id="content"] > section[id="services"] .article, body [id="wrapper"] main [id="content"] > section[id="service"] .article {
         max-width: 280px;
         box-shadow: 0 0px 3px rgba(0, 0, 0, 0.2);
@@ -3475,6 +3476,46 @@ body {
           padding: 1px 0; }
         body [id="wrapper"] main [id="content"] > section[id="services"] .article a[role="button"].active::after, body [id="wrapper"] main [id="content"] > section[id="services"] .article .button.active::after, body [id="wrapper"] main [id="content"] > section[id="service"] .article a[role="button"].active::after, body [id="wrapper"] main [id="content"] > section[id="service"] .article .button.active::after {
           transform: rotate(-90deg); }
+      body [id="wrapper"] main [id="content"] > section[id="service"] [id="formules"] .cols {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+        -ms-flex-pack: center;
+            justify-content: center; }
+        @media (min-width: 1001px) {
+          body [id="wrapper"] main [id="content"] > section[id="service"] [id="formules"] .cols {
+            display: block; } }
+        body [id="wrapper"] main [id="content"] > section[id="service"] [id="formules"] .cols .article {
+          margin: .5em; }
+          @media (min-width: 1001px) {
+            body [id="wrapper"] main [id="content"] > section[id="service"] [id="formules"] .cols .article {
+              margin: 0;
+              margin-bottom: 1.5em; }
+              body [id="wrapper"] main [id="content"] > section[id="service"] [id="formules"] .cols .article:last-child {
+                margin-bottom: 0; } }
+          @media (min-width: 1001px) {
+            body [id="wrapper"] main [id="content"] > section[id="service"] [id="formules"] .cols .article .illustration {
+              -ms-flex-negative: 0;
+                  flex-shrink: 0; } }
+      body [id="wrapper"] main [id="content"] > section[id="service"] [id="formules"] .article {
+        max-width: 280px;
+        box-shadow: 0 0px 3px rgba(0, 0, 0, 0.2);
+        background-color: #ffffff; }
+        @media (min-width: 1001px) {
+          body [id="wrapper"] main [id="content"] > section[id="service"] [id="formules"] .article {
+            max-width: none;
+            display: -ms-flexbox;
+            display: flex; } }
+        body [id="wrapper"] main [id="content"] > section[id="service"] [id="formules"] .article a[role="button"].active::after, body [id="wrapper"] main [id="content"] > section[id="service"] [id="formules"] .article .button.active::after {
+          transform: rotate(-90deg); }
+        @media (min-width: 1001px) {
+          body [id="wrapper"] main [id="content"] > section[id="service"] [id="formules"] .article a[role="button"], body [id="wrapper"] main [id="content"] > section[id="service"] [id="formules"] .article .button {
+            display: inline-block;
+            margin-bottom: 1em;
+            width: auto; } }
+        body [id="wrapper"] main [id="content"] > section[id="service"] [id="formules"] .article .visibility-toggle {
+          padding: 1px 0; }
       body [id="wrapper"] main [id="content"] > section.archive article .content-article, body [id="wrapper"] main [id="content"] > section.archive .article .content-article {
         padding-left: 1em;
         padding-right: 1em; }
@@ -3485,16 +3526,16 @@ body {
         display: block; }
       body [id="wrapper"] main [id="content"] > section.archive article .illustration a:not(.reverside):hover img, body [id="wrapper"] main [id="content"] > section.archive article .illustration a:not(.reverside):focus img, body [id="wrapper"] main [id="content"] > section.archive .article .illustration a:not(.reverside):hover img, body [id="wrapper"] main [id="content"] > section.archive .article .illustration a:not(.reverside):focus img {
         opacity: .5; }
-      body [id="wrapper"] main [id="content"] > section.archive article h2 a, body [id="wrapper"] main [id="content"] > section.archive .article h2 a {
+      body [id="wrapper"] main [id="content"] > section.archive article h2 a:not([role="button"]):not(.button), body [id="wrapper"] main [id="content"] > section.archive .article h2 a:not([role="button"]):not(.button) {
         text-decoration: none;
         color: #000; }
-        body [id="wrapper"] main [id="content"] > section.archive article h2 a:visited, body [id="wrapper"] main [id="content"] > section.archive .article h2 a:visited {
+        body [id="wrapper"] main [id="content"] > section.archive article h2 a:not([role="button"]):not(.button):visited, body [id="wrapper"] main [id="content"] > section.archive .article h2 a:not([role="button"]):not(.button):visited {
           color: #000; }
-        body [id="wrapper"] main [id="content"] > section.archive article h2 a:focus, body [id="wrapper"] main [id="content"] > section.archive .article h2 a:focus {
+        body [id="wrapper"] main [id="content"] > section.archive article h2 a:not([role="button"]):not(.button):focus, body [id="wrapper"] main [id="content"] > section.archive .article h2 a:not([role="button"]):not(.button):focus {
           color: #ebbe00; }
-        body [id="wrapper"] main [id="content"] > section.archive article h2 a:hover, body [id="wrapper"] main [id="content"] > section.archive .article h2 a:hover {
+        body [id="wrapper"] main [id="content"] > section.archive article h2 a:not([role="button"]):not(.button):hover, body [id="wrapper"] main [id="content"] > section.archive .article h2 a:not([role="button"]):not(.button):hover {
           color: #ebbe00; }
-        body [id="wrapper"] main [id="content"] > section.archive article h2 a:active, body [id="wrapper"] main [id="content"] > section.archive .article h2 a:active {
+        body [id="wrapper"] main [id="content"] > section.archive article h2 a:not([role="button"]):not(.button):active, body [id="wrapper"] main [id="content"] > section.archive .article h2 a:not([role="button"]):not(.button):active {
           color: #9bc407; }
       body [id="wrapper"] main [id="content"] > section.archive article a[role="button"], body [id="wrapper"] main [id="content"] > section.archive article .button, body [id="wrapper"] main [id="content"] > section.archive .article a[role="button"], body [id="wrapper"] main [id="content"] > section.archive .article .button {
         margin-bottom: 1em; }
@@ -3534,7 +3575,7 @@ body {
       background-color: #3f4949; }
       @media (min-width: 1001px) {
         body [id="wrapper"] [id="footer"] {
-          margin-left: 265px; } }
+          margin-left: 26.5rem; } }
       body [id="wrapper"] [id="footer"] a {
         color: #ffffff;
         display: inline-block;

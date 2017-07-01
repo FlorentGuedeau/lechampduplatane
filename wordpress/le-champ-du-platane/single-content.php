@@ -36,7 +36,7 @@
 
 <?php
 $categories = get_the_category();
-if ( class_exists( 'Jetpack_RelatedPosts' ) && $categories[0]->term_id == 2 ) {
+if ( $categories && class_exists( 'Jetpack_RelatedPosts' ) && $categories[0]->term_id == 2 ) {
     echo do_shortcode( '[jetpack-related-posts]' );
 }
 ?>
