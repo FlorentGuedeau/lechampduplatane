@@ -12,13 +12,13 @@
 
     <body itemscope itemtype="http://schema.org/WebPage" <?php body_class(); ?>>
         <div id="wrapper">
-            <noscript><div class="states warning">Pour une meilleure utilisation de ce site, veuillez activer JavaScript dans votre navigateur.</div></noscript>
+            <noscript><div class="states warning"><?php _e('Pour une meilleure utilisation de ce site, veuillez activer JavaScript dans votre navigateur.', 'le-champ-du-platane'); ?></div></noscript>
 
             <aside id="sidebar" aria-label="Menu latéral">
                 <div id="sticky-sidebar">
 
                     <header role="banner" class="main-logo">
-                        <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" title="Retour à l'accueil">
+                        <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" title="<?php _e('Retour à l\'accueil', 'le-champ-du-platane'); ?>">
                             <span role="heading"><?php bloginfo( 'name' ); ?><?php echo ', '; ?><?php bloginfo( 'description' ); ?></span>
                             <img src="<?php echo get_template_directory_uri(); ?>/images/logo-le-champ-du-platane-paysagiste-concepteur.png" width="200" height="193" alt="<?php bloginfo( 'name' ); ?><?php echo ', '; ?><?php bloginfo( 'description' ); ?>">
                         </a>
@@ -40,7 +40,7 @@
                 </div>
             </aside>
 
-            <button aria-pressed="false" type="button" id="menu-button" tabindex="1">Menu <span></span></button>
+            <button aria-pressed="false" type="button" id="menu-button" tabindex="1"><?php _e('Menu', 'le-champ-du-platane'); ?> <span></span></button>
 
             <main role="main">
                 <div id="content">

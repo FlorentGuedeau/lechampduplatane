@@ -93,44 +93,49 @@
         }
     }
 
-    &:hover, &:focus {
-        > span {
-            &::before {
-                top: -0.6em;
-            }
+    //    &:hover, &:focus {
+    //        > span {
+    //            &::before {
+    //                top: -0.6em;
+    //            }
+    //
+    //            &::after {
+    //                top: 0.6em;
+    //            }
+    //        }
+    //    }
+    //
+    //    &:active, &:focus {
+    //        background-color: $color-green;
+    //        color: #ffffff;
+    //
+    //        > span {
+    //            background-color: #ffffff;
+    //
+    //            &::before, &::after {
+    //                @include transition-duration(0ms);
+    //                background-color: #ffffff;
+    //            }
+    //        }
+    //    }
 
-            &::after {
-                top: 0.6em;
-            }
-        }
-    }
-
-    &:active, &:focus {
+    &.active {
         background-color: $color-green;
         color: #ffffff;
 
-        > span {
-            background-color: #ffffff;
-
-            &::before, &::after {
-                @include transition-duration(0ms);
-                background-color: #ffffff;
-            }
-        }
-    }
-
-    &.active {
         > span {
             background-color: transparent;
 
             &::before {
                 top: 0;
                 transform: rotate(-45deg);
+                background-color: #ffffff;
             }
 
             &::after {
                 top: 0;
                 transform: rotate(45deg);
+                background-color: #ffffff;
             }
         }
     }
@@ -157,15 +162,15 @@
     margin-top: 1em;
 
     img {
-        display: inline-block;
+        display: none;
         line-height: calc(193px / 2); // hauteur du logo
         text-transform: uppercase;
         font-size: 15px; // unité en pixel car la largeur de l'image est figée. L'utilisation de em ferai bouger la mise en page
         text-align: center;
         max-width: 200px;
 
-        @include to('mobile') {
-            display: none;
+        @include from('desktop') {
+            display: inline-block;
         }
     }
 

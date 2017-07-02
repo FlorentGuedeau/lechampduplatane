@@ -2829,26 +2829,19 @@ body {
           top: -0.4em; }
         body [id="wrapper"] [id="menu-button"] > span::after {
           top: 0.4em; }
-      body [id="wrapper"] [id="menu-button"]:hover > span::before, body [id="wrapper"] [id="menu-button"]:focus > span::before {
-        top: -0.6em; }
-      body [id="wrapper"] [id="menu-button"]:hover > span::after, body [id="wrapper"] [id="menu-button"]:focus > span::after {
-        top: 0.6em; }
-      body [id="wrapper"] [id="menu-button"]:active, body [id="wrapper"] [id="menu-button"]:focus {
+      body [id="wrapper"] [id="menu-button"].active {
         background-color: #9bc407;
         color: #ffffff; }
-        body [id="wrapper"] [id="menu-button"]:active > span, body [id="wrapper"] [id="menu-button"]:focus > span {
-          background-color: #ffffff; }
-          body [id="wrapper"] [id="menu-button"]:active > span::before, body [id="wrapper"] [id="menu-button"]:active > span::after, body [id="wrapper"] [id="menu-button"]:focus > span::before, body [id="wrapper"] [id="menu-button"]:focus > span::after {
-            transition-duration: 0ms;
+        body [id="wrapper"] [id="menu-button"].active > span {
+          background-color: transparent; }
+          body [id="wrapper"] [id="menu-button"].active > span::before {
+            top: 0;
+            transform: rotate(-45deg);
             background-color: #ffffff; }
-      body [id="wrapper"] [id="menu-button"].active > span {
-        background-color: transparent; }
-        body [id="wrapper"] [id="menu-button"].active > span::before {
-          top: 0;
-          transform: rotate(-45deg); }
-        body [id="wrapper"] [id="menu-button"].active > span::after {
-          top: 0;
-          transform: rotate(45deg); }
+          body [id="wrapper"] [id="menu-button"].active > span::after {
+            top: 0;
+            transform: rotate(45deg);
+            background-color: #ffffff; }
     body [id="wrapper"] [id="sticky-sidebar"] {
       padding-top: 1px;
       padding-bottom: 5em; }
@@ -2864,15 +2857,15 @@ body {
       text-align: center;
       margin-top: 1em; }
       body [id="wrapper"] .main-logo img {
-        display: inline-block;
+        display: none;
         line-height: calc(193px / 2);
         text-transform: uppercase;
         font-size: 15px;
         text-align: center;
         max-width: 200px; }
-        @media (max-width: 768px) {
+        @media (min-width: 1001px) {
           body [id="wrapper"] .main-logo img {
-            display: none; } }
+            display: inline-block; } }
       body [id="wrapper"] .main-logo span {
         display: block;
         font-size: 1.5em;

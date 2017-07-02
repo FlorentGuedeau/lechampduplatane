@@ -4333,7 +4333,7 @@ body [id='wrapper']
 
     height: auto;
     min-height: 100%;
-    margin-bottom: -250px; 
+    margin-bottom: -25rem; 
     padding-top: 1px;
 }
 body [id='wrapper'] > noscript > div
@@ -4377,7 +4377,7 @@ body [id='wrapper'] [id='sidebar'].active
 
         overflow-x: hidden;
 
-        width: 265px; 
+        width: 26.5rem; 
         height: 100%;
 
         transition-duration: 0ms;
@@ -4533,7 +4533,7 @@ body [id='wrapper'] [id='sticky-sidebar']
 
         float: left;
 
-        width: 265px;
+        width: 26.5rem;
         padding: inherit;
 
         border-right: solid 5px #ebbe00; 
@@ -4558,7 +4558,7 @@ body [id='wrapper'] .main-logo img
     text-align: center;
     text-transform: uppercase;
 }
-@media (max-width: 1000px)
+@media (max-width: 768px)
 {
     body [id='wrapper'] .main-logo img
     {
@@ -4832,8 +4832,8 @@ body [id='wrapper'] ul[role='menubar'] > li > ul > li > ul
     {
         max-width: 1600px; 
         min-height: 100vh;
-        margin-bottom: -250px;
-        margin-left: 265px;
+        margin-bottom: -25rem;
+        margin-left: 26.5rem;
         padding-bottom: 1px;
     }
 }
@@ -4845,7 +4845,7 @@ body [id='wrapper'] main [id='content']
 {
     body [id='wrapper'] main [id='content']
     {
-        margin-bottom: 250px;
+        margin-bottom: 25rem;
     }
 }
 body [id='wrapper'] main [id='content'] > section
@@ -5842,15 +5842,18 @@ body [id='wrapper'] main [id='content'] > section[id='service'] .cols .article
 {
     margin: 1em;
 }
-body [id='wrapper'] main [id='content'] > section[id='services'] .cols .article:first-child,
-body [id='wrapper'] main [id='content'] > section[id='service'] .cols .article:first-child
+@media (min-width: 1001px)
 {
-    margin-left: 0;
-}
-body [id='wrapper'] main [id='content'] > section[id='services'] .cols .article:last-child,
-body [id='wrapper'] main [id='content'] > section[id='service'] .cols .article:last-child
-{
-    margin-right: 0;
+    body [id='wrapper'] main [id='content'] > section[id='services'] .cols .article:first-child,
+    body [id='wrapper'] main [id='content'] > section[id='service'] .cols .article:first-child
+    {
+        margin-left: 0;
+    }
+    body [id='wrapper'] main [id='content'] > section[id='services'] .cols .article:last-child,
+    body [id='wrapper'] main [id='content'] > section[id='service'] .cols .article:last-child
+    {
+        margin-right: 0;
+    }
 }
 body [id='wrapper'] main [id='content'] > section[id='services'] .article,
 body [id='wrapper'] main [id='content'] > section[id='service'] .article
@@ -5880,6 +5883,84 @@ body [id='wrapper'] main [id='content'] > section[id='service'] .article .button
 {
     transform: rotate(-90deg);
 }
+body [id='wrapper'] main [id='content'] > section[id='service'] [id='formules'] .cols
+{
+    display: -ms-flexbox;
+    display: flex;
+
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+@media (min-width: 1001px)
+{
+    body [id='wrapper'] main [id='content'] > section[id='service'] [id='formules'] .cols
+    {
+        display: block;
+    }
+}
+body [id='wrapper'] main [id='content'] > section[id='service'] [id='formules'] .cols .article
+{
+    margin: .5em;
+}
+@media (min-width: 1001px)
+{
+    body [id='wrapper'] main [id='content'] > section[id='service'] [id='formules'] .cols .article
+    {
+        margin: 0;
+        margin-bottom: 1.5em;
+    }
+    body [id='wrapper'] main [id='content'] > section[id='service'] [id='formules'] .cols .article:last-child
+    {
+        margin-bottom: 0;
+    }
+}
+@media (min-width: 1001px)
+{
+    body [id='wrapper'] main [id='content'] > section[id='service'] [id='formules'] .cols .article .illustration
+    {
+        -ms-flex-negative: 0;
+        flex-shrink: 0;
+    }
+}
+body [id='wrapper'] main [id='content'] > section[id='service'] [id='formules'] .article
+{
+    max-width: 280px;
+
+    background-color: #fff; 
+    box-shadow: 0 0 3px rgba(0, 0, 0, .2);
+}
+@media (min-width: 1001px)
+{
+    body [id='wrapper'] main [id='content'] > section[id='service'] [id='formules'] .article
+    {
+        display: -ms-flexbox;
+        display: flex; 
+
+        max-width: none;
+    }
+}
+body [id='wrapper'] main [id='content'] > section[id='service'] [id='formules'] .article a[role='button'].active::after,
+body [id='wrapper'] main [id='content'] > section[id='service'] [id='formules'] .article .button.active::after
+{
+    transform: rotate(-90deg);
+}
+@media (min-width: 1001px)
+{
+    body [id='wrapper'] main [id='content'] > section[id='service'] [id='formules'] .article a[role='button'],
+    body [id='wrapper'] main [id='content'] > section[id='service'] [id='formules'] .article .button
+    {
+        display: inline-block;
+
+        width: auto; 
+        margin-bottom: 1em;
+    }
+}
+body [id='wrapper'] main [id='content'] > section[id='service'] [id='formules'] .article .visibility-toggle
+{
+    padding: 1px 0;
+}
 body [id='wrapper'] main [id='content'] > section.archive article .content-article,
 body [id='wrapper'] main [id='content'] > section.archive .article .content-article
 {
@@ -5907,30 +5988,30 @@ body [id='wrapper'] main [id='content'] > section.archive .article .illustration
 {
     opacity: .5;
 }
-body [id='wrapper'] main [id='content'] > section.archive article h2 a,
-body [id='wrapper'] main [id='content'] > section.archive .article h2 a
+body [id='wrapper'] main [id='content'] > section.archive article h2 a:not([role='button']):not(.button),
+body [id='wrapper'] main [id='content'] > section.archive .article h2 a:not([role='button']):not(.button)
 {
     text-decoration: none;
 
     color: #000;
 }
-body [id='wrapper'] main [id='content'] > section.archive article h2 a:visited,
-body [id='wrapper'] main [id='content'] > section.archive .article h2 a:visited
+body [id='wrapper'] main [id='content'] > section.archive article h2 a:not([role='button']):not(.button):visited,
+body [id='wrapper'] main [id='content'] > section.archive .article h2 a:not([role='button']):not(.button):visited
 {
     color: #000;
 }
-body [id='wrapper'] main [id='content'] > section.archive article h2 a:focus,
-body [id='wrapper'] main [id='content'] > section.archive .article h2 a:focus
+body [id='wrapper'] main [id='content'] > section.archive article h2 a:not([role='button']):not(.button):focus,
+body [id='wrapper'] main [id='content'] > section.archive .article h2 a:not([role='button']):not(.button):focus
 {
     color: #ebbe00;
 }
-body [id='wrapper'] main [id='content'] > section.archive article h2 a:hover,
-body [id='wrapper'] main [id='content'] > section.archive .article h2 a:hover
+body [id='wrapper'] main [id='content'] > section.archive article h2 a:not([role='button']):not(.button):hover,
+body [id='wrapper'] main [id='content'] > section.archive .article h2 a:not([role='button']):not(.button):hover
 {
     color: #ebbe00;
 }
-body [id='wrapper'] main [id='content'] > section.archive article h2 a:active,
-body [id='wrapper'] main [id='content'] > section.archive .article h2 a:active
+body [id='wrapper'] main [id='content'] > section.archive article h2 a:not([role='button']):not(.button):active,
+body [id='wrapper'] main [id='content'] > section.archive .article h2 a:not([role='button']):not(.button):active
 {
     color: #9bc407;
 }
@@ -6010,7 +6091,7 @@ body [id='wrapper'] [id='footer']
 {
     body [id='wrapper'] [id='footer']
     {
-        margin-left: 265px;
+        margin-left: 26.5rem;
     }
 }
 body [id='wrapper'] [id='footer'] a

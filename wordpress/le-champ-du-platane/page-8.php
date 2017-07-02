@@ -16,7 +16,7 @@
             <div class="article">
                 <?php if( has_post_thumbnail() ) : ?>
                 <div class="illustration">
-                    <a href="<?php the_permalink(); ?>" title="Cliquez ici pour en savoir plus">
+                    <a href="<?php the_permalink(); ?>" title="<?php _e('Cliquez ici pour en savoir plus', 'le-champ-du-platane'); ?>">
                         <?php the_post_thumbnail( 'archive-single' ); ?>
                     </a>
                 </div>
@@ -24,7 +24,7 @@
 
                 <div class="content-article">
                     <h2>
-                        <a href="<?php the_permalink(); ?>" title="Cliquez ici pour en savoir plus">
+                        <a href="<?php the_permalink(); ?>" title="<?php _e('Cliquez ici pour en savoir plus', 'le-champ-du-platane'); ?>">
                             <?php if( get_field( "nos_services_title" ) ) : ?>
                             <?php echo get_field( "nos_services_title" ); ?>
                             <?php else : ?>
@@ -38,7 +38,7 @@
                     </div>
 
                     <footer>
-                        <a role="button" href="<?php the_permalink(); ?>" title="Cliquez ici pour en savoir plus">En savoir plus</a>
+                        <a role="button" href="<?php the_permalink(); ?>" title="<?php _e('Cliquez ici pour en savoir plus', 'le-champ-du-platane'); ?>"><?php _e('En savoir plus', 'le-champ-du-platane'); ?></a>
                     </footer>
                 </div>
             </div>

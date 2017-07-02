@@ -32,7 +32,7 @@
 
                 <?php if( get_the_content() ) : ?>
                 <footer>
-                    <button type="button" class="button not-loading" title="Cliquez ici pour en voir plus">En voir plus</button>
+                    <button type="button" class="button not-loading" title="<?php _e('Cliquez ici pour en voir plus', 'le-champ-du-platane'); ?>"><?php _e('En voir plus', 'le-champ-du-platane'); ?></button>
                     <?php edit_post_link('Modifier la page', '<p class="edit-post-link txt-center">', '</p>'); ?>
                 </footer>
                 <?php endif; ?>
@@ -44,7 +44,7 @@
 
     <?php if( get_field( "service_tarifs" ) ) : ?>
     <div id="tarifs">
-        <h2 class="title-h1">Tarifs</h2>
+        <h2 class="title-h1"><?php _e('Tarifs', 'le-champ-du-platane'); ?></h2>
         <?php echo get_field( "service_tarifs" ); ?>
     </div>
     <?php endif; ?>
@@ -59,7 +59,7 @@
 
     <?php if( !empty($formules) && $formules->post_count > 0 ) : ?>
     <div id="formules">
-        <h2 class="title-h1">Formules</h2>
+        <h2 class="title-h1"<?php _e('Formules', 'le-champ-du-platane'); ?>></h2>
         <div class="cols">
             <?php while ( $formules->have_posts() ) : $formules->the_post(); ?>
             <div class="article">
@@ -85,7 +85,7 @@
 
                 <?php if( get_the_content() ) : ?>
                 <footer>
-                    <button type="button" class="button not-loading" title="Cliquez ici pour en voir plus">En voir plus</button>
+                    <button type="button" class="button not-loading" title="<?php _e('Cliquez ici pour en voir plus', 'le-champ-du-platane'); ?>"><?php _e('En voir plus', 'le-champ-du-platane'); ?></button>
                     <?php edit_post_link('Modifier la page', '<p class="edit-post-link txt-center">', '</p>'); ?>
                 </footer>
                 <?php endif; ?>

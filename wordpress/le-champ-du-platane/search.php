@@ -2,9 +2,9 @@
 
 <section itemprop="mainContentOfPage" id="search" class="archive">
     <?php if ( have_posts() ) : ?>
-    <h1 itemprop="name">Résultats de recherche pour &laquo; <em><?php echo get_search_query(); ?></em> &raquo;</h1>
+    <h1 itemprop="name"><?php _e('Résultats de recherche pour', 'le-champ-du-platane'); ?> &laquo; <em><?php echo get_search_query(); ?></em> &raquo;</h1>
     <?php else : ?>
-    <h1 itemprop="name">Aucun résultat</h1>
+    <h1 itemprop="name"><?php _e('Aucun résultat', 'le-champ-du-platane'); ?></h1>
     <?php endif; ?>
 
 
@@ -26,7 +26,7 @@
 
     <?php else : ?>
 
-    <p>Désolé, mais rien ne correspond à votre recherche. Veuillez réessayer avec des mots différents.</p>
+    <p><?php _e('Désolé, mais rien ne correspond à votre recherche. Veuillez réessayer avec des mots différents.', 'le-champ-du-platane'); ?></p>
 
     <?php get_search_form(); ?>
 
