@@ -54,12 +54,16 @@
         case 12:
             $formules = new WP_Query( array( 'post_type' => 'formules', 'orderby' => 'menu_order', 'order' => 'ASC', 'posts_per_page' => -1, 'post_status' => 'publish', 'tag' => 'execution' ) );
             break;
+
+        case 14:
+            $formules = new WP_Query( array( 'post_type' => 'formules', 'orderby' => 'menu_order', 'order' => 'ASC', 'posts_per_page' => -1, 'post_status' => 'publish', 'tag' => 'gestion' ) );
+            break;
     }
     ?>
 
     <?php if( !empty($formules) && $formules->post_count > 0 ) : ?>
     <div id="formules">
-        <h2 class="title-h1"<?php _e('Formules', 'le-champ-du-platane'); ?>></h2>
+        <h2 class="title-h1"><?php _e('Formules', 'le-champ-du-platane'); ?></h2>
         <div class="cols">
             <?php while ( $formules->have_posts() ) : $formules->the_post(); ?>
             <div class="article">
@@ -86,7 +90,7 @@
                 <?php if( get_the_content() ) : ?>
                 <footer>
                     <button type="button" class="button not-loading" title="<?php _e('Cliquez ici pour en voir plus', 'le-champ-du-platane'); ?>"><?php _e('En voir plus', 'le-champ-du-platane'); ?></button>
-                    <?php edit_post_link('Modifier la page', '<p class="edit-post-link txt-center">', '</p>'); ?>
+                    <?php edit_post_link('Modifier la page', '<p class="edit-post-link">', '</p>'); ?>
                 </footer>
                 <?php endif; ?>
             </div>
