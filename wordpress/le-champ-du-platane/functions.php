@@ -21,7 +21,6 @@ function theme_setup() {
 
     add_theme_support( 'post-thumbnails' );
     add_image_size( 'archive-single', 280, 280, true );
-    //    add_image_size( 'twentyseventeen-thumbnail-avatar', 100, 100, true );
 
     /* Ajout les menus au theme */
     register_nav_menus( array(
@@ -33,6 +32,8 @@ function theme_setup() {
 
     /* ajout les input html5 comme type=email etc.. */
     add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption' ) );
+
+    //    add_editor_style( 'stylesheets/editor-style.css' );
 }
 add_action('after_setup_theme', 'theme_setup');
 
@@ -100,10 +101,6 @@ function theme_scripts() {
     // Theme stylesheet.
     wp_enqueue_style( 'main-style', get_theme_file_uri( '/stylesheets/main.css' ) );
 
-    //    // Load the Internet Explorer 8 specific stylesheet.
-    //    wp_enqueue_style( 'twentyseventeen-ie8', get_theme_file_uri( '/assets/css/ie8.css' ), array( 'twentyseventeen-style' ), '1.0' );
-    //    wp_style_add_data( 'twentyseventeen-ie8', 'conditional', 'lt IE 9' );
-    //
     //    // Load the html5 shiv.
     wp_enqueue_script( 'html5', get_theme_file_uri( '/javascripts/modules/html5.js' ), array(), '3.7.3', false );
     wp_script_add_data( 'html5', 'conditional', 'lt IE 9' );
@@ -209,10 +206,10 @@ add_action( 'admin_init', 'theme_posts_order' );
 function my_login_logo() { ?>
 <style type="text/css">
     body.login div#login h1 a {
-        background-size: 269px 100px;
-        height: 100px;
-        width: 269px;
-        background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/images/logo.png);
+        background-size: 320px 310px;
+        height: 310px;
+        width: 320px;
+        background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/images/logo-admin.png);
     }
 </style>
 <?php }
