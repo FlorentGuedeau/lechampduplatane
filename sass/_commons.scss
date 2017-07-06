@@ -147,7 +147,7 @@ a[role="button"], .button {
     line-height: normal;
     display: block;
     text-decoration: none;
-    color: #ffffff;
+    //    color: #ffffff;
     background-color: $color-green;
     border-radius: .2em;
     text-align: center;
@@ -171,18 +171,13 @@ a[role="button"], .button {
         }
     }
 
-    &:hover, &:focus {
-        background-color: darken($color-green, 20%);
-    }
-
-    &:active {
-        background-color: darken($color-green, 30%);
-
-        //        &::after {
-        //            @include content('\f110');
-        //            animation: spin 2s linear infinite;
-        //        }
-    }
+    //    &:hover, &:focus {
+    //        background-color: darken($color-green, 20%);
+    //    }
+    //
+    //    &:active {
+    //        background-color: darken($color-green, 30%);
+    //    }
 
     &.is-loading {
         &::after {
@@ -268,5 +263,13 @@ table {
     tr, td, th { // J'en suis pas fier mais c'est le seul moyen de contrer la mise en place des hauteur dans TinyMCE
         width: auto !important;
         height: auto !important;
+    }
+}
+
+#cookie-notice .button {
+    width: auto;
+
+    &::after {
+        display: none;
     }
 }

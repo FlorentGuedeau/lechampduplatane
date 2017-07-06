@@ -50,7 +50,8 @@ main {
             color: $color-green;
         }
 
-        a:not([role="button"]):not(.button) {
+        //        a:not([role="button"]):not(.button) {
+        a {
             @include link-colors($color-blue, $color-orange, $color-green, $color-blue, $color-orange);
 
             @include from('desktop') {
@@ -59,6 +60,18 @@ main {
                     @include link-colors($color-text, $color-text, $color-text, $color-text, $color-text);
                     cursor: default;
                 }
+            }
+        }
+
+        a[role="button"], .button {
+            color: #ffffff;
+
+            &:hover, &:focus {
+                background-color: darken($color-green, 20%);
+            }
+
+            &:active {
+                background-color: darken($color-green, 30%);
             }
         }
 
@@ -792,7 +805,8 @@ main {
                     }
 
                     h2 {
-                        a:not([role="button"]):not(.button) {
+                        //                        a:not([role="button"]):not(.button) {
+                        a {
                             text-decoration: none;
                             @include link-colors($color-text, $color-orange, $color-green, $color-text, $color-orange);
                         }
