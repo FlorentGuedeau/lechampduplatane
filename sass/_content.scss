@@ -64,14 +64,19 @@ main {
         }
 
         a[role="button"], .button {
-            color: #ffffff;
+            color: #fff;
 
             &:hover, &:focus {
+                color: #fff;
                 background-color: darken($color-green, 20%);
             }
 
             &:active {
                 background-color: darken($color-green, 30%);
+            }
+
+            &:visited {
+                color: #fff;
             }
         }
 
